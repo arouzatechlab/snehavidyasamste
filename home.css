@@ -1,0 +1,903 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700;800&display=swap");
+
+:root {
+  --navprimarydark: #4c1d95;
+  --navprimarylight: #6d28d9;
+  --navsoftlavender: #c4b5fd;
+  --navaccentgold: #fbbf24;
+  --navaccentgoldhover: #f59e0b;
+  --navtextdark: #1f2937;
+  --navtextlight: #f9fafb;
+  --navbgglass: rgba(255, 255, 255, 0.85);
+  --navbgglassdark: rgba(26, 15, 54, 0.96);
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  font-family: "Inter", sans-serif;
+  background-color: #faf9fd;
+  color: var(--navtextdark);
+}
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+.hm-hero-slide {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  position: absolute;
+  inset: 0;
+}
+.hm-hero-slide.hm-active {
+  opacity: 1;
+}
+.hm-btn-gold {
+  background: linear-gradient(
+    135deg,
+    var(--navaccentgold),
+    var(--navaccentgoldhover)
+  );
+}
+
+.hm-container {
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: auto;
+}
+@media (min-width: 768px) {
+  .hm-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+@media (min-width: 1024px) {
+  .hm-container {
+    max-width: 1280px;
+  }
+}
+
+.hm-heading-main {
+  font-size: clamp(2rem, 7vw, 5rem);
+  line-height: 1.15;
+}
+.hm-text-body {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+}
+
+:root {
+  --hmfacprimary: #4c1d95;
+  --hmfacgold: #fbbf24;
+  --hmfacbg: #faf9fd;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--hmfacbg);
+}
+.hmfactitle-font {
+  font-family: "Playfair Display", serif;
+}
+
+/* Premium Card Interaction */
+.hmfaccard {
+  background: white;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.hmfaccard:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px -15px rgba(76, 29, 149, 0.2);
+  border-color: var(--hmfacprimary);
+}
+
+.hmfac-gold-line {
+  height: 2px;
+  width: 0;
+  background: var(--hmfacgold);
+  transition: width 0.4s ease;
+}
+
+.hmfaccard:hover .hmfac-gold-line {
+  width: 40px;
+}
+.hmfaccard:hover .hmfac-icon-svg {
+  transform: scale(1.05) rotate(2deg);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap");
+
+:root {
+  --primary: #4c1d95;
+  --secondary: #6d28d9;
+  --lavender: #c4b5fd;
+  --gold: #fbbf24;
+  --gold-hover: #f59e0b;
+  --bg: #faf9fd;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg);
+  color: #1e293b;
+}
+.hmevtsection {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hmevtheaderbadge {
+  background: linear-gradient(135deg, var(--gold), var(--gold-hover));
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--primary);
+  display: inline-block;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.hmevttitle {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.hmevtdesc {
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+.hmevtgrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .hmevtgrid {
+    grid-template-columns: 1fr 1.5fr;
+  }
+}
+
+.hmevtcalendar {
+  background: white;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  height: fit-content;
+}
+.hmevtcalendarheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+.hmevtcalendarbody {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+.hmevtday {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  font-weight: 500;
+}
+.hmevtday:hover {
+  background: var(--lavender);
+  color: white;
+}
+.hmevthasevent::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.hmevtlist {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.hmevtcard {
+  background: white;
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  transition: transform 0.3s ease;
+  border: 1px solid #f1f5f9;
+}
+.hmevtcard:hover {
+  transform: translateY(-5px);
+}
+.hmevtdateblock {
+  background: var(--primary);
+  color: white;
+  padding: 1rem;
+  border-radius: 16px;
+  text-align: center;
+  min-width: 70px;
+}
+.hmevtdateblock .day {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.hmevtdateblock .month {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+.hmevtcontent h4 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.hmevtcategory {
+  font-size: 0.7rem;
+  background: #fef3c7;
+  color: #92400e;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.hmevtadminfloat {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--primary);
+  color: white;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 10px 20px rgba(76, 29, 149, 0.3);
+  z-index: 100;
+  transition: 0.3s;
+}
+.hmevtadminfloat:hover {
+  transform: scale(1.1);
+  background: var(--secondary);
+}
+
+.hmevtmodal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+.hmevtmodalactive {
+  display: flex;
+}
+.hmevtmodalbox {
+  background: white;
+  padding: 2rem;
+  border-radius: 24px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#naveventcalendarsection {
+  background: #faf9fd;
+  padding: 4rem 1.5rem;
+  font-family: "Inter", sans-serif;
+  scroll-margin-top: 80px;
+}
+
+.hmevtcontainer {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.hmevtheader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.hmevtbadge {
+  display: inline-block;
+  background: rgba(196, 181, 253, 0.2);
+  backdrop-filter: blur(2px);
+  padding: 0.5rem 1.2rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #4c1d95;
+  border: 1px solid rgba(196, 181, 253, 0.5);
+  margin-bottom: 1rem;
+}
+.hmevttitle {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e1b2e;
+  margin-bottom: 1rem;
+}
+.hmevtdesc {
+  color: #4a4a5a;
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+.hmevtgrid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (min-width: 992px) {
+  .hmevtgrid {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+  }
+}
+
+.hmevtcalendarpanel {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 20px 35px -12px rgba(76, 29, 149, 0.12);
+  padding: 1.2rem;
+}
+@media (min-width: 640px) {
+  .hmevtcalendarpanel {
+    padding: 1.5rem;
+  }
+}
+.hmevtcalheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #4c1d95, #6d28d9);
+  margin: -1.2rem -1.2rem 1.5rem -1.2rem;
+  padding: 1rem 1.2rem;
+  border-radius: 24px 24px 20px 20px;
+}
+.hmevtmonthyear {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+}
+.hmevtnavbtns {
+  display: flex;
+  gap: 0.75rem;
+}
+.hmevtnavbtn {
+  background: rgba(255, 255, 240, 0.15);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #fbbf24;
+  transition: 0.2s;
+}
+.hmevtnavbtn:hover {
+  background: #fbbf24;
+  color: #4c1d95;
+}
+.hmevtweekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  color: #4c1d95;
+}
+.hmevtcaldays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+.hmevtday {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border-radius: 16px;
+  cursor: pointer;
+  background: #faf9fd;
+  transition: 0.2s;
+}
+.hmevtday:hover {
+  background: #e9e4ff;
+  transform: translateY(-2px);
+}
+.hmevtcurrent {
+  background: #6d28d9;
+  color: white;
+}
+.hmevteventdate {
+  background: #f3f0ff;
+  border: 1px solid #c4b5fd;
+}
+.hmevtdaydot {
+  width: 6px;
+  height: 6px;
+  background: #fbbf24;
+  border-radius: 50%;
+  margin-top: 3px;
+}
+.hmevtselected {
+  background: #fbbf24;
+  color: #1e1b2e;
+}
+.hmevteventspanel {
+  background: transparent;
+}
+.hmevteventlist {
+  max-height: 550px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.hmevteventcard {
+  background: white;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+  border-left: 4px solid #c4b5fd;
+  transition: 0.25s;
+}
+.hmevteventcard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 30px -12px rgba(76, 29, 149, 0.15);
+}
+.hmevtcardtop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.hmevtdatebox {
+  background: #4c1d95;
+  border-radius: 16px;
+  padding: 0.3rem 0.8rem;
+  text-align: center;
+  color: white;
+}
+.hmevtcatbadge {
+  background: #fbbf24;
+  padding: 0.25rem 0.8rem;
+  border-radius: 40px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.hmevttitle {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0.5rem 0 0.3rem;
+}
+.hmevtmetainfo {
+  display: flex;
+  gap: 0.8rem;
+  font-size: 0.7rem;
+  color: #6d28d9;
+  margin-top: 0.5rem;
+}
+.hmevtadminactions {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-end;
+  margin-top: 0.6rem;
+}
+.hmevtadminicon {
+  background: #f3f0ff;
+  border: none;
+  border-radius: 30px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+.hmevtaddbtn {
+  background: #4c1d95;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 40px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+.hmevtadminfloat {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  padding: 0.6rem 1rem;
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  z-index: 1000;
+}
+.hmevtadminfloat.adminactive {
+  background: #10b981;
+  color: white;
+}
+.hmevtmodal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.hmevtmodalcontent {
+  background: white;
+  max-width: 500px;
+  width: 90%;
+  border-radius: 32px;
+  padding: 1.5rem;
+  animation: fadeUp 0.25s ease;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hmevtmodalcontent input,
+.hmevtmodalcontent select,
+.hmevtmodalcontent textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin: 0.7rem 0;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+}
+.hmevtmodalbtns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.hmevtbtnsave {
+  background: #4c1d95;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 40px;
+  cursor: pointer;
+}
+.hmevtbtncancel {
+  background: #e2e2e2;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+:root {
+  --hmprimary: #4c1d95;
+  --hmsecondary: #6d28d9;
+  --hmlavender: #c4b5fd;
+  --hmgold: #fbbf24;
+  --hmgoldhover: #f59e0b;
+  --hmbg: #faf9fd;
+  --hmwhite: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--hmbg);
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+/* Shared Header Styles */
+.hmheader {
+  text-align: center;
+  padding: 0 20px 60px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.hmbadge {
+  display: inline-block;
+  padding: 8px 24px;
+  border: 1px solid var(--hmgold);
+  border-radius: 50px;
+  color: var(--hmprimary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  background: rgba(251, 191, 36, 0.1);
+}
+.hmtitle {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: var(--hmprimary);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.hmdesc {
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Section 1: Parents Review */
+.hmreviewsection {
+  padding: 100px 0;
+  background: var(--hmwhite);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Marquee Wrapper */
+.hmreviewslider {
+  display: flex;
+  gap: 24px;
+  animation: hmscrollRtl 40s linear infinite;
+  padding: 20px;
+  width: fit-content;
+}
+.hmreviewslider:hover {
+  animation-play-state: paused;
+}
+
+.hmreviewcard {
+  min-width: 350px;
+  min-height: 260px;
+  background: var(--hmwhite);
+  border: 1px solid #f1f5f9;
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+}
+.hmreviewcard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(76, 29, 149, 0.1);
+}
+
+.hmreviewmeta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.hmreviewphoto {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  object-fit: cover;
+}
+.hmstars {
+  color: var(--hmgold);
+  font-size: 0.8rem;
+}
+.hmquote {
+  color: var(--hmprimary);
+  font-size: 1.5rem;
+}
+.hmreviewtext {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Section 2: Technology Partners */
+.hmtechsection {
+  padding: 100px 0;
+  background: linear-gradient(to bottom, var(--hmwhite), var(--hmbg));
+  overflow: hidden;
+  position: relative;
+}
+.hmtechslider {
+  display: flex;
+  gap: 24px;
+  animation: hmscrollLtr 40s linear infinite;
+  padding: 20px;
+  width: fit-content;
+}
+.hmtechslider:hover {
+  animation-play-state: paused;
+}
+
+.hmtechcard {
+  min-width: 300px;
+  min-height: 200px;
+  background: var(--hmwhite);
+  border: 1px solid #f1f5f9;
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+}
+.hmtechcard:hover {
+  transform: translateY(-10px);
+  border-color: var(--hmlavender);
+}
+.hmtechlogo {
+  width: 60px;
+  height: 60px;
+  fill: var(--hmprimary);
+  margin-bottom: 8px;
+}
+.hmtechname {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.hmtechdesc {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Animations */
+@keyframes hmscrollRtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes hmscrollLtr {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .hmreviewcard {
+    min-width: 280px;
+  }
+  .hmtechcard {
+    min-width: 250px;
+  }
+}
+.hmctasection {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 20px;
+  text-align: center;
+
+  /* Replace with your image path */
+  background: url("images/logo.webp") center center/cover no-repeat;
+
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hmctaoverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(76, 29, 149, 0.75), rgba(76, 29, 149, 0.75));
+}
+
+.hmctacontent {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+}
+
+.hmctatitle {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hmctadesc {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 700px;
+  margin: 0 auto 35px;
+}
+
+.hmctabutton {
+  display: inline-block;
+  padding: 16px 40px;
+  background: #fbbf24;
+  color: #4c1d95;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+  box-shadow: 0 15px 35px rgba(251, 191, 36, 0.3);
+}
+
+.hmctabutton:hover {
+  background: #ffffff;
+  transform: translateY(-4px);
+}
+
+@media (max-width: 768px) {
+  .hmctasection {
+    min-height: 420px;
+    padding: 80px 20px;
+  }
+
+  .hmctabutton {
+    width: 100%;
+    max-width: 260px;
+  }
+}

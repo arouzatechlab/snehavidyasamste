@@ -1,0 +1,982 @@
+/* ==========================================
+       CSS VARIABLES & THEME SELECTION
+       No hyphens used in variable names or classes
+       ========================================== */
+:root {
+  --navprimarydark: #4c1d95;
+  --navprimarylight: #6d28d9;
+  --navsoftlavender: #c4b5fd;
+  --navaccentgold: #fbbf24;
+  --navaccentgoldhover: #f59e0b;
+  --navtextdark: #1f2937;
+  --navtextlight: #f9fafb;
+  --navbgglass: rgba(255, 255, 255, 0.85);
+  --navbgglassdark: rgba(26, 15, 54, 0.96);
+  --navborderglass: rgba(76, 29, 149, 0.08);
+  --navshadowpremium: 0 10px 30px -5px rgba(31, 38, 135, 0.08);
+  --navshadowglow: 0 0 15px rgba(251, 191, 36, 0.4);
+  --navfontsans: "Inter", sans-serif;
+  --navfontserif: "Playfair Display", serif;
+  --navtransitionsmooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --navnavbarheight: 90px;
+}
+
+/* ==========================================
+       RESET & BASE STYLES
+       ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--navfontsans);
+  color: var(--navtextdark);
+  background-color: #f8f7ff; /* 60% Soft canvas background */
+  overflow-x: hidden;
+  min-height: 200vh;
+}
+
+/* Spacer for Demo Content */
+.navdemohero {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #4c1d95 0%, #1e1b4b 100%);
+  color: white;
+  padding: 2rem;
+  overflow: hidden;
+  margin-top: 0;
+}
+.navheaderwrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 9999;
+}
+
+body {
+  padding-top: 90px;
+}
+.navdemohero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(196, 181, 253, 0.15) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+  animation: navrotateBg 25s linear infinite;
+}
+
+@keyframes navrotateBg {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.navdemohero h1 {
+  font-family: var(--navfontserif);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+  z-index: 2;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+}
+
+.navdemohero p {
+  font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+  max-width: 700px;
+  color: var(--navsoftlavender);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  z-index: 2;
+}
+
+.navdemosection {
+  padding: 5rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navdemocard {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(76, 29, 149, 0.05);
+}
+
+.navdemocard h2 {
+  font-family: var(--navfontserif);
+  color: var(--navprimarydark);
+  font-size: 1.85rem;
+  margin-bottom: 1rem;
+}
+
+.naveditindicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  background: rgba(76, 29, 149, 0.06);
+  color: var(--navprimarydark);
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.naveditindicator.navactive {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+/* ==========================================
+       PREMIUM NAV BAR STYLES
+       ========================================== */
+.navheaderwrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: var(--navtransitionsmooth);
+}
+
+/* Navbar styling with glassmorphism + modern UI style */
+.navnavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  height: var(--navnavbarheight);
+  background: var(--navbgglass);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--navborderglass);
+  box-shadow: var(--navshadowpremium);
+  transition: var(--navtransitionsmooth);
+}
+
+/* Sticky modifier when scrolled */
+.navheaderwrapper.navscrolled .navnavbar {
+  height: 72px;
+  background: rgba(
+    76,
+    29,
+    149,
+    0.98
+  ); /* Deep purple background when scrolled */
+  border-bottom: 2px solid var(--navaccentgold);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.navheaderwrapper.navscrolled .navnavbarlogo {
+  border-color: var(--navaccentgold);
+}
+
+.navheaderwrapper.navscrolled .navnavbarlink {
+  color: var(--navsoftlavender);
+}
+
+.navheaderwrapper.navscrolled .navnavbarlink:hover {
+  color: var(--navtextlight);
+}
+
+.navheaderwrapper.navscrolled .navnavbarlink.navactive {
+  color: var(--navaccentgold);
+}
+
+.navheaderwrapper.navscrolled .navhamburger span {
+  background-color: var(--navtextlight);
+}
+
+/* Left Side: Logo & School Name */
+.navnavbarbrand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  z-index: 1001;
+  max-width: 80%; /* Adjusted slightly to guarantee absolute clearance for the hamburger button */
+}
+
+/* Logo container upgraded with perfect overflow boundaries for images */
+.navnavbarlogo {
+  width: auto;
+  height: 80px;
+  /* border-radius: 50%;
+        border: 2px solid var(--navprimarydark); */
+  /* box-shadow: 0 4px 10px rgba(76, 29, 149, 0.15); */
+  transition: var(--navtransitionsmooth);
+  /* background: white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  overflow: hidden; /* Clips the child image into a flawless circle */
+}
+
+/* Highly scaled, centered image layout */
+.navlogoimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fits cleanly without stretching */
+  transition: var(--navtransitionsmooth);
+}
+
+.navnavbarbrand:hover .navnavbarlogo {
+  transform: scale(1.08) rotate(5deg);
+  border-color: var(--navaccentgold);
+}
+
+.navnavbarbrand:hover .navlogoimg {
+  transform: scale(1.05); /* Soft micro-interaction scale on hover */
+}
+
+.navnavbarbrandtext {
+  display: flex;
+  flex-direction: column;
+  overflow: visible; /* Ensure nothing clips name scaling */
+}
+
+.navschoolname {
+  font-family: var(--navfontserif);
+  font-size: clamp(
+    1.1rem,
+    3.8vw,
+    1.45rem
+  ); /* Scales dynamically on standard viewports */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--navprimarydark);
+  transition: var(--navtransitionsmooth);
+  white-space: nowrap;
+}
+
+.navheaderwrapper.navscrolled .navschoolname {
+  color: white;
+}
+
+/* Center/Right side Navigation Links */
+.navnavbarmenu {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  list-style: none;
+}
+
+.navnavbaritem {
+  position: relative;
+}
+
+.navnavbarlink {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navprimarydark);
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: var(--navtransitionsmooth);
+  border-radius: 8px;
+}
+
+.navnavbarlink:hover {
+  color: var(--navprimarylight);
+}
+
+/* Elegant hover underline animation */
+.navnavbarlink::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--navaccentgold);
+  transition: var(--navtransitionsmooth);
+  transform: translateX(-50%);
+}
+
+.navnavbarlink:hover::after {
+  width: 70%;
+}
+
+.navnavbarlink.navactive::after {
+  width: 70%;
+  background-color: var(--navaccentgold);
+}
+
+.navnavbarlink.navactive {
+  color: var(--navprimarylight);
+  font-weight: 700;
+}
+
+/* Premium Animated Dropdown */
+.navdropdown {
+  position: relative;
+}
+
+.navdropdownmenu {
+  position: absolute;
+  top: calc(100% + 15px);
+  left: 50%;
+  transform: translateX(-50%) translateY(15px);
+  background: white;
+  min-width: 250px;
+  border-radius: 16px;
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.03);
+  opacity: 0;
+  visibility: hidden;
+  padding: 0.8rem 0;
+  transition:
+    opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.3s;
+  z-index: 1002;
+}
+
+/* Micro-arrow on Desktop Dropdown */
+.navdropdownmenu::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.03);
+  border-left: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* Desktop Hover Trigger */
+@media (min-width: 1024px) {
+  .navdropdown:hover .navdropdownmenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+  .navdropdownmenu:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.navdropdownitem {
+  list-style: none;
+}
+
+.navdropdownlink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--navtextdark);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  transition: var(--navtransitionsmooth);
+}
+
+.navdropdownlink i {
+  font-size: 0.95rem;
+  color: var(--navprimarylight);
+  width: 20px;
+  text-align: center;
+  transition: var(--navtransitionsmooth);
+}
+
+.navdropdownlink:hover {
+  background-color: #f5f3ff;
+  color: var(--navprimarydark);
+  padding-left: 1.75rem;
+}
+
+.navdropdownlink:hover i {
+  color: var(--navaccentgold);
+  transform: scale(1.15);
+}
+
+/* ADMIN LOGIN CTA Button with Glow/Ripple Accent Gold Color */
+.navbtnlogin {
+  font-family: var(--navfontsans);
+  background: var(--navaccentgold);
+  color: var(--navprimarydark) !important;
+  font-weight: 700 !important;
+  border: none;
+  padding: 0.65rem 1.4rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--navtransitionsmooth);
+  box-shadow: 0 4px 14px rgba(251, 191, 36, 0.4);
+  position: relative;
+  overflow: hidden;
+  outline: none;
+}
+
+/* Glow Ripple effect */
+.navbtnlogin::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.6s ease-out,
+    height 0.6s ease-out;
+}
+
+.navbtnlogin:hover::before {
+  width: 260px;
+  height: 260px;
+}
+
+.navbtnlogin:hover {
+  background-color: var(--navaccentgoldhover);
+  box-shadow: 0 6px 20px rgba(251, 191, 36, 0.6);
+  transform: translateY(-2px);
+}
+
+.navbtnlogin:active {
+  transform: translateY(1px);
+}
+
+/* LOGOUT state button */
+.navbtnlogin.navbtnlogout {
+  background: #ef4444; /* Standard Red */
+  color: white !important;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4);
+}
+
+.navbtnlogin.navbtnlogout:hover {
+  background: #dc2626;
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.6);
+}
+
+/* ==========================================
+       MOBILE NAVBAR HAMBURGER & MODERN SLIDEOUT (100% COVERAGE)
+       ========================================== */
+.navhamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1005;
+  flex-shrink: 0;
+}
+
+.navhamburger span {
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--navprimarydark);
+  border-radius: 9999px;
+  transition: var(--navtransitionsmooth);
+}
+
+/* Transform Hamburger into Close Icon */
+.navhamburger.navopen span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.navhamburger.navopen span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.navhamburger.navopen span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Backdrop Dark Blur Overlay */
+.navmobilenavoverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(15, 11, 42, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navmobilenavoverlay.navopen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mobile Premium Sliding Drawer Menu - Upgraded to Cover 100% width and 100% height */
+@media (max-width: 1023px) {
+  .navhamburger {
+    display: flex;
+  }
+
+  /* Logo scaled slightly down on general mobile to gain space */
+  .navnavbarlogo {
+    width: 46px;
+    height: 46px;
+  }
+
+  /* Reduce structural padding and gap on mobile header to prevent overlapping triggers */
+  .navnavbarbrand {
+    gap: 8px;
+    max-width: calc(100% - 46px);
+  }
+
+  .navnavbarmenu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden offscreen completely */
+    width: 100% !important; /* Covers exactly 100% width of the mobile display */
+    height: 100vh !important; /* Covers exactly 100% height */
+    background: var(--navbgglassdark) !important;
+    box-shadow: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: calc(var(--navnavbarheight) + 1.5rem) 2.5rem 2rem 2.5rem;
+    gap: 1.2rem;
+    transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 999;
+    overflow-y: auto;
+  }
+
+  .navnavbarmenu.navopen {
+    right: 0 !important; /* Fully slides across the screen */
+  }
+
+  .navnavbaritem {
+    width: 100%;
+  }
+
+  .navnavbarlink {
+    font-size: 1.15rem;
+    color: white;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    width: 100%;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    transition: var(--navtransitionsmooth);
+  }
+
+  .navnavbarlink:hover,
+  .navnavbarlink.navactive {
+    color: var(--navaccentgold);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(251, 191, 36, 0.2);
+    padding-left: 1.25rem;
+  }
+
+  /* Animated indicator on Mobile active state */
+  .navnavbarlink.navactive {
+    border-left: 4px solid var(--navaccentgold);
+  }
+
+  .navnavbarlink::after {
+    display: none; /* Disable default underline animation */
+  }
+
+  /* Rotating Chevron on mobile */
+  .navdropdowntoggle i {
+    transition: transform 0.3s ease;
+  }
+  .navdropdown.navopenaccordion .navdropdowntoggle i {
+    transform: rotate(180deg);
+    color: var(--navaccentgold);
+  }
+
+  /* Mobile Accordion Dropdown Setup */
+  .navdropdownmenu {
+    position: static;
+    transform: none !important;
+    opacity: 1;
+    visibility: visible;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+    box-shadow: none;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+    transition:
+      max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      margin 0.3s;
+    border: none;
+  }
+
+  .navdropdownmenu::before {
+    display: none; /* Hide Arrow on mobile */
+  }
+
+  .navdropdown.navopenaccordion .navdropdownmenu {
+    max-height: 300px; /* Expands smoothly */
+    padding: 0.4rem 0;
+    margin-top: 0.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .navdropdownlink {
+    color: var(--navsoftlavender);
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    margin: 0.2rem 0.5rem;
+  }
+
+  .navdropdownlink i {
+    color: var(--navsoftlavender);
+  }
+
+  .navdropdownlink:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: white;
+    padding-left: 1.75rem;
+  }
+
+  .navbtnlogin {
+    width: 100%;
+    justify-content: center;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    padding: 0.85rem;
+  }
+
+  /* Mobile prevent background scrolling */
+  body.navmenuopen {
+    overflow: hidden;
+  }
+}
+
+/* ==========================================
+       EXTRA-SMALL MOBILE SUPPORT (e.g., iPhone SE, Galaxy Fold)
+       Guarantees full name layout rendering without touching hamburger
+       ========================================== */
+@media (max-width: 350px) {
+  .navnavbar {
+    padding: 0 3%; /* Compress side padding slightly */
+  }
+  .navnavbarlogo {
+    width: 40px; /* Highly scaled compact branding circle */
+    height: 40px;
+  }
+  .navschoolname {
+    font-size: 0.85rem !important; /* Scale school name down to fit completely inside 320px */
+    letter-spacing: 0.2px;
+  }
+  .navnavbarbrand {
+    gap: 6px; /* Bring text closer to the logo */
+  }
+}
+
+/* ==========================================
+       PREMIUM MODAL DIALOG STYLES
+       ========================================== */
+.navmodaloverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 11, 42, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000; /* Float above mobile sidebar drawer */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.navmodaloverlay.navactive {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.navmodalcard {
+  background: white;
+  width: 90%;
+  max-width: 440px;
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  position: relative;
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.navmodaloverlay.navactive .navmodalcard {
+  transform: scale(1) translateY(0);
+}
+
+.navmodalclose {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--navtextdark);
+  font-size: 1.1rem;
+  transition: var(--navtransitionsmooth);
+}
+
+.navmodalclose:hover {
+  background: #e5e7eb;
+  color: #ef4444;
+  transform: rotate(90deg);
+}
+
+.navmodalheader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.navmodalheaderlogo {
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(
+    135deg,
+    var(--navprimarydark) 0%,
+    var(--navprimarylight) 100%
+  );
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem auto;
+  box-shadow: 0 10px 20px rgba(76, 29, 149, 0.3);
+}
+
+.navmodalheaderlogo i {
+  color: var(--navaccentgold);
+  font-size: 1.8rem;
+}
+
+.navmodaltitle {
+  font-family: var(--navfontserif);
+  font-size: 1.75rem;
+  color: var(--navprimarydark);
+  font-weight: 700;
+}
+
+.navmodalsubtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.navformgroup {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.navformlabel {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navprimarydark);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.navforminputwrapper {
+  position: relative;
+}
+
+.navforminputwrapper i {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: var(--navprimarylight);
+  opacity: 0.7;
+  transition: var(--navtransitionsmooth);
+}
+
+.navforminput {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.5rem;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+  font-family: var(--navfontsans);
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--navtransitionsmooth);
+  background: #f9fafb;
+}
+
+.navforminput:focus {
+  border-color: var(--navprimarylight);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(109, 40, 217, 0.15);
+}
+
+.navforminput:focus + i {
+  color: var(--navaccentgold);
+  opacity: 1;
+}
+
+.navbtnsubmit {
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--navprimarydark) 0%,
+    var(--navprimarylight) 100%
+  );
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(76, 29, 149, 0.25);
+  transition: var(--navtransitionsmooth);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbtnsubmit:hover {
+  background: linear-gradient(
+    135deg,
+    var(--navprimarylight) 0%,
+    var(--navprimarydark) 100%
+  );
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(109, 40, 217, 0.35);
+}
+
+.navbtnsubmit:active {
+  transform: translateY(1px);
+}
+
+.navdemocredentials {
+  background: #f5f3ff;
+  border: 1px dashed var(--navsoftlavender);
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--navprimarydark);
+}
+
+.navdemocredentials strong {
+  color: var(--navprimarylight);
+}
+
+/* ==========================================
+       TOAST NOTIFICATIONS
+       ========================================== */
+.navtoastcontainer {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.navtoast {
+  background: white;
+  color: var(--navtextdark);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-left: 6px solid #10b981;
+  transform: translateX(120%);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  min-width: 300px;
+}
+
+.navtoast.navsuccess {
+  border-left-color: #10b981;
+}
+
+.navtoast.naverror {
+  border-left-color: #ef4444;
+}
+
+.navtoast.navshow {
+  transform: translateX(0);
+}
+
+.navtoasticon {
+  font-size: 1.25rem;
+}
+
+.navtoast.navsuccess .navtoasticon {
+  color: #10b981;
+}
+
+.navtoast.naverror .navtoasticon {
+  color: #ef4444;
+}
+
+.navtoastmessage {
+  font-size: 0.9rem;
+  font-weight: 500;
+}

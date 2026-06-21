@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sneha Vidya Samste - Premium Responsive Footer</title>
+
+    <!-- Google Fonts: Inter & Playfair Display for premium academic typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome Icons for footer social and address representations -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      /* ==========================================
+       CSS VARIABLES & THEME SELECTION
+       No hyphens used in variable names or classes
+       Applying strict ftr prefix to all selectors
+       ========================================== */
+      :root {
+        --ftrprimarydark: #4c1d95;
+        --ftrprimarylight: #6d28d9;
+        --ftrsoftlavender: #c4b5fd;
+        --ftraccentgold: #fbbf24;
+        --ftraccentgoldhover: #f59e0b;
+        --ftrtextlight: #f9fafb;
+        --ftrtextmuted: #d1d5db;
+        --ftrbgglass: rgba(21, 11, 46, 0.98);
+        --ftrbgcard: rgba(255, 255, 255, 0.04);
+        --ftrborderglass: rgba(255, 255, 255, 0.08);
+        --ftrshadowglow: 0 0 15px rgba(251, 191, 36, 0.4);
+        --ftrtransitionsmooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        --ftrfontsans: "Inter", sans-serif;
+        --ftrfontserif: "Playfair Display", serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      body {
+        font-family: var(--ftrfontsans);
+        background-color: #f8f7ff;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      /* Dummy top spacer so footer has a beautiful presentation page */
+      .ftrdummyspacer {
+        padding: 12rem 2rem;
+        text-align: center;
+        background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+        color: #4b5563;
+      }
+
+      .ftrdummyspacer h2 {
+        font-family: var(--ftrfontserif);
+        color: var(--ftrprimarydark);
+        margin-bottom: 1rem;
+      }
+
+      /* ==========================================
+       PREMIUM SCHOOL FOOTER STYLES
+       ========================================== */
+      .ftrfooter {
+        background: var(--ftrbgglass);
+        border-top: 2px solid rgba(251, 191, 36, 0.15);
+        padding: 3.5rem 0 0 0; /* Optimized for mobile start */
+        color: var(--ftrtextlight);
+        position: relative;
+        overflow: hidden;
+        z-index: 10;
+      }
+
+      /* Desktop scaled padding */
+      @media (min-width: 1024px) {
+        .ftrfooter {
+          padding: 5rem 0 0 0;
+        }
+      }
+
+      /* Subtle background glow effect in footer */
+      .ftrfooter::before {
+        content: "";
+        position: absolute;
+        top: -150px;
+        right: -150px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(
+          circle,
+          rgba(109, 40, 217, 0.15) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* Footer Container with fluid widths and padding margins */
+      .ftrcontainer {
+        width: 90%;
+        max-width: 1240px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1fr; /* Mobile first vertical stack */
+        gap: 2.5rem; /* Tightened gap for mobile structural balance */
+      }
+
+      /* Tablet balanced 2-column view */
+      @media (min-width: 640px) and (max-width: 1023px) {
+        .ftrcontainer {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2.5rem;
+        }
+      }
+
+      /* Desktop Premium 4-column view */
+      @media (min-width: 1024px) {
+        .ftrcontainer {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 2.2rem;
+        }
+      }
+
+      /* Sleek Separators between sections on Mobile */
+      .ftrseparator {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.08) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        border: none;
+      }
+
+      @media (min-width: 640px) {
+        .ftrseparator {
+          display: none; /* Hide delimiters on tablet/desktop grids */
+        }
+      }
+
+      /* Section 1: Branding and Social Links */
+      .ftrbrandcol {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Consistently left-aligned */
+        text-align: left;
+      }
+
+      .ftrlogoimgwrapper {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 2px solid var(--ftraccentgold);
+        box-shadow: var(--ftrshadowglow);
+        background: white;
+        padding: 3px;
+        overflow: hidden;
+        margin-bottom: 1.25rem;
+        transition: var(--ftrtransitionsmooth);
+      }
+
+      .ftrlogoimg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        transition: var(--ftrtransitionsmooth);
+      }
+
+      .ftrlogoimgwrapper:hover {
+        transform: scale(1.08) rotate(5deg);
+      }
+
+      .ftrbranddesc {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--ftrtextmuted);
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+      }
+
+      .ftrsocialbox {
+        display: flex;
+        gap: 12px;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      /* Circular Social Buttons with Golden Hover Glow */
+      .ftrsocialbtn {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--ftrborderglass);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: var(--ftrtransitionsmooth);
+        position: relative;
+        z-index: 1;
+      }
+
+      .ftrsocialbtn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: var(--ftraccentgold);
+        opacity: 0;
+        transform: scale(0.8);
+        transition: var(--ftrtransitionsmooth);
+        z-index: -1;
+      }
+
+      .ftrsocialbtn:hover {
+        color: var(--ftrprimarydark);
+        transform: translateY(-4px);
+        border-color: var(--ftraccentgold);
+        box-shadow: var(--ftrshadowglow);
+      }
+
+      .ftrsocialbtn:hover::before {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* Section 2: Google Maps Embed container */
+      .ftrmapcol {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .ftrmapcoltitle,
+      .ftrqrcoltitle,
+      .ftrcontactcoltitle {
+        font-family: var(--ftrfontserif);
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 1.25rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      /* Elegant border line beneath headers */
+      .ftrmapcoltitle::after,
+      .ftrqrcoltitle::after,
+      .ftrcontactcoltitle::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 45px;
+        height: 2px;
+        background: var(--ftraccentgold);
+      }
+
+      .ftrmapbox {
+        width: 100%;
+        height: 160px; /* Highly optimized height for compact mobile screens */
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--ftrborderglass);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        transition: var(--ftrtransitionsmooth);
+      }
+
+      @media (min-width: 640px) {
+        .ftrmapbox {
+          height: 180px; /* Standard height for tablets and desktops */
+        }
+      }
+
+      .ftrmapbox:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 30px rgba(109, 40, 217, 0.15);
+        border-color: var(--ftrsoftlavender);
+      }
+
+      .ftriframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* Section 3: Premium QR Card Block */
+      .ftrqrcol {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Elegant left-aligned stacking */
+      }
+
+      .ftrqrcard {
+        background: var(--ftrbgcard);
+        border: 1px solid var(--ftrborderglass);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: 16px;
+        padding: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 160px;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+        transition: var(--ftrtransitionsmooth);
+      }
+
+      .ftrqrcard:hover {
+        transform: translateY(-5px) scale(1.03);
+        border-color: var(--ftraccentgold);
+        box-shadow: var(--ftrshadowglow);
+      }
+
+      .ftrqrimg {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        background: white;
+        padding: 6px;
+      }
+
+      .ftrqrtext {
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--ftrsoftlavender);
+        text-align: center;
+      }
+
+      /* Section 4: Modern Contact Rows */
+      .ftrcontactcol {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .ftrcontactlist {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      /* Always maintain horizontal alignment with proper spacing and text line height */
+      .ftrcontactitem {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        justify-content: flex-start;
+        text-align: left;
+      }
+
+      .ftrcontacticon {
+        color: var(--ftraccentgold);
+        font-size: 1.1rem;
+        width: 20px;
+        text-align: center;
+        flex-shrink: 0;
+        transition: var(--ftrtransitionsmooth);
+        margin-top: 3px; /* Centers vector alignment visually with multi line text */
+      }
+
+      .ftrcontactitem:hover .ftrcontacticon {
+        transform: scale(1.2);
+        color: var(--ftrsoftlavender);
+      }
+
+      .ftrcontacttext {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: var(--ftrtextmuted);
+        text-decoration: none;
+        transition: var(--ftrtransitionsmooth);
+      }
+
+      a.ftrcontacttext:hover {
+        color: var(--ftraccentgold);
+        padding-left: 3px;
+      }
+
+      /* Footer Copyright Bar */
+      .ftrbottombar {
+        margin-top: 4rem;
+        padding: 1.5rem 0;
+        border-top: 1px solid var(--ftrborderglass);
+        background: rgba(15, 8, 32, 0.5);
+      }
+
+      .ftrbottomcontainer {
+        width: 90%;
+        max-width: 1240px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .ftrbottomcontainer {
+          flex-direction: row;
+          justify-content: space-between;
+          text-align: left;
+        }
+      }
+
+      .ftrcopyright {
+        font-size: 0.85rem;
+        color: var(--ftrtextmuted);
+      }
+
+      .ftrdesigner {
+        font-size: 0.85rem;
+        color: var(--ftrtextmuted);
+      }
+
+      .ftrdesignerlink {
+        color: var(--ftrsoftlavender);
+        text-decoration: none;
+        font-weight: 600;
+        transition: var(--ftrtransitionsmooth);
+      }
+
+      .ftrdesignerlink:hover {
+        color: var(--ftraccentgold);
+      }
+
+      /* ==========================================
+       BACK TO TOP COMPONENT STYLES
+       ========================================== */
+      .ftrbacktotop {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 48px;
+        height: 48px;
+        background: var(--ftrprimarydark);
+        border: 2px solid var(--ftraccentgold);
+        border-radius: 50%;
+        color: var(--ftraccentgold);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(15px);
+        transition: var(--ftrtransitionsmooth);
+        z-index: 9999;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .ftrbacktotop:hover {
+        background: var(--ftraccentgold);
+        color: var(--ftrprimarydark);
+        transform: translateY(-5px);
+        box-shadow: var(--ftrshadowglow);
+      }
+
+      .ftrbacktotop.ftrshow {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .ftrbacktotop i {
+        font-size: 1.1rem;
+        transition: var(--ftrtransitionsmooth);
+      }
+
+      .ftrbacktotop:hover i {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Demo page container placeholder -->
+    <div class="ftrdummyspacer">
+      <h2>Sneha Vidya Samste</h2>
+      <p>
+        Premium responsive footer component interface layout. (Scroll down to
+        view footer)
+      </p>
+    </div>
+
+    <!-- ==========================================
+       PREMIUM SCHOOL WEBSITE FOOTER
+       Satisfies all strictly prefixed ftr requirements
+       ========================================== -->
+    <footer class="ftrfooter">
+      <div class="ftrcontainer">
+        <!-- COLUMN 1: School Branding & Social Handles -->
+        <div class="ftrbrandcol">
+          <div class="ftrlogoimgwrapper">
+            <img
+              src="./assets/logosneha.webp"
+              alt="Sneha Vidya Samste Foot Logo"
+              class="ftrlogoimg"
+            />
+          </div>
+          <p class="ftrbranddesc">
+            Empowering students with knowledge, discipline, innovation, and
+            values for a brighter future.
+          </p>
+          <div class="ftrsocialbox">
+            <a
+              href="https://facebook.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://instagram.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://youtube.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="YouTube"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a
+              href="https://linkedin.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+
+        <hr class="ftrseparator" />
+
+        <!-- COLUMN 2: Responsive Embedded Map -->
+        <div class="ftrmapcol">
+          <h3 class="ftrmapcoltitle">Find Our Campus</h3>
+          <div class="ftrmapbox">
+            <!-- Responsive maps placeholder pointing to a premium Bangalore tech/academic zone -->
+            <iframe class="ftriframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3895.4743818457423!2d77.02681947121012!3d12.484685001648813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf07f417132ce7%3A0x91d5d4ff62792c9b!2ssneha%20education%20society!5e0!3m2!1sen!2sin!4v1780376612211!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </iframe>
+          </div>
+        </div>
+
+        <hr class="ftrseparator" />
+
+        <!-- COLUMN 3: Premium QR Access Code Card -->
+        <div class="ftrqrcol">
+          <h3 class="ftrqrcoltitle">Quick Access</h3>
+          <div class="ftrqrcard">
+            <img
+              src="./assets/QR.webp"
+              alt="Quick Access QR"
+              class="ftrqrimg"
+            />
+            <span class="ftrqrtext">Scan for Quick Access</span>
+          </div>
+        </div>
+
+        <hr class="ftrseparator" />
+
+        <!-- COLUMN 4: Complete Interactive Contact Information -->
+        <div class="ftrcontactcol">
+          <h3 class="ftrcontactcoltitle">Contact Details</h3>
+          <ul class="ftrcontactlist">
+            <li class="ftrcontactitem">
+              <i class="fas fa-map-marker-alt ftrcontacticon"></i>
+              <span class="ftrcontacttext"
+                >Gudigere Road, Bharathi Nagar(KM DODDI), Karnataka-571422 </span
+              >
+            </li>
+            <li class="ftrcontactitem">
+              <i class="fas fa-phone-alt ftrcontacticon"></i>
+              <a href="tel:+919739422025" class="ftrcontacttext"
+                >+91 97394 22025</a
+              >
+            </li>
+            <!-- <li class="ftrcontactitem">
+              <i class="fas fa-phone-volume ftrcontacticon"></i>
+              <a href="tel:+91802345678" class="ftrcontacttext"
+                >+91 80 2345 6789</a
+              >
+            </li> -->
+            <li class="ftrcontactitem">
+              <i class="fas fa-envelope ftrcontacticon"></i>
+              <a href="mailto:snehavidyasamste123@gmail.com" class="ftrcontacttext"
+                >snehavidyasamste123@gmail.com</a
+              >
+            </li>
+            <li class="ftrcontactitem">
+              <i class="fas fa-globe ftrcontacticon"></i>
+              <a
+                href="https://snehavidyasamste.in"
+                target="_blank"
+                class="ftrcontacttext"
+                >www.snehavidyasamste.in</a
+              >
+            </li>
+            <li class="ftrcontactitem">
+              <i class="fas fa-clock ftrcontacticon"></i>
+              <span class="ftrcontacttext">Mon - Sat: 8:30 AM - 4:30 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Foot Bottom Copyright Banner Block -->
+      <div class="ftrbottombar">
+        <div class="ftrbottomcontainer">
+          <p class="ftrcopyright">
+            &copy; 2026 SNEHA VIDYA SAMSTE. All Rights Reserved.
+          </p>
+          <p class="ftrdesigner">
+            Designed by
+            <a href="https://arouzatechlabs.in/" class="ftrdesignerlink"
+              >Arouza Techlabs</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==========================================
+       BACK TO TOP BUTTON TRIGGER
+       ========================================== -->
+    <button class="ftrbacktotop" id="ftrbacktotop" aria-label="Back to top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ==========================================
+       VANILLA JAVASCRIPT FOR FUNCTIONALITY
+       ========================================== -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const ftrbacktotop = document.getElementById("ftrbacktotop");
+
+        // Monitor scrolling depth to reveal/hide button
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 300) {
+            ftrbacktotop.classList.add("ftrshow");
+          } else {
+            ftrbacktotop.classList.remove("ftrshow");
+          }
+        });
+
+        // Smooth scroll action back to top of document
+        ftrbacktotop.addEventListener("click", () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

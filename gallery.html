@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | SNEHA VIDYA SAMSTE</title>
+     <!-- Google Fonts: Inter & Playfair Display for premium academic typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome Icons for UI elements -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./home.css" />
+    <link rel="stylesheet" href="./nav.css" />
+    <link rel="stylesheet" href="./footer.css" />
+    <style>
+      :root {
+        --glrprimarypurple: #4c1d95;
+        --glrsecondarypurple: #6d28d9;
+        --glrlavender: #c4b5fd;
+        --glrgold: #fbbf24;
+        --glrgoldhover: #f59e0b;
+        --glrdarktext: #1f2937;
+        --glrmutedtext: #4b5563;
+        --glrlightbg: #faf9fd;
+        --glrwhite: #ffffff;
+      }
+
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap");
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        color: var(--glrdarktext);
+        background: var(--glrlightbg);
+        overflow-x: hidden;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Playfair Display", serif;
+      }
+
+      /* Premium Hero */
+      .glrhero {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: var(--glrwhite);
+        padding: 2rem;
+        background:
+          linear-gradient(rgba(76, 29, 149, 0.85), rgba(76, 29, 149, 0.85)),
+          url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2000")
+            center/cover;
+        height: 75vh;
+      }
+      .glrherobadge {
+        background: var(--glrgold);
+        color: var(--glrprimarypurple);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+      .glrherotitle {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+      }
+      .glrherocta {
+        margin-top: 2rem;
+        padding: 1rem 2rem;
+        background: var(--glrgold);
+        color: var(--glrprimarypurple);
+        border: none;
+        border-radius: 8px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .glrherocta:hover {
+        background: var(--glrgoldhover);
+      }
+
+      .glrsection {
+        padding: 5rem 1.5rem;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+      .glrgrid {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(1, 1fr);
+      }
+      @media (min-width: 640px) {
+        .glrgrid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .glrgrid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      /* Premium Cards */
+      .glrcard {
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        background: var(--glrwhite);
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+      .glrcard:hover {
+        transform: translateY(-5px);
+      }
+      .glrcard img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      /* Video Section */
+      .glrvideosection {
+        padding: 5rem 1.5rem;
+        background: #ede9fe;
+      }
+      .glrvideogrid {
+        display: grid;
+        gap: 24px;
+        max-width: 1400px;
+        margin: 0 auto;
+        grid-template-columns: repeat(1, 1fr);
+      }
+      @media (min-width: 768px) {
+        .glrvideogrid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .glrvideocard {
+        background: var(--glrwhite);
+        border-radius: 16px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        cursor: pointer;
+      }
+      .glrvideothumb {
+        height: 200px;
+        background: var(--glrlavender);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        font-size: 3rem;
+        color: var(--glrprimarypurple);
+        margin-bottom: 1rem;
+        position: relative;
+      }
+      .glrvideothumb::after {
+        content: "▶";
+      }
+
+      /* Admission CTA */
+      .glrcta {
+        padding: 8rem 1.5rem;
+        text-align: center;
+        color: var(--glrwhite);
+        background:
+          linear-gradient(rgba(76, 29, 149, 0.9), rgba(76, 29, 149, 0.9)),
+          url("https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?q=80&w=2000")
+            center/cover;
+      }
+      .glrctabtn {
+        margin-top: 2rem;
+        padding: 1.2rem 3rem;
+        background: var(--glrgold);
+        border: none;
+        border-radius: 8px;
+        font-weight: 700;
+        cursor: pointer;
+        color: var(--glrprimarypurple);
+        font-size: 1.1rem;
+        transition: background 0.3s;
+      }
+      .glrctabtn:hover {
+        background: var(--glrgoldhover);
+      }
+
+      /* Lightbox */
+      .glrlightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        backdrop-filter: blur(5px);
+      }
+      .glrlightbox-content {
+        width: 90%;
+        max-width: 800px;
+      }
+      .glrlightbox-content img,
+      .glrlightbox-content video {
+        width: 100%;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ==========================================
+       HEADER / NAVIGATION WRAPPER
+       ========================================== -->
+    <div class="navheaderwrapper" id="navheaderwrapper">
+      <nav class="navnavbar">
+        <!-- Left Branding Logo -->
+        <a href="./index.html" class="navnavbarbrand">
+          <div class="navnavbarlogo">
+            <!-- Styled <img> tag replaced SVG representation cleanly -->
+            <img
+              src="./assets/logosneha.webp"
+              alt="Sneha Vidya Samste Logo"
+              class="navlogoimg"
+              id="navlogoimg"
+            />
+          </div>
+          <div class="navnavbarbrandtext">
+            <span class="navschoolname">SNEHA VIDYA SAMSTE</span>
+          </div>
+        </a>
+
+        <!-- Premium Navigation Menu Links -->
+        <ul class="navnavbarmenu" id="navnavbarmenu">
+          <li class="navnavbaritem">
+            <a href="./index.html" class="navnavbarlink navactive">HOME</a>
+          </li>
+          <li class="navnavbaritem">
+            <a href="./facilities.html" class="navnavbarlink">FACILITIES</a>
+          </li>
+          <li class="navnavbaritem">
+            <a href="./academics.html" class="navnavbarlink">ACADEMICS</a>
+          </li>
+
+          <!-- About Us Dropdown Trigger -->
+          <li class="navnavbaritem navdropdown" id="navaboutdropdown">
+            <a
+              href="./about.html"
+              class="navnavbarlink navdropdowntoggle"
+              id="navdropdowntoggle"
+            >
+              ABOUT US
+              <i
+                class="fas fa-chevron-down"
+                style="font-size: 0.75rem; margin-left: 2px"
+              ></i>
+            </a>
+            <!-- Animated Dropdown Options -->
+            <ul class="navdropdownmenu">
+              <li class="navdropdownitem">
+                <a href="./about.html#about" class="navdropdownlink"
+                  ><i class="fas fa-school"></i> About</a
+                >
+              </li>
+              <li class="navdropdownitem">
+                <a href="./faculty.html" class="navdropdownlink"
+                  ><i class="fas fa-users"></i> Faculties</a
+                >
+              </li>
+              <li class="navdropdownitem">
+                <a href="./disclosure.html" class="navdropdownlink"
+                  ><i class="fas fa-file-signature"></i> Mandatory Disclosure</a
+                >
+              </li>
+              <!-- <li class="navdropdownitem">
+                <a href="#disclosure" class="navdropdownlink"
+                  ><i class="fas fa-images"></i> Gallery</a
+                >
+              </li> -->
+            </ul>
+          </li>
+
+          <!-- New Root Contact Option (Moved out of Dropdown as requested) -->
+          <li class="navnavbaritem">
+            <a href="./gallery.html" class="navnavbarlink">GALLERY</a>
+          </li>
+
+          <!-- Call To Action Admin Login Button -->
+          <li class="navnavbaritem">
+            <button
+              class="navbtnlogin"
+              id="navadminloginbtn"
+              onclick="window.location.href = './admission.html'"
+            >
+              <i class="fas fa-book"></i>
+              <span id="navloginbtntext">ADMISSIONS</span>
+            </button>
+          </li>
+        </ul>
+
+        <!-- Hamburger Action Trigger for Mobile Responsive Display -->
+        <button
+          class="navhamburger"
+          id="navhamburgermenu"
+          aria-label="Toggle navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Mobile Overlay Background Blur Element -->
+    <div class="navmobilenavoverlay" id="navmobilenavoverlay"></div>
+    <section class="glrhero">
+      <div class="glrherobadge">Campus Life & Memories</div>
+      <h1 class="glrherotitle">Gallery</h1>
+      <button
+        class="glrherocta"
+        onclick="
+          document
+            .getElementById('glranchor')
+            .scrollIntoView({ behavior: 'smooth' })
+        "
+      >
+        Explore Gallery
+      </button>
+    </section>
+
+    <section id="glranchor" class="glrsection">
+      <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem">
+        Photo Gallery
+      </h2>
+      <div class="glrgrid" id="glrgrid"></div>
+    </section>
+
+    <section class="glrvideosection">
+      <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem">
+        Campus Videos
+      </h2>
+      <div class="glrvideogrid" id="glrvideogrid"></div>
+    </section>
+
+    <section class="glrcta">
+      <h2
+        style="
+          font-size: 3rem;
+          font-family: &quot;Playfair Display&quot;, serif;
+        "
+      >
+        Become a Part of Our Success Story
+      </h2>
+      <p style="margin-top: 1.5rem; font-size: 1.25rem; opacity: 0.9">
+        Join SNEHA VIDYA SAMSTE and create your own memorable journey.
+      </p>
+      <button class="glrctabtn">Admission</button>
+    </section>
+
+    <div class="glrlightbox" id="glrlightbox" onclick="closeLightbox()">
+      <div
+        class="glrlightbox-content"
+        id="glrlightbox-content"
+        onclick="event.stopPropagation()"
+      >
+        <!-- Content injected here -->
+      </div>
+    </div>
+<!-- ==========================================
+       PREMIUM SCHOOL WEBSITE FOOTER
+       Satisfies all strictly prefixed ftr requirements
+       ========================================== -->
+    <footer class="ftrfooter">
+      <div class="ftrcontainer">
+        <!-- COLUMN 1: School Branding & Social Handles -->
+        <div class="ftrbrandcol">
+          <div class="ftrlogoimgwrapper">
+            <img
+              src="./assets/logosneha.webp"
+              alt="Sneha Vidya Samste Foot Logo"
+              class="ftrlogoimg"
+            />
+          </div>
+          <p class="ftrbranddesc">
+            Empowering students with knowledge, discipline, innovation, and
+            values for a brighter future.
+          </p>
+          <div class="ftrsocialbox">
+            <a
+              href="https://facebook.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://instagram.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://youtube.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="YouTube"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a
+              href="https://linkedin.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+
+        <hr class="ftrseparator" />
+
+        <!-- COLUMN 2: Responsive Embedded Map -->
+        <div class="ftrmapcol">
+          <h3 class="ftrmapcoltitle">Find Our Campus</h3>
+          <div class="ftrmapbox">
+            <!-- Responsive maps placeholder pointing to a premium Bangalore tech/academic zone -->
+            <iframe class="ftriframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3895.4743818457423!2d77.02681947121012!3d12.484685001648813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf07f417132ce7%3A0x91d5d4ff62792c9b!2ssneha%20education%20society!5e0!3m2!1sen!2sin!4v1780376612211!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </iframe>
+          </div>
+        </div>
+
+        <hr class="ftrseparator" />
+
+        <!-- COLUMN 3: Premium QR Access Code Card -->
+        <div class="ftrqrcol">
+          <h3 class="ftrqrcoltitle">Quick Access</h3>
+          <div class="ftrqrcard">
+            <img
+              src="./assets/QR.webp"
+              alt="Quick Access QR"
+              class="ftrqrimg"
+            />
+            <span class="ftrqrtext">Scan for Quick Access</span>
+          </div>
+        </div>
+
+        <hr class="ftrseparator" />
+
+        <!-- COLUMN 4: Complete Interactive Contact Information -->
+        <div class="ftrcontactcol">
+          <h3 class="ftrcontactcoltitle">Contact Details</h3>
+          <ul class="ftrcontactlist">
+            <li class="ftrcontactitem">
+              <i class="fas fa-map-marker-alt ftrcontacticon"></i>
+              <span class="ftrcontacttext"
+                >Gudigere Road, Bharathi Nagar(KM DODDI), Karnataka-571422 </span
+              >
+            </li>
+            <li class="ftrcontactitem">
+              <i class="fas fa-phone-alt ftrcontacticon"></i>
+              <a href="tel:+919739422025" class="ftrcontacttext"
+                >+91 97394 22025</a
+              >
+            </li>
+            <!-- <li class="ftrcontactitem">
+              <i class="fas fa-phone-volume ftrcontacticon"></i>
+              <a href="tel:+91802345678" class="ftrcontacttext"
+                >+91 80 2345 6789</a
+              >
+            </li> -->
+            <li class="ftrcontactitem">
+              <i class="fas fa-envelope ftrcontacticon"></i>
+              <a href="mailto:snehavidyasamste123@gmail.com" class="ftrcontacttext"
+                >snehavidyasamste123@gmail.com</a
+              >
+            </li>
+            <li class="ftrcontactitem">
+              <i class="fas fa-globe ftrcontacticon"></i>
+              <a
+                href="https://snehavidyasamste.in"
+                target="_blank"
+                class="ftrcontacttext"
+                >www.snehavidyasamste.in</a
+              >
+            </li>
+            <li class="ftrcontactitem">
+              <i class="fas fa-clock ftrcontacticon"></i>
+              <span class="ftrcontacttext">Mon - Sat: 8:30 AM - 4:30 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Foot Bottom Copyright Banner Block -->
+      <div class="ftrbottombar">
+        <div class="ftrbottomcontainer">
+          <p class="ftrcopyright">
+            &copy; 2026 SNEHA VIDYA SAMSTE. All Rights Reserved.
+          </p>
+          <p class="ftrdesigner">
+            Designed by
+            <a href="https://arouzatechlabs.in/" class="ftrdesignerlink"
+              >Arouza Techlabs</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==========================================
+       BACK TO TOP BUTTON TRIGGER
+       ========================================== -->
+    <button class="ftrbacktotop" id="ftrbacktotop" aria-label="Back to top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+<script type="module" src="./nav.js"></script>
+<script type="module" src="./footer.js"></script>
+    <script>
+      // Populate Images
+      const grid = document.getElementById("glrgrid");
+      for (let i = 0; i < 12; i++) {
+        const div = document.createElement("div");
+        div.className = "glrcard";
+        div.innerHTML = `<img src="https://picsum.photos/400/300?random=${i}" loading="lazy" alt="Image ${i}">`;
+        div.onclick = () => {
+          document.getElementById("glrlightbox-content").innerHTML =
+            `<img src="https://picsum.photos/800/600?random=${i}" alt="Full view">`;
+          document.getElementById("glrlightbox").style.display = "flex";
+        };
+        grid.appendChild(div);
+      }
+
+      // Populate Videos
+      const vgrid = document.getElementById("glrvideogrid");
+      for (let i = 0; i < 5; i++) {
+        const div = document.createElement("div");
+        div.className = "glrvideocard";
+        div.innerHTML = `<div class="glrvideothumb"></div><h3>Campus Event ${i + 1}</h3>`;
+        div.onclick = () => {
+          document.getElementById("glrlightbox-content").innerHTML = `
+                    <video controls autoplay>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>`;
+          document.getElementById("glrlightbox").style.display = "flex";
+        };
+        vgrid.appendChild(div);
+      }
+
+      function closeLightbox() {
+        document.getElementById("glrlightbox").style.display = "none";
+        document.getElementById("glrlightbox-content").innerHTML = "";
+      }
+    </script>
+  </body>
+</html>

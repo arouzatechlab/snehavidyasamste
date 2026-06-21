@@ -1,0 +1,1856 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Faculty & Staff | Sneha Vidya Samste</title>
+
+    <!-- Google Fonts: Playfair Display for academic heritage & Inter for pristine modern interfaces -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap"
+      rel="stylesheet"
+    />
+     <!-- Google Fonts: Inter & Playfair Display for premium academic typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome Icons for UI elements -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./home.css" />
+    <link rel="stylesheet" href="./nav.css" />
+    <link rel="stylesheet" href="./footer.css" />
+    <style>
+      /* CSS VARIABLES - Syncing exact global values from the matching Admissions & About Page Design Systems */
+      :root {
+        --facprimarydark: #4c1d95;
+        --facprimarylight: #6d28d9;
+        --facsoftlavender: #c4b5fd;
+        --facaccentgold: #fbbf24;
+        --facaccentgoldhover: #f59e0b;
+        --factextdark: #1f2937;
+        --factextmuted: #4b5563;
+        --factextlight: #f9fafb;
+        --facbgglass: rgba(255, 255, 255, 0.85);
+        --facbglight: #faf9fd;
+        --facwhite: #ffffff;
+        --facborderglass: rgba(76, 29, 149, 0.08);
+        --facshadowpremium: 0 10px 30px -5px rgba(76, 29, 149, 0.08);
+        --facshadowglow: 0 0 15px rgba(251, 191, 36, 0.3);
+        --facfontsans: "Inter", sans-serif;
+        --facfontserif: "Playfair Display", serif;
+        --factransitionsmooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      /* GLOBAL SETUP */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        width: 100%;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--facfontsans);
+        background-color: var(--facbglight);
+        color: var(--factextdark);
+        line-height: 1.6;
+      }
+
+      /* UTILITIES */
+      .faccontainer {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 24px; /* 24px safe mobile padding gutter */
+      }
+
+      .facsectionhead {
+        text-align: center;
+        margin-bottom: 48px;
+      }
+
+      .facsectionbadge {
+        color: var(--facprimarydark);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        display: inline-block;
+      }
+
+      .facsectiontitle {
+        font-family: var(--facfontserif);
+        font-size: 2rem;
+        color: var(--facprimarydark);
+        font-weight: 800;
+        line-height: 1.3;
+        margin-bottom: 16px;
+      }
+
+      .facsectionsubtitle {
+        font-size: 0.95rem;
+        color: var(--factextmuted);
+        max-width: 650px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      /* SCROLL REVEAL TRIGGERS */
+      .facreveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: var(--factransitionsmooth);
+      }
+
+      .facrevealactive {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* SECTION 1 — HERO SECTION */
+      .fachero {
+        position: relative;
+        background-image: url("https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=1920&auto=format&fit=crop");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--facwhite);
+        padding: 100px 24px 80px 24px; /* Generous vertical padding guarantees safe space around button on mobile */
+        overflow: hidden;
+      }
+
+      .facherooverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(30, 12, 68, 0.85) 0%,
+          rgba(76, 29, 149, 0.75) 100%
+        );
+        z-index: 1;
+      }
+
+      .facherocontent {
+        position: relative;
+        z-index: 2;
+        max-width: 850px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .facherobadge {
+        background: rgba(251, 191, 36, 0.15);
+        border: 1px solid var(--facaccentgold);
+        color: var(--facaccentgold);
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        padding: 6px 18px;
+        border-radius: 50px;
+        margin-bottom: 24px;
+        box-shadow: var(--facshadowglow);
+      }
+
+      .facherotitle {
+        font-family: var(--facfontserif);
+        font-size: 2.2rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        color: var(--facwhite);
+      }
+
+      .facherosubtitle {
+        font-family: var(--facfontsans);
+        font-size: 0.95rem;
+        color: var(--facsoftlavender);
+        font-weight: 300;
+        line-height: 1.6;
+        margin-bottom: 32px;
+        max-width: 650px;
+      }
+
+      .facherobtn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          135deg,
+          var(--facaccentgold) 0%,
+          var(--facaccentgoldhover) 100%
+        );
+        color: var(--facprimarydark);
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        padding: 16px 36px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+        transition: var(--factransitionsmooth);
+        cursor: pointer;
+        border: none;
+        min-height: 48px; /* Safe mobile tap target */
+      }
+
+      .facherobtn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(251, 191, 36, 0.55);
+      }
+
+      /* SECTION 2 — INTRODUCTION STORY BLOCK */
+      .facintro {
+        padding: 60px 0;
+        background-color: var(--facbglight);
+      }
+
+      .facintrogrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .facintroimagebox {
+        display: none; /* Desktop only asset fallback for clean mobile stacking */
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--facshadowpremium);
+        height: 380px;
+        width: 100%;
+      }
+
+      .facintroimg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--factransitionsmooth);
+      }
+
+      .facintroimagebox:hover .facintroimg {
+        transform: scale(1.04);
+      }
+
+      .facintrocontent {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .facintrocontentlabel {
+        color: var(--facprimarydark);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+
+      .facintrocontenttitle {
+        font-family: var(--facfontserif);
+        font-size: 1.8rem;
+        color: var(--facprimarydark);
+        line-height: 1.3;
+        margin-bottom: 20px;
+      }
+
+      .facintrocontenttext {
+        font-size: 0.95rem;
+        color: var(--factextmuted);
+        line-height: 1.7;
+        margin-bottom: 30px;
+      }
+
+      /* Counters grid */
+      .facstats {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        border-top: 1px solid rgba(196, 181, 253, 0.2);
+        padding-top: 24px;
+      }
+
+      .facstatcard {
+        background: var(--facwhite);
+        border: 1px solid var(--facborderglass);
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: var(--facshadowpremium);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .facstatnum {
+        font-family: var(--facfontserif);
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--facaccentgoldhover);
+        line-height: 1.1;
+        margin-bottom: 4px;
+      }
+
+      .facstatlabel {
+        font-size: 0.8rem;
+        color: var(--facprimarydark);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      /* SECTION 3 — TEACHING FACULTY */
+      .facteaching {
+        padding: 80px 0;
+        background-color: var(--facwhite);
+        content-visibility: auto; /* Optimizes page load performance for large layouts */
+        contain-intrinsic-size: 1200px;
+      }
+
+      .facteachinggrid {
+        display: grid;
+        grid-template-columns: 1fr; /* Strict mobile first */
+        gap: 28px;
+      }
+
+      /* Profile cards styling */
+      .faccard {
+        background: var(--facwhite);
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--facborderglass);
+        box-shadow: var(--facshadowpremium);
+        display: flex;
+        flex-direction: column;
+        transition: var(--factransitionsmooth);
+        position: relative;
+      }
+
+      .faccard:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(76, 29, 149, 0.1);
+        border-color: var(--facaccentgold);
+      }
+
+      /* Optimized image container wrapper preventing Layout Shift (CLS) */
+      .facimage {
+        width: 100%;
+        aspect-ratio: 4 / 5; /* Absolute layout containment */
+        overflow: hidden;
+        position: relative;
+        background-color: #e2e8f0; /* Preloader placeholder color */
+      }
+
+      .faccardimg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: var(--factransitionsmooth);
+      }
+
+      .faccard:hover .faccardimg {
+        transform: scale(1.05);
+      }
+
+      .faccontent {
+        padding: 24px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .faccardname {
+        font-family: var(--facfontserif);
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: var(--facprimarydark);
+        margin-bottom: 6px;
+      }
+
+      .faccardqual {
+        font-size: 0.85rem;
+        color: var(--facaccentgoldhover);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 8px;
+      }
+
+      .faccardrole {
+        font-size: 0.85rem;
+        color: var(--factextmuted);
+        line-height: 1.5;
+      }
+
+      /* SECTION 4 — NON TEACHING STAFF */
+      .facnonteaching {
+        padding: 80px 0;
+        background-color: rgba(196, 181, 253, 0.12);
+        content-visibility: auto;
+        contain-intrinsic-size: 800px;
+      }
+
+      .facnonteachinggrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      /* SECTION 5 — TRANSPORT TEAM */
+      .factransport {
+        padding: 80px 0;
+        background-color: var(--facwhite);
+      }
+
+      .factransportgrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      /* Slightly different style for Transport drivers */
+      .facdrivercard {
+        background: var(--facbglight);
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--facborderglass);
+        box-shadow: var(--facshadowpremium);
+        display: flex;
+        flex-direction: column;
+        transition: var(--factransitionsmooth);
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+      }
+
+      .facdrivercard:hover {
+        transform: translateY(-4px);
+        border-color: var(--facaccentgold);
+        box-shadow: var(--facshadowpremium);
+      }
+
+      .facdriveravatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: var(--facwhite);
+        border: 2px solid var(--facsoftlavender);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--facprimarydark);
+        margin-bottom: 16px;
+        box-shadow: var(--facshadowpremium);
+        transition: var(--factransitionsmooth);
+      }
+
+      .facdrivercard:hover .facdriveravatar {
+        background-color: var(--facprimarydark);
+        color: var(--facaccentgold);
+        border-color: var(--facaccentgold);
+        transform: scale(1.05);
+      }
+
+      .facdriveravatar svg {
+        width: 32px;
+        height: 32px;
+        fill: currentColor;
+      }
+
+      .facdrivername {
+        font-family: var(--facfontsans);
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--facprimarydark);
+        margin-bottom: 4px;
+      }
+
+      .facdriverexp {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--facaccentgoldhover);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 6px;
+      }
+
+      .facdriverbadge {
+        display: inline-block;
+        background: rgba(76, 29, 149, 0.06);
+        border: 1px solid rgba(76, 29, 149, 0.1);
+        padding: 4px 12px;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        color: var(--facprimarydark);
+        font-weight: 500;
+      }
+
+      /* SECTION 6 — WHY OUR TEAM STANDS OUT */
+      .facwhy {
+        padding: 80px 0;
+        background-color: var(--facbglight);
+      }
+
+      .facwhygrid {
+        display: grid;
+        grid-template-columns: 1fr; /* Default single column on mobile prevents horizontal compression and overlap */
+        gap: 20px;
+      }
+
+      .facwhyitem {
+        background-color: var(--facwhite);
+        border-radius: 12px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border: 1px solid var(--facborderglass);
+        box-shadow: var(--facshadowpremium);
+        transition: var(--factransitionsmooth);
+      }
+
+      .facwhyitem:hover {
+        transform: translateY(-4px);
+        border-color: var(--facsoftlavender);
+        box-shadow: 0 10px 25px rgba(76, 29, 149, 0.04);
+      }
+
+      .facwhyicon {
+        color: var(--facaccentgoldhover);
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .facwhyicon svg {
+        width: 28px;
+        height: 28px;
+        fill: currentColor;
+      }
+
+      .facwhyitemtitle {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--facprimarydark);
+        margin-bottom: 8px;
+      }
+
+      .facwhyitemdesc {
+        font-size: 0.8rem;
+        color: var(--factextmuted);
+        line-height: 1.5;
+      }
+
+      /* SECTION 7 — JOIN OUR SCHOOL CTA */
+      .faccta {
+        position: relative;
+        background-image: url("https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1920&auto=format&fit=crop");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 60px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--facwhite);
+      }
+
+      .facctaoverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(30, 12, 68, 0.9) 0%,
+          rgba(76, 29, 149, 0.8) 100%
+        );
+        z-index: 1;
+      }
+
+      .facctacontent {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 800px;
+      }
+
+      .facctatitle {
+        font-family: var(--facfontserif);
+        font-size: 1.6rem;
+        font-weight: 800;
+        margin-bottom: 14px;
+        line-height: 1.3;
+      }
+
+      .facctadesc {
+        font-size: 0.9rem;
+        color: var(--facsoftlavender);
+        margin-bottom: 28px;
+        line-height: 1.6;
+      }
+
+      .facctabtnwrap {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .facctabtn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          135deg,
+          var(--facaccentgold) 0%,
+          var(--facaccentgoldhover) 100%
+        );
+        color: var(--facprimarydark);
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        padding: 14px 24px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+        transition: var(--factransitionsmooth);
+        min-height: 48px;
+        width: 100%;
+        max-width: 260px;
+      }
+
+      .facctabtnsecondary {
+        background: transparent;
+        border: 1px solid var(--facwhite);
+        color: var(--facwhite);
+      }
+
+      .facctabtnsecondary:hover {
+        background: var(--facwhite);
+        color: var(--facprimarydark);
+      }
+
+      .facctabtn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(251, 191, 36, 0.45);
+      }
+
+      /* RESPONSIVE BREAKPOINTS (Upward scaling layout adapters) */
+
+      /* Small/Medium Mobile (360px+) */
+      @media (min-width: 360px) {
+        /* Fluid stats spacing prevents cramming on standard device screens */
+        .facstats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* Large Mobile (480px+) */
+      @media (min-width: 480px) {
+        .facherotitle {
+          font-size: 2.5rem;
+        }
+        .fachero {
+          min-height: 520px;
+        }
+        .facintrocontenttitle {
+          font-size: 2.1rem;
+        }
+        .facstats {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .facctabtnwrap {
+          flex-direction: row;
+          gap: 16px;
+        }
+        .facctabtn {
+          width: auto;
+        }
+      }
+
+      /* Small Tablet displays (640px+) */
+      @media (min-width: 640px) {
+        .facwhygrid {
+          grid-template-columns: repeat(
+            2,
+            1fr
+          ); /* Elegant dual grids on medium landscape modules */
+        }
+      }
+
+      /* Tablet Displays (768px+) */
+      @media (min-width: 768px) {
+        .facsectiontitle {
+          font-size: 2.4rem;
+        }
+        .facintrogrid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 40px;
+        }
+        .facintroimagebox {
+          display: block; /* Render decorative side cover image */
+        }
+        .facteachinggrid {
+          grid-template-columns: repeat(
+            3,
+            1fr
+          ); /* Balanced 3-col grids on tablets */
+        }
+        .facnonteachinggrid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .factransportgrid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .faccta {
+          padding: 80px 24px;
+        }
+      }
+
+      /* Desktop Viewports (1024px+) */
+      @media (min-width: 1024px) {
+        .facherotitle {
+          font-size: 3.5rem;
+        }
+        .facteachinggrid {
+          grid-template-columns: repeat(
+            5,
+            1fr
+          ); /* Premium 5 cards per row on desktops */
+        }
+        .facnonteachinggrid {
+          grid-template-columns: repeat(
+            3,
+            1fr
+          ); /* Balanced 3 column displays */
+        }
+        .factransportgrid {
+          grid-template-columns: repeat(4, 1fr); /* Compact 4 cards per row */
+        }
+        .facwhygrid {
+          grid-template-columns: repeat(4, 1fr); /* Compact icon matrices */
+          gap: 24px;
+        }
+        .facctatitle {
+          font-size: 2.4rem;
+          margin-bottom: 20px;
+        }
+      }
+
+      /* Ultra Wide Desktop (1440px+) */
+      @media (min-width: 1440px) {
+        .facherotitle {
+          font-size: 4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ==========================================
+       HEADER / NAVIGATION WRAPPER
+       ========================================== -->
+    <div class="navheaderwrapper" id="navheaderwrapper">
+      <nav class="navnavbar">
+        <!-- Left Branding Logo -->
+        <a href="./index.html" class="navnavbarbrand">
+          <div class="navnavbarlogo">
+            <!-- Styled <img> tag replaced SVG representation cleanly -->
+            <img
+              src="./assets/logosneha.webp"
+              alt="Sneha Vidya Samste Logo"
+              class="navlogoimg"
+              id="navlogoimg"
+            />
+          </div>
+          <div class="navnavbarbrandtext">
+            <span class="navschoolname">SNEHA VIDYA SAMSTE</span>
+          </div>
+        </a>
+
+        <!-- Premium Navigation Menu Links -->
+        <ul class="navnavbarmenu" id="navnavbarmenu">
+          <li class="navnavbaritem">
+            <a href="./index.html" class="navnavbarlink navactive">HOME</a>
+          </li>
+          <li class="navnavbaritem">
+            <a href="./facilities.html" class="navnavbarlink">FACILITIES</a>
+          </li>
+          <li class="navnavbaritem">
+            <a href="./academics.html" class="navnavbarlink">ACADEMICS</a>
+          </li>
+
+          <!-- About Us Dropdown Trigger -->
+          <li class="navnavbaritem navdropdown" id="navaboutdropdown">
+            <a
+              href="./about.html"
+              class="navnavbarlink navdropdowntoggle"
+              id="navdropdowntoggle"
+            >
+              ABOUT US
+              <i
+                class="fas fa-chevron-down"
+                style="font-size: 0.75rem; margin-left: 2px"
+              ></i>
+            </a>
+            <!-- Animated Dropdown Options -->
+            <ul class="navdropdownmenu">
+              <li class="navdropdownitem">
+                <a href="./about.html#about" class="navdropdownlink"
+                  ><i class="fas fa-school"></i> About</a
+                >
+              </li>
+              <li class="navdropdownitem">
+                <a href="./faculty.html" class="navdropdownlink"
+                  ><i class="fas fa-users"></i> Faculties</a
+                >
+              </li>
+              <li class="navdropdownitem">
+                <a href="./disclosure.html" class="navdropdownlink"
+                  ><i class="fas fa-file-signature"></i> Mandatory Disclosure</a
+                >
+              </li>
+              <!-- <li class="navdropdownitem">
+                <a href="#disclosure" class="navdropdownlink"
+                  ><i class="fas fa-images"></i> Gallery</a
+                >
+              </li> -->
+            </ul>
+          </li>
+
+          <!-- New Root Contact Option (Moved out of Dropdown as requested) -->
+          <li class="navnavbaritem">
+            <a href="./gallery.html" class="navnavbarlink">GALLERY</a>
+          </li>
+
+          <!-- Call To Action Admin Login Button -->
+          <li class="navnavbaritem">
+            <button
+              class="navbtnlogin"
+              id="navadminloginbtn"
+              onclick="window.location.href = './admission.html'"
+            >
+              <i class="fas fa-book"></i>
+              <span id="navloginbtntext">ADMISSIONS</span>
+            </button>
+          </li>
+        </ul>
+
+        <!-- Hamburger Action Trigger for Mobile Responsive Display -->
+        <button
+          class="navhamburger"
+          id="navhamburgermenu"
+          aria-label="Toggle navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Mobile Overlay Background Blur Element -->
+    <div class="navmobilenavoverlay" id="navmobilenavoverlay"></div>
+    <!-- SECTION 1 — HERO SECTION -->
+    <section class="fachero" id="fachero">
+      <div class="facherooverlay"></div>
+      <div class="facherocontent">
+        <div class="facherobadge">Our Faculty</div>
+        <h1 class="facherotitle">Meet Our Dedicated Educators &amp; Staff</h1>
+        <p class="facherosubtitle">
+          A team of passionate educators, administrators and support staff
+          committed to nurturing every student's academic and personal growth.
+        </p>
+        <button
+          class="facherobtn"
+          id="facherobtn"
+          aria-label="Explore Our Team"
+        >
+          Explore Our Team
+        </button>
+      </div>
+    </section>
+
+    <!-- SECTION 2 — INTRODUCTION -->
+    <section class="facintro">
+      <div class="faccontainer">
+        <div class="facintrogrid">
+          <!-- Large Campus Graphic -->
+          <div class="facintroimagebox facreveal">
+            <img
+              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop"
+              alt="Sneha Vidya Samste Faculty Assembly"
+              class="facintroimg"
+            />
+          </div>
+
+          <!-- Narrative Content -->
+          <div class="facintrocontent facreveal">
+            <span class="facintrocontentlabel">Who We Are</span>
+            <h2 class="facintrocontenttitle">
+              Our Strength Lies In Our People
+            </h2>
+            <p class="facintrocontenttext">
+              SNEHA VIDYA SAMSTE owes its standing as a citadel of value-based
+              learning to its highly skilled, compassionate staff. By
+              prioritizing qualified educators, individual attention, and
+              holistic development methodologies, our team guides students
+              through academic hurdles while establishing a secure,
+              values-focused workspace.
+            </p>
+
+            <!-- Interactive Counters Block -->
+            <div class="facstats">
+              <div class="facstatcard">
+                <span class="facstatnum" data-target="15">0</span>
+                <span class="facstatlabel">Teaching Faculty</span>
+              </div>
+              <div class="facstatcard">
+                <span class="facstatnum" data-target="6">0</span>
+                <span class="facstatlabel">Non-Teaching Staff</span>
+              </div>
+              <div class="facstatcard">
+                <span class="facstatnum" data-target="4">0</span>
+                <span class="facstatlabel">School Drivers</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 — TEACHING FACULTY -->
+    <section class="facteaching" id="facteachingsection">
+      <div class="faccontainer">
+        <div class="facsectionhead facreveal">
+          <span class="facsectionbadge">Educators</span>
+          <h2 class="facsectiontitle">Teaching Faculty</h2>
+          <p class="facsectionsubtitle">
+            Experienced educators dedicated to inspiring learning, moral values,
+            and excellence across all grades.
+          </p>
+        </div>
+
+        <div class="facteachinggrid">
+          <!-- Teacher Card 1 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&h=500&fit=crop"
+                alt="Mrs. Lakshmi Devi"
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mrs. Lakshmi Devi</h4>
+              <span class="faccardqual">M.A., B.Ed.</span>
+              <p class="faccardrole">
+                Senior Kannada Teacher &amp; Academic Lead
+              </p>
+            </div>
+          </div>
+
+          <!-- Teacher Card 2 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&h=500&fit=crop"
+                alt="Mr. Anand Gowda"
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mr. Anand Gowda</h4>
+              <span class="faccardqual">M.Sc., B.Ed.</span>
+              <p class="faccardrole">Senior Mathematics Teacher</p>
+            </div>
+          </div>
+
+          <!-- Teacher Card 3 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&h=500&fit=crop"
+                alt="Mrs. Saraswathi K."
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mrs. Saraswathi K.</h4>
+              <span class="faccardqual">B.Sc., B.Ed.</span>
+              <p class="faccardrole">General Science Coordinator</p>
+            </div>
+          </div>
+
+          <!-- Teacher Card 4 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&h=500&fit=crop"
+                alt="Mrs. Roopa S."
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mrs. Roopa S.</h4>
+              <span class="faccardqual">B.C.A., B.Ed.</span>
+              <p class="faccardrole">Computer Studies Instructor</p>
+            </div>
+          </div>
+
+          <!-- Teacher Card 5 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&h=500&fit=crop"
+                alt="Mr. Manjunath V."
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mr. Manjunath V.</h4>
+              <span class="faccardqual">M.A., B.Ed.</span>
+              <p class="faccardrole">Senior English Faculty</p>
+            </div>
+          </div>
+
+          <!-- Teacher Card 6 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?q=80&w=400&h=500&fit=crop"
+                alt="Mrs. Geetha Prasanna"
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mrs. Geetha Prasanna</h4>
+              <span class="faccardqual">M.A., B.Ed.</span>
+              <p class="faccardrole">Social Studies Specialist</p>
+            </div>
+          </div>
+
+          <!-- Teacher Card 7 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&h=500&fit=crop"
+                alt="Mr. Raghavendra Rao"
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mr. Raghavendra Rao</h4>
+              <span class="faccardqual">M.Sc. (Physics)</span>
+              <p class="faccardrole">Physical Science Coordinator</p>
+            </div>
+          </div>
+
+          <!-- Teacher Card 8 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=400&h=500&fit=crop"
+                alt="Mrs. Rekha Shastry"
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mrs. Rekha Shastry</h4>
+              <span class="faccardqual">B.A., B.Ed.</span>
+              <p class="faccardrole">Senior Hindi Language Instructor</p>
+            </div>
+          </div>
+
+          <!-- Teacher Card 9 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=400&h=500&fit=crop"
+                alt="Mrs. Divya Bharathi"
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mrs. Divya Bharathi</h4>
+              <span class="faccardqual">M.Sc. (Mathematics)</span>
+              <p class="faccardrole">Primary Mathematics Teacher</p>
+            </div>
+          </div>
+
+          <!-- Teacher Card 10 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=400&h=500&fit=crop"
+                alt="Mr. Krishna Prasad"
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mr. Krishna Prasad</h4>
+              <span class="faccardqual">M.A. (Sanskrit)</span>
+              <p class="faccardrole">Languages &amp; Culture Head</p>
+            </div>
+          </div>
+
+          <!-- Teacher Card 11 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&h=500&fit=crop"
+                alt="Mrs. Asha Kirana"
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mrs. Asha Kirana</h4>
+              <span class="faccardqual">M.Sc., B.Ed.</span>
+              <p class="faccardrole">Chemistry Faculty</p>
+            </div>
+          </div>
+
+          <!-- Teacher Card 12 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&h=500&fit=crop"
+                alt="Mrs. Meenakshi S."
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mrs. Meenakshi S.</h4>
+              <span class="faccardqual">B.A., D.Ed.</span>
+              <p class="faccardrole">Primary Section Coordinator</p>
+            </div>
+          </div>
+
+          <!-- Teacher Card 13 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1620122303020-43ec4b6cf7f8?q=80&w=400&h=500&fit=crop"
+                alt="Mr. Chandrashekar B."
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mr. Chandrashekar B.</h4>
+              <span class="faccardqual">M.P.Ed.</span>
+              <p class="faccardrole">Physical Education Director</p>
+            </div>
+          </div>
+
+          <!-- Teacher Card 14 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1548142813-c348350df52b?q=80&w=400&h=500&fit=crop"
+                alt="Mrs. Sumangala G."
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mrs. Sumangala G.</h4>
+              <span class="faccardqual">Fine Arts Diploma</span>
+              <p class="faccardrole">Creative Arts &amp; Crafts Mentor</p>
+            </div>
+          </div>
+
+          <!-- Teacher Card 15 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&h=500&fit=crop"
+                alt="Mr. Shanthakumar M."
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mr. Shanthakumar M.</h4>
+              <span class="faccardqual">D.Ed.</span>
+              <p class="faccardrole">Primary Wing Mentor</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 — NON TEACHING STAFF -->
+    <section class="facnonteaching">
+      <div class="faccontainer">
+        <div class="facsectionhead facreveal">
+          <span class="facsectionbadge">Administration</span>
+          <h2 class="facsectiontitle">Administrative &amp; Support Staff</h2>
+          <p class="facsectionsubtitle">
+            The dedicated administrative professionals ensuring smooth, highly
+            secure institutional operations every day.
+          </p>
+        </div>
+
+        <div class="facnonteachinggrid">
+          <!-- Non Teaching Card 1 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&h=500&fit=crop"
+                alt="Mr. Ramesh"
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mr. Ramesh</h4>
+              <span class="faccardqual">B.Com</span>
+              <p class="faccardrole">Senior Office Administrator</p>
+            </div>
+          </div>
+
+          <!-- Non Teaching Card 2 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=400&h=500&fit=crop"
+                alt="Mrs. Padmavathi S."
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mrs. Padmavathi S.</h4>
+              <span class="faccardqual">Secretarial Practice</span>
+              <p class="faccardrole">Accounts Officer</p>
+            </div>
+          </div>
+
+          <!-- Non Teaching Card 3 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&h=500&fit=crop"
+                alt="Mr. Venkatesh K."
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mr. Venkatesh K.</h4>
+              <span class="faccardqual">M.C.A.</span>
+              <p class="faccardrole">Systems &amp; IT Manager</p>
+            </div>
+          </div>
+
+          <!-- Non Teaching Card 4 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1582052786114-049fa0270a31?q=80&w=400&h=500&fit=crop"
+                alt="Mrs. Sunitha R."
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mrs. Sunitha R.</h4>
+              <span class="faccardqual">B.A.</span>
+              <p class="faccardrole">Admissions Relations Officer</p>
+            </div>
+          </div>
+
+          <!-- Non Teaching Card 5 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1500048993953-d23a436266cf?q=80&w=400&h=500&fit=crop"
+                alt="Mr. Murthy Prasanna"
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mr. Murthy Prasanna</h4>
+              <span class="faccardqual">P.U.C.</span>
+              <p class="faccardrole">Campus Operations &amp; Security Lead</p>
+            </div>
+          </div>
+
+          <!-- Non Teaching Card 6 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=400&h=500&fit=crop"
+                alt="Mr. Jayaram Gowda"
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mr. Jayaram Gowda</h4>
+              <span class="faccardqual">Lib. Sci. Diploma</span>
+              <p class="faccardrole">Librarian</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5 — TRANSPORT TEAM -->
+    <section class="factransport">
+      <div class="faccontainer">
+        <div class="facsectionhead facreveal">
+          <span class="facsectionbadge">Logistics</span>
+          <h2 class="facsectiontitle">School Transport Team</h2>
+          <p class="facsectionsubtitle">
+            Ensuring fully monitored, reliable, and secure student transit
+            routes every day.
+          </p>
+        </div>
+
+        <div class="factransportgrid">
+          <!-- Driver 1 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=400&h=500&fit=crop"
+                alt="Mr. Kumar"
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mr. Kumar</h4>
+              <span class="faccardqual">10+ Years Experience</span>
+              <p class="faccardrole">Route 1 — Nagarabhavi</p>
+            </div>
+          </div>
+
+          <!-- Driver 2 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&h=500&fit=crop"
+                alt="Mr. Siddaraju"
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mr. Siddaraju</h4>
+              <span class="faccardqual">12+ Years Experience</span>
+              <p class="faccardrole">Route 2 — Vijaynagar</p>
+            </div>
+          </div>
+
+          <!-- Driver 3 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&h=500&fit=crop"
+                alt="Mr. Shivakumar"
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mr. Shivakumar</h4>
+              <span class="faccardqual">8+ Years Experience</span>
+              <p class="faccardrole">Route 3 — Kengeri</p>
+            </div>
+          </div>
+
+          <!-- Driver 4 -->
+          <div class="faccard facreveal">
+            <div class="facimage">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&h=500&fit=crop"
+                alt="Mr. Rangaswamy"
+                class="faccardimg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="faccontent">
+              <h4 class="faccardname">Mr. Rangaswamy</h4>
+              <span class="faccardqual">15+ Years Experience</span>
+              <p class="faccardrole">Route 4 — Rajajinagar</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6 — WHY OUR TEAM STANDS OUT -->
+    <section class="facwhy">
+      <div class="faccontainer">
+        <div class="facsectionhead facreveal">
+          <h2 class="facsectiontitle">Why Our Team Stands Out</h2>
+          <p class="facsectionsubtitle">
+            The foundational pillars that guide our professionals in driving
+            excellence.
+          </p>
+        </div>
+
+        <div class="facwhygrid">
+          <!-- Feature 1 -->
+          <div class="facwhyitem facreveal">
+            <div class="facwhyicon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                />
+              </svg>
+            </div>
+            <h4 class="facwhyitemtitle">Experienced Educators</h4>
+            <p class="facwhyitemdesc">
+              Our mentors are experts with deep pedagogical training and
+              regional educational certifications.
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="facwhyitem facreveal">
+            <div class="facwhyicon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                />
+              </svg>
+            </div>
+            <h4 class="facwhyitemtitle">Student-Focused Learning</h4>
+            <p class="facwhyitemdesc">
+              Teaching practices tailored around different learning paces to
+              support all students.
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="facwhyitem facreveal">
+            <div class="facwhyicon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                />
+              </svg>
+            </div>
+            <h4 class="facwhyitemtitle">Value-Based Education</h4>
+            <p class="facwhyitemdesc">
+              Focusing strongly on cultivating core moral traits, respect,
+              discipline, and citizenship.
+            </p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="facwhyitem facreveal">
+            <div class="facwhyicon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 14.5L4.82 13.6 3 14.6l9 5 9-5-1.82-1L12 17.5z"
+                />
+              </svg>
+            </div>
+            <h4 class="facwhyitemtitle">Continuous Professional Development</h4>
+            <p class="facwhyitemdesc">
+              Staff constantly undergo curriculum workshops to stay updated with
+              modern teaching standards.
+            </p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="facwhyitem facreveal">
+            <div class="facwhyicon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2c-4.97 0-9 4.03-9 9 0 5.25 9 11 9 11s9-5.75 9-11c0-4.97-4.03-9-9-9zm0 11.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                />
+              </svg>
+            </div>
+            <h4 class="facwhyitemtitle">Safe Learning Environment</h4>
+            <p class="facwhyitemdesc">
+              Comprehensive security monitoring across the classrooms and campus
+              perimeter.
+            </p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="facwhyitem facreveal">
+            <div class="facwhyicon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"
+                />
+              </svg>
+            </div>
+            <h4 class="facwhyitemtitle">Individual Student Attention</h4>
+            <p class="facwhyitemdesc">
+              Optimum student-to-teacher ratios that help mentors focus closely
+              on individual needs.
+            </p>
+          </div>
+
+          <!-- Feature 7 -->
+          <div class="facwhyitem facreveal">
+            <div class="facwhyicon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"
+                />
+              </svg>
+            </div>
+            <h4 class="facwhyitemtitle">Technology Enabled Teaching</h4>
+            <p class="facwhyitemdesc">
+              Digital smart-boards and high-speed computer labs implemented into
+              standard schedules.
+            </p>
+          </div>
+
+          <!-- Feature 8 -->
+          <div class="facwhyitem facreveal">
+            <div class="facwhyicon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L11 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"
+                />
+              </svg>
+            </div>
+            <h4 class="facwhyitemtitle">Community Driven Culture</h4>
+            <p class="facwhyitemdesc">
+              Instilling solid environmental and civic duties in students via
+              continuous charity projects.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7 — JOIN OUR SCHOOL CTA -->
+    <section class="faccta">
+      <div class="facctaoverlay"></div>
+      <div class="facctacontent">
+        <h2 class="facctatitle">Learn From Experienced Educators</h2>
+        <p class="facctadesc">
+          Join SNEHA VIDYA SAMSTE and become part of an institution committed to
+          academic excellence, discipline, and holistic development.
+        </p>
+        <div class="facctabtnwrap">
+          <a
+            href="school_admission.html"
+            class="facctabtn"
+            aria-label="Access Admissions Inquiry Form"
+            >Admission Enquiry</a
+          >
+          <a
+            href="school_admission.html#cntmapsection"
+            class="facctabtn facctabtnsecondary"
+            aria-label="Contact School Campus"
+            >Contact Us</a
+          >
+        </div>
+      </div>
+    </section>
+<!-- ==========================================
+       PREMIUM SCHOOL WEBSITE FOOTER
+       Satisfies all strictly prefixed ftr requirements
+       ========================================== -->
+    <footer class="ftrfooter">
+      <div class="ftrcontainer">
+        <!-- COLUMN 1: School Branding & Social Handles -->
+        <div class="ftrbrandcol">
+          <div class="ftrlogoimgwrapper">
+            <img
+              src="./assets/logosneha.webp"
+              alt="Sneha Vidya Samste Foot Logo"
+              class="ftrlogoimg"
+            />
+          </div>
+          <p class="ftrbranddesc">
+            Empowering students with knowledge, discipline, innovation, and
+            values for a brighter future.
+          </p>
+          <div class="ftrsocialbox">
+            <a
+              href="https://facebook.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://instagram.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://youtube.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="YouTube"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a
+              href="https://linkedin.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+
+        <hr class="ftrseparator" />
+
+        <!-- COLUMN 2: Responsive Embedded Map -->
+        <div class="ftrmapcol">
+          <h3 class="ftrmapcoltitle">Find Our Campus</h3>
+          <div class="ftrmapbox">
+            <!-- Responsive maps placeholder pointing to a premium Bangalore tech/academic zone -->
+            <iframe class="ftriframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3895.4743818457423!2d77.02681947121012!3d12.484685001648813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf07f417132ce7%3A0x91d5d4ff62792c9b!2ssneha%20education%20society!5e0!3m2!1sen!2sin!4v1780376612211!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </iframe>
+          </div>
+        </div>
+
+        <hr class="ftrseparator" />
+
+        <!-- COLUMN 3: Premium QR Access Code Card -->
+        <div class="ftrqrcol">
+          <h3 class="ftrqrcoltitle">Quick Access</h3>
+          <div class="ftrqrcard">
+            <img
+              src="./assets/QR.webp"
+              alt="Quick Access QR"
+              class="ftrqrimg"
+            />
+            <span class="ftrqrtext">Scan for Quick Access</span>
+          </div>
+        </div>
+
+        <hr class="ftrseparator" />
+
+        <!-- COLUMN 4: Complete Interactive Contact Information -->
+        <div class="ftrcontactcol">
+          <h3 class="ftrcontactcoltitle">Contact Details</h3>
+          <ul class="ftrcontactlist">
+            <li class="ftrcontactitem">
+              <i class="fas fa-map-marker-alt ftrcontacticon"></i>
+              <span class="ftrcontacttext"
+                >Gudigere Road, Bharathi Nagar(KM DODDI), Karnataka-571422 </span
+              >
+            </li>
+            <li class="ftrcontactitem">
+              <i class="fas fa-phone-alt ftrcontacticon"></i>
+              <a href="tel:+919739422025" class="ftrcontacttext"
+                >+91 97394 22025</a
+              >
+            </li>
+            <!-- <li class="ftrcontactitem">
+              <i class="fas fa-phone-volume ftrcontacticon"></i>
+              <a href="tel:+91802345678" class="ftrcontacttext"
+                >+91 80 2345 6789</a
+              >
+            </li> -->
+            <li class="ftrcontactitem">
+              <i class="fas fa-envelope ftrcontacticon"></i>
+              <a href="mailto:snehavidyasamste123@gmail.com" class="ftrcontacttext"
+                >snehavidyasamste123@gmail.com</a
+              >
+            </li>
+            <li class="ftrcontactitem">
+              <i class="fas fa-globe ftrcontacticon"></i>
+              <a
+                href="https://snehavidyasamste.in"
+                target="_blank"
+                class="ftrcontacttext"
+                >www.snehavidyasamste.in</a
+              >
+            </li>
+            <li class="ftrcontactitem">
+              <i class="fas fa-clock ftrcontacticon"></i>
+              <span class="ftrcontacttext">Mon - Sat: 8:30 AM - 4:30 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Foot Bottom Copyright Banner Block -->
+      <div class="ftrbottombar">
+        <div class="ftrbottomcontainer">
+          <p class="ftrcopyright">
+            &copy; 2026 SNEHA VIDYA SAMSTE. All Rights Reserved.
+          </p>
+          <p class="ftrdesigner">
+            Designed by
+            <a href="https://arouzatechlabs.in/" class="ftrdesignerlink"
+              >Arouza Techlabs</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==========================================
+       BACK TO TOP BUTTON TRIGGER
+       ========================================== -->
+    <button class="ftrbacktotop" id="ftrbacktotop" aria-label="Back to top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+<script type="module" src="./nav.js"></script>
+<script type="module" src="./footer.js"></script>
+    <!-- JAVASCRIPT FOR UX INTERACTIONS & PERFORMANCE ANIMATIONS -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Smooth Scroll click handler for Hero button
+        const exploreBtn = document.getElementById("facherobtn");
+        const targetSection = document.getElementById("facteachingsection");
+
+        if (exploreBtn && targetSection) {
+          exploreBtn.addEventListener("click", () => {
+            targetSection.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          });
+        }
+
+        // 2. Performance Scroll Reveal Animations with Intersection Observer
+        const revealItems = document.querySelectorAll(".facreveal");
+
+        const revealCallback = (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("facrevealactive");
+              observer.unobserve(entry.target); // Trigger once for cleaner layout performance
+            }
+          });
+        };
+
+        const scrollObserver = new IntersectionObserver(revealCallback, {
+          root: null,
+          threshold: 0.12, // Element must be 12% visible
+          rootMargin: "0px 0px -40px 0px",
+        });
+
+        revealItems.forEach((item) => {
+          scrollObserver.observe(item);
+        });
+
+        // 3. Counter Animation Trigger on Scroll
+        const counterNumbers = document.querySelectorAll(".facstatnum");
+
+        const animateCounters = () => {
+          counterNumbers.forEach((counter) => {
+            const target = parseInt(counter.getAttribute("data-target"), 10);
+            const duration = 1500; // Total milliseconds for counter
+            const stepTime = 15;
+            const stepCount = duration / stepTime;
+            const increment = Math.ceil(target / stepCount);
+
+            let current = 0;
+            const updateCount = () => {
+              current += increment;
+              if (current < target) {
+                counter.innerText = current;
+                setTimeout(updateCount, stepTime);
+              } else {
+                counter.innerText = target + "+";
+              }
+            };
+            updateCount();
+          });
+        };
+
+        const introSection = document.querySelector(".facintro");
+        if (introSection) {
+          const counterObserver = new IntersectionObserver(
+            (entries, observer) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  animateCounters();
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.3 },
+          );
+          counterObserver.observe(introSection);
+        }
+
+        console.log(
+          "Sneha Vidya Samste Faculty and Staff Page initialized successfully.",
+        );
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1503 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admissions | Sneha Vidya Samste</title>
+
+    <!-- Google Fonts: Inter for crisp interface text & Playfair Display for academic elegance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap"
+      rel="stylesheet"
+    />
+     <!-- Google Fonts: Inter & Playfair Display for premium academic typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome Icons for UI elements -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./home.css" />
+    <link rel="stylesheet" href="./nav.css" />
+    <link rel="stylesheet" href="./footer.css" />
+    <style>
+      /* CSS PALETTE VARIABLES (Refined Academic Luxury) */
+      :root {
+        --cntprimarydark: #4c1d95;
+        --cntprimarylight: #6d28d9;
+        --cntsoftlavender: #c4b5fd;
+        --cntaccentgold: #fbbf24;
+        --cntaccentgoldhover: #f59e0b;
+        --cnttextdark: #1f2937;
+        --cnttextlight: #f9fafb;
+        --cntbgglass: rgba(255, 255, 255, 0.85);
+        --cntbgglassdark: rgba(26, 15, 54, 0.96);
+        --cntborderglass: rgba(76, 29, 149, 0.08);
+        --cntshadowpremium: 0 10px 30px -5px rgba(31, 38, 135, 0.08);
+        --cntshadowglow: 0 0 15px rgba(251, 191, 36, 0.4);
+        --cntfontsans: "Inter", sans-serif;
+        --cntfontserif: "Playfair Display", serif;
+        --cnttransitionsmooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+        /* New background system (Replacing cosmic neon with ivory luxury) */
+        --cntbgmain: #faf9fd;
+        --cntbgcardlight: #ffffff;
+      }
+
+      /* GENERAL RESET */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--cntfontsans);
+        background-color: var(--cntbgmain);
+        color: var(--cnttextdark);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* UTILITIES */
+      .cntcontainer {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .cntsectiontitle {
+        font-family: var(--cntfontserif);
+        font-size: 2rem;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 12px;
+        color: var(--cntprimarydark);
+        letter-spacing: -0.01em;
+      }
+
+      .cntsectionsubtitle {
+        font-family: var(--cntfontsans);
+        font-size: 0.95rem;
+        font-weight: 400;
+        text-align: center;
+        color: #4b5563;
+        max-width: 650px;
+        margin: 0 auto 40px auto;
+        line-height: 1.6;
+      }
+
+      /* SCROLL REVEAL UTILITY */
+      .cntreveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: var(--cnttransitionsmooth);
+      }
+
+      .cntrevealactive {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* */
+      /* SECTION 1 — HERO SECTION (Professional Full-Width Background Banner Layout) */
+      .cnthero {
+        position: relative;
+        background-image: url("https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1920&auto=format&fit=crop");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 55vh; /* Mobile Default */
+        min-height: 420px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--cnttextlight);
+        padding: 0 20px;
+        overflow: hidden;
+      }
+
+      /* Elegant, premium classic dark purple gradient overlay for maximum readability */
+      .cntherooverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(30, 12, 68, 0.85) 0%,
+          rgba(76, 29, 149, 0.7) 100%
+        );
+        z-index: 1;
+      }
+
+      .cntherocontent {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: cntfadeup 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      .cntherobadge {
+        background: rgba(251, 191, 36, 0.15);
+        border: 1px solid var(--cntaccentgold);
+        color: var(--cntaccentgold);
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        padding: 6px 16px;
+        border-radius: 50px;
+        margin-bottom: 20px;
+        box-shadow: var(--cntshadowglow);
+      }
+
+      .cntherotitle {
+        font-family: var(--cntfontserif);
+        font-size: 2.4rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 16px;
+        color: var(--cnttextlight);
+      }
+
+      .cntherosubtitle {
+        font-family: var(--cntfontsans);
+        font-size: 1rem;
+        color: var(--cntsoftlavender);
+        font-weight: 300;
+        line-height: 1.6;
+        margin-bottom: 28px;
+        max-width: 600px;
+      }
+
+      .cntherobtn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          135deg,
+          var(--cntaccentgold) 0%,
+          var(--cntaccentgoldhover) 100%
+        );
+        color: var(--cntprimarydark);
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        padding: 14px 36px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+        transition: var(--cnttransitionsmooth);
+        cursor: pointer;
+        border: none;
+      }
+
+      .cntherobtn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(251, 191, 36, 0.45);
+      }
+/* @media (max-width: 767px) {
+  .cnthero {
+    margin-top: 90px;
+    min-height: calc(100vh - 90px);
+  }
+} */
+      /* */
+      /* SECTION 2 — ADMISSION GUIDELINES */
+      .cntguidelinessection {
+        padding: 80px 0;
+        background: var(--cntbgmain);
+      }
+
+      .cntguidelinesgrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .cntguidelinecard {
+        background: var(--cntbgcardlight);
+        border: 1px solid var(--cntborderglass);
+        padding: 28px;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        transition: var(--cnttransitionsmooth);
+        box-shadow: var(--cntshadowpremium);
+      }
+
+      .cntguidelinecard:hover {
+        transform: translateY(-6px);
+        border-color: var(--cntsoftlavender);
+        box-shadow: 0 15px 35px rgba(76, 29, 149, 0.08);
+      }
+
+      .cntguidelinenumber {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(76, 29, 149, 0.05);
+        border: 1.5px solid var(--cntprimarydark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--cntprimarydark);
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        transition: var(--cnttransitionsmooth);
+      }
+
+      .cntguidelinecard:hover .cntguidelinenumber {
+        background: var(--cntprimarydark);
+        color: var(--cnttextlight);
+        transform: scale(1.08);
+      }
+
+      .cntguidelinetext {
+        color: var(--cnttextdark);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        font-weight: 400;
+      }
+
+      /* */
+      /* SECTION 3 — DOCUMENTS REQUIRED */
+      .cntdocumentssection {
+        padding: 80px 0;
+        background: #f3f0fa;
+      }
+
+      .cntdocumentsgrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .cntdocumentcard {
+        background: var(--cntbgcardlight);
+        border: 1px solid var(--cntborderglass);
+        border-left: 4px solid var(--cntprimarylight);
+        padding: 24px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        transition: var(--cnttransitionsmooth);
+        box-shadow: var(--cntshadowpremium);
+      }
+
+      .cntdocumentcard:hover {
+        transform: translateX(8px);
+        border-left-color: var(--cntaccentgold);
+        box-shadow: 0 8px 25px rgba(76, 29, 149, 0.05);
+      }
+
+      .cntdocumenticon {
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+        background: rgba(109, 40, 217, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--cntprimarydark);
+        flex-shrink: 0;
+        transition: var(--cnttransitionsmooth);
+      }
+
+      .cntdocumentcard:hover .cntdocumenticon {
+        background: var(--cntprimarydark);
+        color: var(--cnttextlight);
+      }
+
+      .cntdocumenticon svg {
+        width: 20px;
+        height: 20px;
+        fill: currentColor;
+      }
+
+      .cntdocumenttext {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--cntprimarydark);
+        line-height: 1.4;
+      }
+
+      .cntdocumentdetail {
+        font-size: 0.8rem;
+        color: #6b7280;
+        font-weight: 400;
+        margin-top: 4px;
+      }
+
+      /* */
+      /* SECTION 4 — ADMISSION ENQUIRY FORM */
+      .cntformsection {
+        padding: 80px 0;
+        background: var(--cntbgmain);
+      }
+
+      .cntformcard {
+        background: var(--cntbgcardlight);
+        border: 1px solid var(--cntborderglass);
+        border-top: 5px solid var(--cntprimarydark);
+        padding: 24px 16px; /* Optimized tight padding for mobile viewports */
+        border-radius: 20px;
+        box-shadow: 0 20px 40px -15px rgba(76, 29, 149, 0.12);
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .cntformlegend {
+        font-family: var(--cntfontserif);
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--cntprimarydark);
+        margin: 30px 0 15px 0;
+        padding-bottom: 8px;
+        border-bottom: 2px solid rgba(76, 29, 149, 0.08);
+        letter-spacing: 0.01em;
+      }
+
+      .cntformlegend:first-of-type {
+        margin-top: 0;
+      }
+
+      /* MOBILE-FIRST GRID: Fully responsive, stacked layout */
+      .cntinputgrid {
+        display: grid;
+        grid-template-columns: 1fr; /* Force 1 column on mobile */
+        gap: 24px; /* Ample breathing room between forms on small screens */
+      }
+
+      .cntinputgroup {
+        position: relative;
+        width: 100%;
+      }
+
+      /* Responsive Inputs & Fields */
+      .cntforminput,
+      .cntformselect,
+      .cntformtextarea {
+        width: 100%;
+        height: 56px; /* Tall accessible touch target */
+        padding: 16px 14px;
+        background: #fcfbfe;
+        border: 1.5px solid #dcd7e7;
+        border-radius: 8px;
+        color: var(--cnttextdark);
+        font-size: 1rem; /* Prevent mobile zoom issues on input focus */
+        font-family: var(--cntfontsans);
+        outline: none;
+        transition: var(--cnttransitionsmooth);
+        -webkit-appearance: none; /* Reset standard browser styling */
+      }
+
+      .cntformtextarea {
+        resize: vertical;
+        min-height: 120px;
+        height: auto;
+      }
+
+      .cntforminput:focus,
+      .cntformselect:focus,
+      .cntformtextarea:focus {
+        border-color: var(--cntprimarydark);
+        background: #ffffff;
+        box-shadow: 0 0 10px rgba(76, 29, 149, 0.1);
+      }
+
+      /* Floating Label Structure (Fully optimized to prevent overlapping on mobile) */
+      .cntformlabel {
+        position: absolute;
+        left: 14px;
+        top: 16px;
+        color: #6b7280;
+        font-size: 0.95rem;
+        font-weight: 500;
+        pointer-events: none;
+        transition: var(--cnttransitionsmooth);
+        background: #fcfbfe;
+        padding: 0 4px;
+        transform-origin: left top;
+      }
+
+      /* Floating action triggers */
+      .cntforminput:focus ~ .cntformlabel,
+      .cntforminput:not(:placeholder-shown) ~ .cntformlabel,
+      .cntformtextarea:focus ~ .cntformlabel,
+      .cntformtextarea:not(:placeholder-shown) ~ .cntformlabel {
+        transform: translateY(-26px) scale(0.85);
+        color: var(--cntprimarydark);
+        font-weight: 700;
+        background: var(--cntbgcardlight);
+      }
+
+      /* Dropdown handles label behavior instantly to avoid overlapping visual bugs */
+      .cntformselect ~ .cntformlabel {
+        transform: translateY(-26px) scale(0.85);
+        color: var(--cntprimarydark);
+        font-weight: 700;
+        background: var(--cntbgcardlight);
+      }
+
+      /* Date field fallback placeholder spacing */
+      .cntforminput[type="date"] {
+        padding-top: 18px;
+      }
+
+      /* Submit wrapper elements */
+      .cntsubmitwrap {
+        margin-top: 40px;
+        text-align: center;
+      }
+
+      .cntsubmitbtn {
+        width: 100%;
+        max-width: 320px;
+        padding: 16px 32px;
+        background: linear-gradient(
+          135deg,
+          var(--cntaccentgold) 0%,
+          var(--cntaccentgoldhover) 100%
+        );
+        color: var(--cntprimarydark);
+        font-weight: 800;
+        font-size: 1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+        transition: var(--cnttransitionsmooth);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .cntsubmitbtn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(251, 191, 36, 0.45);
+      }
+
+      .cntsubmitbtn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .cntspinner {
+        display: none;
+        width: 18px;
+        height: 18px;
+        border: 3px solid rgba(76, 29, 149, 0.2);
+        border-top-color: var(--cntprimarydark);
+        border-radius: 50%;
+        animation: cntspin 0.8s linear infinite;
+      }
+
+      /* Feedback Banner Messaging styling */
+      .cntfeedback {
+        display: none;
+        margin-top: 24px;
+        padding: 16px;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-align: center;
+        animation: cntfadeup 0.4s ease forwards;
+      }
+
+      .cntsuccess {
+        background: rgba(16, 185, 129, 0.1);
+        border: 1px solid #10b981;
+        color: #065f46;
+      }
+
+      .cnterror {
+        background: rgba(239, 68, 68, 0.1);
+        border: 1px solid #ef4444;
+        color: #991b1b;
+      }
+
+      /* */
+      /* SECTION 5 — GOOGLE MAP */
+      .cntmapsection {
+        width: 100%;
+        background: var(--cntbgmain);
+        padding: 40px 0 80px 0;
+      }
+
+      .cntmapwrapper {
+        width: 100%;
+        height: 350px; /* Mobile Default */
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--cntborderglass);
+        box-shadow: var(--cntshadowpremium);
+        transition: var(--cnttransitionsmooth);
+      }
+
+      .cntmap {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        opacity: 0.95;
+      }
+
+      /* KEYFRAME TRANSITIONS */
+      @keyframes cntfadeup {
+        from {
+          opacity: 0;
+          transform: translateY(25px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes cntspin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* BREAKPOINTS & MEDIA QUERY INHERITANCE */
+
+      /* Small to Medium Mobile Devices */
+      @media (min-width: 480px) {
+        .cntherotitle {
+          font-size: 2.8rem;
+        }
+        .cnthero {
+          height: 55vh;
+        }
+        .cntformcard {
+          padding: 40px 30px;
+        }
+      }
+
+      /* Tablet Screens (Convert grid structures to 2 columns) */
+      @media (min-width: 768px) {
+        .cntsectiontitle {
+          font-size: 2.4rem;
+        }
+        .cntsectionsubtitle {
+          font-size: 1.05rem;
+          margin-bottom: 50px;
+        }
+        .cnthero {
+          height: 65vh;
+        }
+        .cntherotitle {
+          font-size: 3.2rem;
+        }
+        /* Expand grid layouts */
+        .cntguidelinesgrid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 28px;
+        }
+        .cntdocumentsgrid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+        }
+        /* Split form fields horizontally on wider devices */
+        .cntinputgrid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .cntinputspanfull {
+          grid-column: span 2;
+        }
+        .cntmapwrapper {
+          height: 450px;
+        }
+      }
+
+      /* Desktop Viewports (Guidelines to 3 columns, Documents to 4 columns) */
+      @media (min-width: 1024px) {
+        .cntsectiontitle {
+          font-size: 2.8rem;
+        }
+        .cnthero {
+          height: 75vh;
+        }
+        .cntherotitle {
+          font-size: 3.8rem;
+        }
+        .cntherosubtitle {
+          font-size: 1.05rem;
+        }
+        .cntguidelinesgrid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 32px;
+        }
+        .cntdocumentsgrid {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
+        }
+        .cntmapwrapper {
+          height: 550px;
+        }
+      }
+
+      /* Large Display Viewports */
+      @media (min-width: 1440px) {
+        .cntherotitle {
+          font-size: 4.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ==========================================
+       HEADER / NAVIGATION WRAPPER
+       ========================================== -->
+    <div class="navheaderwrapper" id="navheaderwrapper">
+      <nav class="navnavbar">
+        <!-- Left Branding Logo -->
+        <a href="./index.html" class="navnavbarbrand">
+          <div class="navnavbarlogo">
+            <!-- Styled <img> tag replaced SVG representation cleanly -->
+            <img
+              src="./assets/logosneha.webp"
+              alt="Sneha Vidya Samste Logo"
+              class="navlogoimg"
+              id="navlogoimg"
+            />
+          </div>
+          <div class="navnavbarbrandtext">
+            <span class="navschoolname">SNEHA VIDYA SAMSTE</span>
+          </div>
+        </a>
+
+        <!-- Premium Navigation Menu Links -->
+        <ul class="navnavbarmenu" id="navnavbarmenu">
+          <li class="navnavbaritem">
+            <a href="./index.html" class="navnavbarlink navactive">HOME</a>
+          </li>
+          <li class="navnavbaritem">
+            <a href="./facilities.html" class="navnavbarlink">FACILITIES</a>
+          </li>
+          <li class="navnavbaritem">
+            <a href="./academics.html" class="navnavbarlink">ACADEMICS</a>
+          </li>
+
+          <!-- About Us Dropdown Trigger -->
+          <li class="navnavbaritem navdropdown" id="navaboutdropdown">
+            <a
+              href="./about.html"
+              class="navnavbarlink navdropdowntoggle"
+              id="navdropdowntoggle"
+            >
+              ABOUT US
+              <i
+                class="fas fa-chevron-down"
+                style="font-size: 0.75rem; margin-left: 2px"
+              ></i>
+            </a>
+            <!-- Animated Dropdown Options -->
+            <ul class="navdropdownmenu">
+              <li class="navdropdownitem">
+                <a href="./about.html#about" class="navdropdownlink"
+                  ><i class="fas fa-school"></i> About</a
+                >
+              </li>
+              <li class="navdropdownitem">
+                <a href="./faculty.html" class="navdropdownlink"
+                  ><i class="fas fa-users"></i> Faculties</a
+                >
+              </li>
+              <li class="navdropdownitem">
+                <a href="./disclosure.html" class="navdropdownlink"
+                  ><i class="fas fa-file-signature"></i> Mandatory Disclosure</a
+                >
+              </li>
+              <!-- <li class="navdropdownitem">
+                <a href="#disclosure" class="navdropdownlink"
+                  ><i class="fas fa-images"></i> Gallery</a
+                >
+              </li> -->
+            </ul>
+          </li>
+
+          <!-- New Root Contact Option (Moved out of Dropdown as requested) -->
+          <li class="navnavbaritem">
+            <a href="./gallery.html" class="navnavbarlink">GALLERY</a>
+          </li>
+
+          <!-- Call To Action Admin Login Button -->
+          <li class="navnavbaritem">
+            <button
+              class="navbtnlogin"
+              id="navadminloginbtn"
+              onclick="window.location.href = './admission.html'"
+            >
+              <i class="fas fa-book"></i>
+              <span id="navloginbtntext">ADMISSIONS</span>
+            </button>
+          </li>
+        </ul>
+
+        <!-- Hamburger Action Trigger for Mobile Responsive Display -->
+        <button
+          class="navhamburger"
+          id="navhamburgermenu"
+          aria-label="Toggle navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Mobile Overlay Background Blur Element -->
+    <div class="navmobilenavoverlay" id="navmobilenavoverlay"></div>
+    <!-- -->
+    <!-- SECTION 1 — HERO BANNER -->
+    <section class="cnthero" id="cnthero">
+      <div class="cntherooverlay"></div>
+      <div class="cntherocontent">
+        <div class="cntherobadge">Admissions 2026 - 2027</div>
+        <h1 class="cntherotitle">Admissions Open</h1>
+        <p class="cntherosubtitle">
+          Join SNEHA VIDYA SAMSTE and provide your child with a strong
+          foundation for a successful, values-driven, and highly innovative
+          future.
+        </p>
+        <button
+          class="cntherobtn"
+          id="cntheroapplybtn"
+          aria-label="Scroll to Admission Enquiry Form"
+        >
+          Apply for Admission
+        </button>
+      </div>
+    </section>
+
+    <!-- SECTION 2 — ADMISSION GUIDELINES -->
+    <section class="cntguidelinessection" id="cntguidelines">
+      <div class="cntcontainer">
+        <h2 class="cntsectiontitle cntreveal">Admission Guidelines</h2>
+        <p class="cntsectionsubtitle cntreveal">
+          Please review our step-by-step admission guidelines and procedural
+          policy framework carefully.
+        </p>
+
+        <div class="cntguidelinesgrid">
+          <!-- Guideline Card 1 -->
+          <div class="cntguidelinecard cntreveal">
+            <div class="cntguidelinenumber">01</div>
+            <p class="cntguidelinetext">
+              Every parent shall visit and fill the enquiry form first. It
+              includes details of the child and the parents. Parents are advised
+              not to fill more than one enquiry form for one applicant.
+            </p>
+          </div>
+
+          <!-- Guideline Card 2 -->
+          <div class="cntguidelinecard cntreveal">
+            <div class="cntguidelinenumber">02</div>
+            <p class="cntguidelinetext">
+              Admission is on First Come First Serve Basis, ensuring a
+              transparent and sequential allocation mechanism for applicants.
+            </p>
+          </div>
+
+          <!-- Guideline Card 3 -->
+          <div class="cntguidelinecard cntreveal">
+            <div class="cntguidelinenumber">03</div>
+            <p class="cntguidelinetext">
+              Admission to Grades Pre KG and KG will be through a formal,
+              child-friendly interaction of the parents and child with our lead
+              teacher.
+            </p>
+          </div>
+
+          <!-- Guideline Card 4 -->
+          <div class="cntguidelinecard cntreveal">
+            <div class="cntguidelinenumber">04</div>
+            <p class="cntguidelinetext">
+              Admission to Grades I and above will be formally based on the
+              comprehensive written entrance syllabus test.
+            </p>
+          </div>
+
+          <!-- Guideline Card 5 -->
+          <div class="cntguidelinecard cntreveal">
+            <div class="cntguidelinenumber">05</div>
+            <p class="cntguidelinetext">
+              Date and exact time slot for the parent interaction or candidate
+              entrance test will be timely intimated directly to the parents.
+            </p>
+          </div>
+
+          <!-- Guideline Card 6 -->
+          <div class="cntguidelinecard cntreveal">
+            <div class="cntguidelinenumber">06</div>
+            <p class="cntguidelinetext">
+              The final decision of granting student admission will be reserved
+              solely by the School authority based on the Test/Interaction
+              results.
+            </p>
+          </div>
+
+          <!-- Guideline Card 7 -->
+          <div class="cntguidelinecard cntreveal">
+            <div class="cntguidelinenumber">07</div>
+            <p class="cntguidelinetext">
+              The Registration fee can be submitted by the parents before
+              interaction/entrance test. Kindly note that registration charge is
+              non-refundable and needs to be paid one time only.
+            </p>
+          </div>
+
+          <!-- Guideline Card 8 -->
+          <div class="cntguidelinecard cntreveal">
+            <div class="cntguidelinenumber">08</div>
+            <p class="cntguidelinetext">
+              Incomplete registration forms or profiles lacking required
+              authentic declarations will strictly not be accepted or processed.
+            </p>
+          </div>
+
+          <!-- Guideline Card 9 -->
+          <div class="cntguidelinecard cntreveal">
+            <div class="cntguidelinenumber">09</div>
+            <p class="cntguidelinetext">
+              Kindly submit all below mentioned documents along with remaining
+              amount within 15 days of submitting registration charges, failing
+              which the offer of admission stands cancelled and the seat will be
+              offered to another applicant.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -->
+    <!-- SECTION 3 — DOCUMENTS REQUIRED -->
+    <section class="cntdocumentssection" id="cntdocuments">
+      <div class="cntcontainer">
+        <h2 class="cntsectiontitle cntreveal">
+          Documents Required at the Time of Admission
+        </h2>
+        <p class="cntsectionsubtitle cntreveal">
+          Ensure you hold clear copies of the following digital and physical
+          verifications during registration validation.
+        </p>
+
+        <div class="cntdocumentsgrid">
+          <!-- Document Card 1 -->
+          <div class="cntdocumentcard cntreveal">
+            <div class="cntdocumenticon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1z"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="cntdocumenttext">Birth Certificate</div>
+              <div class="cntdocumentdetail">
+                Child's birth record attested explicitly by parents.
+              </div>
+            </div>
+          </div>
+
+          <!-- Document Card 2 -->
+          <div class="cntdocumentcard cntreveal">
+            <div class="cntdocumenticon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="cntdocumenttext">Residence Proof</div>
+              <div class="cntdocumentdetail">
+                Aadhaar Card, Passport, Electricity Bill, Ration Card, or Voter
+                ID.
+              </div>
+            </div>
+          </div>
+
+          <!-- Document Card 3 -->
+          <div class="cntdocumentcard cntreveal">
+            <div class="cntdocumenticon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="cntdocumenttext">Government Issued ID</div>
+              <div class="cntdocumentdetail">
+                Aadhaar Card of the child and both parents.
+              </div>
+            </div>
+          </div>
+
+          <!-- Document Card 4 -->
+          <div class="cntdocumentcard cntreveal">
+            <div class="cntdocumenticon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="cntdocumenttext">Leaving Certificate</div>
+              <div class="cntdocumentdetail">
+                Required for Grade II and upwards from the previous institution.
+              </div>
+            </div>
+          </div>
+
+          <!-- Document Card 5 -->
+          <div class="cntdocumentcard cntreveal">
+            <div class="cntdocumenticon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="cntdocumenttext">Passport Photos</div>
+              <div class="cntdocumentdetail">
+                6 photos of the child and 2 photos of both parents.
+              </div>
+            </div>
+          </div>
+
+          <!-- Document Card 6 -->
+          <div class="cntdocumentcard cntreveal">
+            <div class="cntdocumenticon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="cntdocumenttext">Blood Group Report</div>
+              <div class="cntdocumentdetail">
+                Authorized lab certificate verifying child's blood type.
+              </div>
+            </div>
+          </div>
+
+          <!-- Document Card 7 -->
+          <div class="cntdocumentcard cntreveal">
+            <div class="cntdocumenticon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M21 18V6H3v12h18M21 4c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h18zM12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="cntdocumenttext">Bank Passbook</div>
+              <div class="cntdocumentdetail">
+                Passbook details or copy owned under child's profile.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -->
+    <!-- SECTION 4 — ADMISSION ENQUIRY FORM -->
+    <section class="cntformsection" id="cntformsection">
+      <div class="cntcontainer">
+        <h2 class="cntsectiontitle cntreveal">Admission Enquiry Form</h2>
+        <p class="cntsectionsubtitle cntreveal">
+          Fill the form below and our dedicated academic admissions team will
+          contact you shortly.
+        </p>
+
+        <div class="cntformcard cntreveal">
+          <form
+            action="https://formspree.io/f/placeholder"
+            method="POST"
+            id="cntenquiryform"
+          >
+            <!-- STUDENT INFORMATION GROUP -->
+            <div class="cntformlegend">Student Information</div>
+            <div class="cntinputgrid">
+              <div class="cntinputgroup">
+                <input
+                  type="text"
+                  id="cntstudentname"
+                  name="studentName"
+                  placeholder=" "
+                  class="cntforminput"
+                  required
+                  autocomplete="off"
+                />
+                <label for="cntstudentname" class="cntformlabel"
+                  >Student Name *</label
+                >
+              </div>
+
+              <div class="cntinputgroup">
+                <input
+                  type="date"
+                  id="cntstudentdob"
+                  name="studentDob"
+                  placeholder=" "
+                  class="cntforminput"
+                  required
+                />
+                <label for="cntstudentdob" class="cntformlabel"
+                  >Date of Birth *</label
+                >
+              </div>
+
+              <div class="cntinputgroup">
+                <select
+                  id="cntstudentgender"
+                  name="studentGender"
+                  class="cntformselect"
+                  required
+                >
+                  <option value="" disabled selected hidden></option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+                <label for="cntstudentgender" class="cntformlabel"
+                  >Gender *</label
+                >
+              </div>
+
+              <div class="cntinputgroup">
+                <select
+                  id="cntadmissionclass"
+                  name="admissionForClass"
+                  class="cntformselect"
+                  required
+                >
+                  <option value="" disabled selected hidden></option>
+                  <option value="Pre KG">Pre KG</option>
+                  <option value="LKG">LKG</option>
+                  <option value="UKG">UKG</option>
+                  <option value="1st Standard">1st Standard</option>
+                  <option value="2nd Standard">2nd Standard</option>
+                  <option value="3rd Standard">3rd Standard</option>
+                  <option value="4th Standard">4th Standard</option>
+                  <option value="5th Standard">5th Standard</option>
+                  <option value="6th Standard">6th Standard</option>
+                  <option value="7th Standard">7th Standard</option>
+                  <option value="8th Standard">8th Standard</option>
+                </select>
+                <label for="cntadmissionclass" class="cntformlabel"
+                  >Admission For Class *</label
+                >
+              </div>
+            </div>
+
+            <!-- PARENT INFORMATION GROUP -->
+            <div class="cntformlegend">Parent Information</div>
+            <div class="cntinputgrid">
+              <div class="cntinputgroup">
+                <input
+                  type="text"
+                  id="cntfathername"
+                  name="fatherName"
+                  placeholder=" "
+                  class="cntforminput"
+                  required
+                  autocomplete="off"
+                />
+                <label for="cntfathername" class="cntformlabel"
+                  >Father's Name *</label
+                >
+              </div>
+
+              <div class="cntinputgroup">
+                <input
+                  type="text"
+                  id="cntmothername"
+                  name="motherName"
+                  placeholder=" "
+                  class="cntforminput"
+                  required
+                  autocomplete="off"
+                />
+                <label for="cntmothername" class="cntformlabel"
+                  >Mother's Name *</label
+                >
+              </div>
+            </div>
+
+            <!-- CONTACT INFORMATION GROUP -->
+            <div class="cntformlegend">
+              Contact Details &amp; Correspondence
+            </div>
+            <div class="cntinputgrid">
+              <div class="cntinputgroup">
+                <input
+                  type="tel"
+                  id="cntcontactnumber"
+                  name="contactNumber"
+                  placeholder=" "
+                  class="cntforminput"
+                  required
+                  pattern="[0-9+ ]{10,15}"
+                  title="Please enter a valid phone number (10 to 15 digits)."
+                />
+                <label for="cntcontactnumber" class="cntformlabel"
+                  >Contact Number *</label
+                >
+              </div>
+
+              <div class="cntinputgroup">
+                <input
+                  type="email"
+                  id="cntemailaddress"
+                  name="emailAddress"
+                  placeholder=" "
+                  class="cntforminput"
+                  required
+                  autocomplete="off"
+                />
+                <label for="cntemailaddress" class="cntformlabel"
+                  >Email Address *</label
+                >
+              </div>
+
+              <div class="cntinputgroup cntinputspanfull">
+                <textarea
+                  id="cntfulladdress"
+                  name="fullAddress"
+                  placeholder=" "
+                  class="cntformtextarea"
+                  required
+                  autocomplete="off"
+                ></textarea>
+                <label for="cntfulladdress" class="cntformlabel"
+                  >Full Address *</label
+                >
+              </div>
+
+              <div class="cntinputgroup cntinputspanfull">
+                <textarea
+                  id="cntadditionalmessage"
+                  name="additionalMessage"
+                  placeholder=" "
+                  class="cntformtextarea"
+                  autocomplete="off"
+                ></textarea>
+                <label for="cntadditionalmessage" class="cntformlabel"
+                  >Additional Message</label
+                >
+              </div>
+            </div>
+
+            <!-- SUBMIT CTA -->
+            <div class="cntsubmitwrap">
+              <button type="submit" class="cntsubmitbtn" id="cntsubmitbtn">
+                <span class="cntspinner" id="cntspinner"></span>
+                <span id="cntsubmitbtntxt">Submit Admission Enquiry</span>
+              </button>
+            </div>
+
+            <!-- SUBMISSION NOTIFICATIONS -->
+            <div class="cntfeedback cntsuccess" id="cntsuccessbanner">
+              <strong>Thank you!</strong> Your admission enquiry has been
+              submitted successfully. Our admission cell will contact you
+              shortly.
+            </div>
+            <div class="cntfeedback cnterror" id="cnterrorbanner">
+              <strong>Submission Failed!</strong> Something went wrong. Please
+              check your network and try again.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5 — GOOGLE MAP -->
+    <section class="cntmapsection">
+      <div class="cntcontainer">
+        <div class="cntmapwrapper cntreveal">
+          <iframe
+            class="cntmap"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3895.4743818457423!2d77.02681947121012!3d12.484685001648813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf07f417132ce7%3A0x91d5d4ff62792c9b!2ssneha%20education%20society!5e0!3m2!1sen!2sin!4v1780376612211!5m2!1sen!2sin"
+            loading="lazy"
+            allowfullscreen
+            title="Sneha Vidya Samste Geographic Campus Location Map"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+<!-- ==========================================
+       PREMIUM SCHOOL WEBSITE FOOTER
+       Satisfies all strictly prefixed ftr requirements
+       ========================================== -->
+    <footer class="ftrfooter">
+      <div class="ftrcontainer">
+        <!-- COLUMN 1: School Branding & Social Handles -->
+        <div class="ftrbrandcol">
+          <div class="ftrlogoimgwrapper">
+            <img
+              src="./assets/logosneha.webp"
+              alt="Sneha Vidya Samste Foot Logo"
+              class="ftrlogoimg"
+            />
+          </div>
+          <p class="ftrbranddesc">
+            Empowering students with knowledge, discipline, innovation, and
+            values for a brighter future.
+          </p>
+          <div class="ftrsocialbox">
+            <a
+              href="https://facebook.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://instagram.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://youtube.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="YouTube"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a
+              href="https://linkedin.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+
+        <hr class="ftrseparator" />
+
+        <!-- COLUMN 2: Responsive Embedded Map -->
+        <div class="ftrmapcol">
+          <h3 class="ftrmapcoltitle">Find Our Campus</h3>
+          <div class="ftrmapbox">
+            <!-- Responsive maps placeholder pointing to a premium Bangalore tech/academic zone -->
+            <iframe class="ftriframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3895.4743818457423!2d77.02681947121012!3d12.484685001648813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf07f417132ce7%3A0x91d5d4ff62792c9b!2ssneha%20education%20society!5e0!3m2!1sen!2sin!4v1780376612211!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </iframe>
+          </div>
+        </div>
+
+        <hr class="ftrseparator" />
+
+        <!-- COLUMN 3: Premium QR Access Code Card -->
+        <div class="ftrqrcol">
+          <h3 class="ftrqrcoltitle">Quick Access</h3>
+          <div class="ftrqrcard">
+            <img
+              src="./assets/QR.webp"
+              alt="Quick Access QR"
+              class="ftrqrimg"
+            />
+            <span class="ftrqrtext">Scan for Quick Access</span>
+          </div>
+        </div>
+
+        <hr class="ftrseparator" />
+
+        <!-- COLUMN 4: Complete Interactive Contact Information -->
+        <div class="ftrcontactcol">
+          <h3 class="ftrcontactcoltitle">Contact Details</h3>
+          <ul class="ftrcontactlist">
+            <li class="ftrcontactitem">
+              <i class="fas fa-map-marker-alt ftrcontacticon"></i>
+              <span class="ftrcontacttext"
+                >Gudigere Road, Bharathi Nagar(KM DODDI), Karnataka-571422 </span
+              >
+            </li>
+            <li class="ftrcontactitem">
+              <i class="fas fa-phone-alt ftrcontacticon"></i>
+              <a href="tel:+919739422025" class="ftrcontacttext"
+                >+91 97394 22025</a
+              >
+            </li>
+            <!-- <li class="ftrcontactitem">
+              <i class="fas fa-phone-volume ftrcontacticon"></i>
+              <a href="tel:+91802345678" class="ftrcontacttext"
+                >+91 80 2345 6789</a
+              >
+            </li> -->
+            <li class="ftrcontactitem">
+              <i class="fas fa-envelope ftrcontacticon"></i>
+              <a href="mailto:snehavidyasamste123@gmail.com" class="ftrcontacttext"
+                >snehavidyasamste123@gmail.com</a
+              >
+            </li>
+            <li class="ftrcontactitem">
+              <i class="fas fa-globe ftrcontacticon"></i>
+              <a
+                href="https://snehavidyasamste.in"
+                target="_blank"
+                class="ftrcontacttext"
+                >www.snehavidyasamste.in</a
+              >
+            </li>
+            <li class="ftrcontactitem">
+              <i class="fas fa-clock ftrcontacticon"></i>
+              <span class="ftrcontacttext">Mon - Sat: 8:30 AM - 4:30 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Foot Bottom Copyright Banner Block -->
+      <div class="ftrbottombar">
+        <div class="ftrbottomcontainer">
+          <p class="ftrcopyright">
+            &copy; 2026 SNEHA VIDYA SAMSTE. All Rights Reserved.
+          </p>
+          <p class="ftrdesigner">
+            Designed by
+            <a href="https://arouzatechlabs.in/" class="ftrdesignerlink"
+              >Arouza Techlabs</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==========================================
+       BACK TO TOP BUTTON TRIGGER
+       ========================================== -->
+    <button class="ftrbacktotop" id="ftrbacktotop" aria-label="Back to top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+<script type="module" src="./nav.js"></script>
+<script type="module" src="./footer.js"></script>
+    <!-- -->
+    <!-- JAVASCRIPT FOR ENHANCED UX & ANIMATIONS -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. CTA Button Smooth Scrolling Action to Enquiry Form
+        const applyBtn = document.getElementById("cntheroapplybtn");
+        const formSection = document.getElementById("cntformsection");
+
+        if (applyBtn && formSection) {
+          applyBtn.addEventListener("click", () => {
+            formSection.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        }
+
+        // 2. Intersection Observer Scroll Reveal for elements
+        const revealElements = document.querySelectorAll(".cntreveal");
+
+        const revealCallback = (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("cntrevealactive");
+              observer.unobserve(entry.target);
+            }
+          });
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, {
+          root: null,
+          threshold: 0.15,
+          rootMargin: "0px 0px -50px 0px",
+        });
+
+        revealElements.forEach((el) => {
+          revealObserver.observe(el);
+        });
+
+        // 3. Formspree AJAX Submission with Custom Animated Glass Feedback Banners
+        const enquiryForm = document.getElementById("cntenquiryform");
+        const submitBtn = document.getElementById("cntsubmitbtn");
+        const submitBtnTxt = document.getElementById("cntsubmitbtntxt");
+        const spinner = document.getElementById("cntspinner");
+        const successBanner = document.getElementById("cntsuccessbanner");
+        const errorBanner = document.getElementById("cnterrorbanner");
+
+        if (enquiryForm) {
+          enquiryForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            successBanner.style.display = "none";
+            errorBanner.style.display = "none";
+
+            // Enter Loading State
+            submitBtn.disabled = true;
+            spinner.style.display = "inline-block";
+            submitBtnTxt.textContent = "Processing...";
+
+            const formData = new FormData(enquiryForm);
+
+            try {
+              const response = await fetch(enquiryForm.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                  Accept: "application/json",
+                },
+              });
+
+              if (response.ok) {
+                successBanner.style.display = "block";
+                enquiryForm.reset();
+                successBanner.scrollIntoView({
+                  behavior: "smooth",
+                  block: "nearest",
+                });
+              } else {
+                throw new Error("Formspree Server Error");
+              }
+            } catch (error) {
+              console.error("Submission Issue: ", error);
+              errorBanner.style.display = "block";
+              errorBanner.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+              });
+            } finally {
+              submitBtn.disabled = false;
+              spinner.style.display = "none";
+              submitBtnTxt.textContent = "Submit Admission Enquiry";
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

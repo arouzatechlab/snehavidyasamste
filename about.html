@@ -1,0 +1,1933 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Sneha Vidya Samste</title>
+
+    <!-- Google Fonts: Playfair Display for heritage elegance & Inter for high-contrast precision -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap"
+      rel="stylesheet"
+    />
+     <!-- Google Fonts: Inter & Playfair Display for premium academic typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome Icons for UI elements -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./home.css" />
+    <link rel="stylesheet" href="./nav.css">
+    <link rel="stylesheet" href="./footer.css">
+    <style>
+      :root {
+        --abtprimarypurple: #4c1d95;
+        --abtprimarylight: #6d28d9;
+        --abtsoftlavender: #c4b5fd;
+        --abtaccentgold: #fbbf24;
+        --abtaccentgoldhover: #f59e0b;
+        --abttextdark: #1f2937;
+        --abttextmuted: #4b5563;
+        --abtbglight: #faf9fd;
+        --abtwhite: #ffffff;
+        --abtshadowpremium: 0 10px 30px -5px rgba(76, 29, 149, 0.08);
+        --abtshadowglow: 0 0 15px rgba(251, 191, 36, 0.3);
+        --abtfontsans: "Inter", sans-serif;
+        --abtfontserif: "Playfair Display", serif;
+        --abttransitionsmooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        width: 100%;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--abtfontsans);
+        background-color: var(--abtbglight);
+        color: var(--abttextdark);
+        line-height: 1.6;
+      }
+
+      /* GLOBAL UTILITIES */
+      .abtcontainer {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 16px; /* 16px safe mobile gutter */
+      }
+
+      /* SECTION REVEAL SYSTEM */
+      .abtreveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: var(--abttransitionsmooth);
+      }
+
+      .abtrevealactive {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* SECTION 1 — HERO SECTION */
+      .abthero {
+        position: relative;
+        background-image: url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1920&auto=format&fit=crop");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 55vh; /* Mobile Height */
+        min-height: 440px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--abtwhite);
+        padding: 0 16px;
+        overflow: hidden;
+      }
+
+      .abtherooverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(30, 12, 68, 0.85) 0%,
+          rgba(76, 29, 149, 0.75) 100%
+        );
+        z-index: 1;
+      }
+
+      .abtherocontent {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .abtherobadge {
+        background: rgba(251, 191, 36, 0.15);
+        border: 1px solid var(--abtaccentgold);
+        color: var(--abtaccentgold);
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        padding: 6px 18px;
+        border-radius: 50px;
+        margin-bottom: 24px;
+        box-shadow: var(--abtshadowglow);
+      }
+
+      .abtherotitle {
+        font-family: var(--abtfontserif);
+        font-size: 2.2rem; /* Scaled down for standard mobile */
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        color: var(--abtwhite);
+      }
+
+      .abtherosubtitle {
+        font-family: var(--abtfontsans);
+        font-size: 0.95rem;
+        color: var(--abtsoftlavender);
+        font-weight: 300;
+        line-height: 1.6;
+        margin-bottom: 32px;
+        max-width: 650px;
+      }
+
+      .abtherobtn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          135deg,
+          var(--abtaccentgold) 0%,
+          var(--abtaccentgoldhover) 100%
+        );
+        color: var(--abtprimarypurple);
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        padding: 16px 36px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+        transition: var(--abttransitionsmooth);
+        cursor: pointer;
+        border: none;
+        min-height: 48px; /* Accessible Touch Area */
+      }
+
+      .abtherobtn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(251, 191, 36, 0.55);
+      }
+/* Mobile Navbar Overlap Fix */
+/* @media (max-width: 767px) {
+  body {
+    padding-top: 90px;
+  }
+
+  .abthero {
+    min-height: calc(100vh - 90px);
+  }
+} */
+      /* SECTION 2 — INTRODUCTION STORY BLOCK */
+      .abtintro {
+        padding: 60px 0;
+        background-color: var(--abtbglight);
+      }
+
+      .abtintrogrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .abtintroimagebox {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--abtshadowpremium);
+        height: 280px; /* Fluid height for mobile viewports */
+        width: 100%;
+      }
+
+      .abtintroimg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--abttransitionsmooth);
+      }
+
+      .abtintroimagebox:hover .abtintroimg {
+        transform: scale(1.05);
+      }
+
+      .abtintrocontent {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .abtintrocontentlabel {
+        color: var(--abtprimarypurple);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+
+      .abtintrocontenttitle {
+        font-family: var(--abtfontserif);
+        font-size: 1.8rem; /* Responsive sizing */
+        color: var(--abtprimarypurple);
+        line-height: 1.3;
+        margin-bottom: 20px;
+      }
+
+      .abtintrocontenttext {
+        font-size: 0.95rem;
+        color: var(--abttextmuted);
+        line-height: 1.7;
+        margin-bottom: 24px;
+      }
+
+      /* Counters block */
+      .abtcountergrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        border-top: 1px solid rgba(196, 181, 253, 0.2);
+        padding-top: 20px;
+      }
+
+      .abtcounterbox {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .abtcounternum {
+        font-family: var(--abtfontserif);
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--abtaccentgoldhover);
+        line-height: 1.1;
+        margin-bottom: 4px;
+      }
+
+      .abtcounterlabel {
+        font-size: 0.8rem;
+        color: var(--abttextdark);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      /* SECTION 3 — VISION & MISSION */
+      .abtvisionmission {
+        background: rgba(196, 181, 253, 0.12);
+        padding: 60px 0;
+        position: relative;
+      }
+
+      .abtvisionmissiongrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+        position: relative;
+      }
+
+      .abtvisionblock,
+      .abtmissionblock {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 0;
+      }
+
+      .abtvisionmissionicon {
+        width: 52px;
+        height: 52px;
+        background-color: var(--abtwhite);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--abtshadowpremium);
+        color: var(--abtprimarypurple);
+        margin-bottom: 20px;
+      }
+
+      .abtvisionmissionicon svg {
+        width: 24px;
+        height: 24px;
+        fill: currentColor;
+      }
+
+      .abtvisionmissiontitle {
+        font-family: var(--abtfontserif);
+        font-size: 1.6rem;
+        color: var(--abtprimarypurple);
+        margin-bottom: 12px;
+      }
+
+      .abtvisionmissiontext {
+        font-size: 0.95rem;
+        color: var(--abttextmuted);
+        line-height: 1.7;
+      }
+
+      .abtdivider {
+        display: none; /* Desktop Only */
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        bottom: 10%;
+        width: 1px;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--abtaccentgold) 20%,
+          var(--abtaccentgold) 80%,
+          transparent
+        );
+      }
+
+      /* SECTION 4 — OUR JOURNEY TIMELINE */
+      .abttimelinesection {
+        padding: 80px 0;
+        background-color: var(--abtwhite);
+      }
+
+      .abttimelinehead {
+        text-align: center;
+        margin-bottom: 48px;
+      }
+
+      .abttimelineheadlabel {
+        color: var(--abtprimarypurple);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .abttimelineheadtitle {
+        font-family: var(--abtfontserif);
+        font-size: 1.8rem;
+        color: var(--abtprimarypurple);
+      }
+
+      .abttimelinewrap {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 10px 0;
+      }
+
+      /* Timeline spine */
+      .abttimelinewrap::before {
+        content: "";
+        position: absolute;
+        left: 15px; /* Offset to prevent alignment breakage on narrow mobile screens */
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(
+          to bottom,
+          rgba(124, 58, 237, 0.1),
+          var(--abtprimarypurple) 15%,
+          var(--abtprimarypurple) 85%,
+          rgba(124, 58, 237, 0.1)
+        );
+      }
+
+      .abttimelineitem {
+        position: relative;
+        margin-bottom: 36px;
+        padding-left: 36px; /* Reduced to fit mobile viewport screens */
+      }
+
+      .abttimelineitem:last-child {
+        margin-bottom: 0;
+      }
+
+      .abttimelineicon {
+        position: absolute;
+        left: 6px; /* Aligned properly with 15px left margin spine */
+        top: 4px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: var(--abtaccentgold);
+        border: 3px solid var(--abtwhite);
+        box-shadow: var(--abtshadowglow);
+        z-index: 2;
+        transition: var(--abttransitionsmooth);
+      }
+
+      .abttimelineitem:hover .abttimelineicon {
+        background-color: var(--abtprimarypurple);
+        transform: scale(1.2);
+      }
+
+      .abttimelinecontent {
+        background: var(--abtbglight);
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: var(--abtshadowpremium);
+        border: 1px solid rgba(196, 181, 253, 0.1);
+        transition: var(--abttransitionsmooth);
+      }
+
+      .abttimelineitem:hover .abttimelinecontent {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 35px rgba(76, 29, 149, 0.06);
+        border-color: var(--abtsoftlavender);
+      }
+
+      .abttimelineyear {
+        font-family: var(--abtfontserif);
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: var(--abtprimarypurple);
+        margin-bottom: 4px;
+        display: inline-block;
+      }
+
+      .abttimelinedesc {
+        font-size: 0.9rem;
+        color: var(--abttextmuted);
+        line-height: 1.6;
+      }
+
+      /* SECTION 5 & 6 — LEADERSHIP MESSAGES */
+      .abtleadersection {
+        padding: 60px 0;
+        background-color: var(--abtbglight);
+      }
+
+      .abtheadmizsection {
+        background-color: var(--abtwhite);
+      }
+
+      .abtleadergrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 36px;
+        align-items: center;
+      }
+
+      .abtleaderimagebox {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        padding: 12px; /* Protective padding containment for negative absolute outline frames */
+        width: 100%;
+      }
+
+      .abtleaderframe {
+        position: relative;
+        width: 100%;
+        max-width: 280px; /* Safe mobile limit bounds */
+        border-radius: 16px;
+        overflow: hidden;
+        border: 6px solid var(--abtwhite);
+        box-shadow: var(--abtshadowpremium);
+      }
+
+      /* Decorative Gold outline frame - bound carefully inside padded wrapper */
+      .abtleaderframe::after {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
+        border: 1px solid var(--abtaccentgold);
+        border-radius: 20px;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .abtleaderimg {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        transition: var(--abttransitionsmooth);
+      }
+
+      .abtleaderframe:hover .abtleaderimg {
+        transform: scale(1.04);
+      }
+
+      .abtleadercontent {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .abtleaderlabel {
+        color: var(--abtprimarypurple);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+
+      .abtleadertitle {
+        font-family: var(--abtfontserif);
+        font-size: 1.8rem;
+        color: var(--abtprimarypurple);
+        margin-bottom: 20px;
+        line-height: 1.3;
+      }
+
+      .abtleadertext {
+        font-size: 0.95rem;
+        color: var(--abttextmuted);
+        line-height: 1.7;
+        margin-bottom: 24px;
+      }
+
+      .abtleaderinfo {
+        border-top: 1px solid rgba(196, 181, 253, 0.2);
+        padding-top: 18px;
+      }
+
+      .abtleadersignature {
+        font-family: var(--abtfontserif);
+        font-size: 1.4rem;
+        font-weight: 700;
+        font-style: italic;
+        color: var(--abtprimarypurple);
+        margin-bottom: 4px;
+      }
+
+      .abtleadername {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--abttextdark);
+      }
+
+      .abtleaderrole {
+        font-size: 0.75rem;
+        color: var(--abtaccentgoldhover);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      /* SECTION 7 — MANAGEMENT TEAM */
+      .abtmanagement {
+        padding: 80px 0;
+        background-color: var(--abtwhite);
+      }
+
+      .abtmanagementhead {
+        text-align: center;
+        margin-bottom: 48px;
+      }
+
+      .abtmanagementtitle {
+        font-family: var(--abtfontserif);
+        font-size: 1.8rem;
+        color: var(--abtprimarypurple);
+        margin-bottom: 12px;
+      }
+
+      .abtmanagementsubtitle {
+        font-size: 0.9rem;
+        color: var(--abttextmuted);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .abtmanagementgrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .abtmanagementcard {
+        background: var(--abtbglight);
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(196, 181, 253, 0.1);
+        box-shadow: var(--abtshadowpremium);
+        display: flex;
+        flex-direction: column;
+        transition: var(--abttransitionsmooth);
+      }
+
+      .abtmanagementcard:hover {
+        transform: translateY(-8px);
+        border-color: var(--abtaccentgold);
+        box-shadow: 0 15px 35px rgba(76, 29, 149, 0.08);
+      }
+
+      .abtmanagementimgwrap {
+        width: 100%;
+        height: 240px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .abtmanagementimg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--abttransitionsmooth);
+      }
+
+      .abtmanagementcard:hover .abtmanagementimg {
+        transform: scale(1.06);
+      }
+
+      .abtmanagementinfo {
+        padding: 24px;
+        text-align: center;
+      }
+
+      .abtmanagementname {
+        font-family: var(--abtfontsans);
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--abtprimarypurple);
+        margin-bottom: 4px;
+      }
+
+      .abtmanagementrole {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--abtaccentgoldhover);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 12px;
+      }
+
+      .abtmanagementbio {
+        font-size: 0.85rem;
+        color: var(--abttextmuted);
+        line-height: 1.5;
+      }
+
+      /* SECTION 8 — WHY CHOOSE US */
+      .abtwhy {
+        padding: 80px 0;
+        background-color: var(--abtbglight);
+      }
+
+      .abtwhyhead {
+        text-align: center;
+        margin-bottom: 48px;
+      }
+
+      .abtwhytitle {
+        font-family: var(--abtfontserif);
+        font-size: 1.8rem;
+        color: var(--abtprimarypurple);
+        margin-bottom: 12px;
+      }
+
+      .abtwhysubtitle {
+        font-size: 0.9rem;
+        color: var(--abttextmuted);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Adaptive 1 column layout on ultra-narrow, scaling gracefully later */
+      .abtwhygrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .abtwhyitem {
+        background-color: var(--abtwhite);
+        border-radius: 12px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border: 1px solid rgba(196, 181, 253, 0.08);
+        box-shadow: var(--abtshadowpremium);
+        transition: var(--abttransitionsmooth);
+      }
+
+      .abtwhyitem:hover {
+        transform: translateY(-4px);
+        border-color: var(--abtsoftlavender);
+        box-shadow: 0 10px 25px rgba(76, 29, 149, 0.04);
+      }
+
+      .abtwhyicon {
+        color: var(--abtaccentgoldhover);
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .abtwhyicon svg {
+        width: 28px;
+        height: 28px;
+        fill: currentColor;
+      }
+
+      .abtwhyitemtitle {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--abtprimarypurple);
+        margin-bottom: 8px;
+      }
+
+      .abtwhyitemdesc {
+        font-size: 0.85rem;
+        color: var(--abttextmuted);
+        line-height: 1.5;
+      }
+
+      /* SECTION 9 — FULL WIDTH ADMISSION CTA */
+      .abtcta {
+        position: relative;
+        background-image: url("https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1920&auto=format&fit=crop");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: auto; /* Fluid auto height with padding on mobile to prevent overlap */
+        padding: 60px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--abtwhite);
+      }
+
+      .abtctaoverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(30, 12, 68, 0.9) 0%,
+          rgba(76, 29, 149, 0.8) 100%
+        );
+        z-index: 1;
+      }
+
+      .abtctacontent {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 800px;
+      }
+
+      .abtctatitle {
+        font-family: var(--abtfontserif);
+        font-size: 1.6rem;
+        font-weight: 800;
+        margin-bottom: 14px;
+        line-height: 1.3;
+      }
+
+      .abtctadesc {
+        font-size: 0.9rem;
+        color: var(--abtsoftlavender);
+        margin-bottom: 28px;
+        line-height: 1.6;
+      }
+
+      .abtctabtnwrap {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .abtctabtn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          135deg,
+          var(--abtaccentgold) 0%,
+          var(--abtaccentgoldhover) 100%
+        );
+        color: var(--abtprimarypurple);
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        padding: 14px 24px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+        transition: var(--abttransitionsmooth);
+        min-height: 48px;
+        width: 100%;
+        max-width: 260px;
+      }
+
+      .abtctabtnsecondary {
+        background: transparent;
+        border: 1px solid var(--abtwhite);
+        color: var(--abtwhite);
+      }
+
+      .abtctabtnsecondary:hover {
+        background: var(--abtwhite);
+        color: var(--abtprimarypurple);
+      }
+
+      .abtctabtn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(251, 191, 36, 0.45);
+      }
+
+      /* RESPONSIVE MEDIA QUERIES (Upward scaling layout adapters) */
+
+      /* Small/Medium Mobile (360px+) */
+      @media (min-width: 360px) {
+        .abtwhygrid {
+          grid-template-columns: repeat(2, 1fr); /* safe 2 column split */
+        }
+      }
+
+      /* Large Mobile (480px+) */
+      @media (min-width: 480px) {
+        .abtherotitle {
+          font-size: 2.5rem;
+        }
+        .abthero {
+          height: 60vh;
+        }
+        .abtintroimagebox {
+          height: 320px;
+        }
+        .abtctabtnwrap {
+          flex-direction: row;
+          gap: 16px;
+        }
+        .abtctabtn {
+          width: auto;
+        }
+      }
+
+      /* Tablet Displays (768px+) */
+      @media (min-width: 768px) {
+        .abthero {
+          height: 65vh;
+        }
+        .abtintrogrid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 40px;
+        }
+        .abtintroimagebox {
+          height: 380px;
+        }
+        .abttimelineheadtitle,
+        .abtmanagementtitle,
+        .abtwhytitle {
+          font-size: 2.4rem;
+        }
+        .abtvisionmissiongrid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 48px;
+        }
+        .abtdivider {
+          display: block;
+        }
+        .abtleadergrid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 40px;
+        }
+        /* Clean, staggered column arrangements */
+        .abtheadmistress .abtleadergrid {
+          direction: rtl;
+        }
+        .abtheadmistress .abtleadercontent {
+          direction: ltr;
+        }
+        .abtmanagementgrid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .abtcta {
+          padding: 80px 24px;
+        }
+
+        /* Timeline vertical centering */
+        .abttimelinewrap::before {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        .abttimelineitem {
+          width: 50%;
+          padding-left: 0;
+          margin-bottom: 48px;
+        }
+        /* Staggered timeline left and right nodes */
+        .abttimelineitem:nth-child(odd) {
+          left: 0;
+          padding-right: 40px;
+          text-align: right;
+        }
+        .abttimelineitem:nth-child(odd) .abtcontentwrapper {
+          display: flex;
+          justify-content: flex-end;
+        }
+        .abttimelineitem:nth-child(odd) .abttimelinecontent {
+          text-align: right;
+        }
+        .abttimelineitem:nth-child(even) {
+          left: 50%;
+          padding-left: 40px;
+          text-align: left;
+        }
+        .abttimelineicon {
+          left: auto;
+          right: -9px;
+        }
+        .abttimelineitem:nth-child(even) .abttimelineicon {
+          left: -9px;
+          right: auto;
+        }
+      }
+
+      /* Desktop Viewports (1024px+) */
+      @media (min-width: 1024px) {
+        .abthero {
+          height: 75vh;
+        }
+        .abtherotitle {
+          font-size: 3.5rem;
+        }
+        .abtintrocontenttitle {
+          font-size: 2.4rem;
+        }
+        .abtleadercontent {
+          padding: 0 30px;
+        }
+        .abtmanagementgrid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .abtwhygrid {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
+        }
+        .abtctatitle {
+          font-size: 2.4rem;
+          margin-bottom: 20px;
+        }
+      }
+
+      /* Ultra Wide Desktop (1440px+) */
+      @media (min-width: 1440px) {
+        .abtherotitle {
+          font-size: 4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ==========================================
+       HEADER / NAVIGATION WRAPPER
+       ========================================== -->
+    <div class="navheaderwrapper" id="navheaderwrapper">
+      <nav class="navnavbar">
+        <!-- Left Branding Logo -->
+        <a href="./index.html" class="navnavbarbrand">
+          <div class="navnavbarlogo">
+            <!-- Styled <img> tag replaced SVG representation cleanly -->
+            <img
+              src="./assets/logosneha.webp"
+              alt="Sneha Vidya Samste Logo"
+              class="navlogoimg"
+              id="navlogoimg"
+            />
+          </div>
+          <div class="navnavbarbrandtext">
+            <span class="navschoolname">SNEHA VIDYA SAMSTE</span>
+          </div>
+        </a>
+
+        <!-- Premium Navigation Menu Links -->
+        <ul class="navnavbarmenu" id="navnavbarmenu">
+          <li class="navnavbaritem">
+            <a href="./index.html" class="navnavbarlink navactive">HOME</a>
+          </li>
+          <li class="navnavbaritem">
+            <a href="./facilities.html" class="navnavbarlink">FACILITIES</a>
+          </li>
+          <li class="navnavbaritem">
+            <a href="./academics.html" class="navnavbarlink">ACADEMICS</a>
+          </li>
+
+          <!-- About Us Dropdown Trigger -->
+          <li class="navnavbaritem navdropdown" id="navaboutdropdown">
+            <a
+              href="./about.html"
+              class="navnavbarlink navdropdowntoggle"
+              id="navdropdowntoggle"
+            >
+              ABOUT US
+              <i
+                class="fas fa-chevron-down"
+                style="font-size: 0.75rem; margin-left: 2px"
+              ></i>
+            </a>
+            <!-- Animated Dropdown Options -->
+            <ul class="navdropdownmenu">
+              <li class="navdropdownitem">
+                <a href="./about.html#about" class="navdropdownlink"
+                  ><i class="fas fa-school"></i> About</a
+                >
+              </li>
+              <li class="navdropdownitem">
+                <a href="./faculty.html" class="navdropdownlink"
+                  ><i class="fas fa-users"></i> Faculties</a
+                >
+              </li>
+              <li class="navdropdownitem">
+                <a href="./disclosure.html" class="navdropdownlink"
+                  ><i class="fas fa-file-signature"></i> Mandatory Disclosure</a
+                >
+              </li>
+              <!-- <li class="navdropdownitem">
+                <a href="#disclosure" class="navdropdownlink"
+                  ><i class="fas fa-images"></i> Gallery</a
+                >
+              </li> -->
+            </ul>
+          </li>
+
+          <!-- New Root Contact Option (Moved out of Dropdown as requested) -->
+          <li class="navnavbaritem">
+            <a href="./gallery.html" class="navnavbarlink">GALLERY</a>
+          </li>
+
+          <!-- Call To Action Admin Login Button -->
+          <li class="navnavbaritem">
+            <button
+              class="navbtnlogin"
+              id="navadminloginbtn"
+              onclick="window.location.href = './admission.html'"
+            >
+              <i class="fas fa-book"></i>
+              <span id="navloginbtntext">ADMISSIONS</span>
+            </button>
+          </li>
+        </ul>
+
+        <!-- Hamburger Action Trigger for Mobile Responsive Display -->
+        <button
+          class="navhamburger"
+          id="navhamburgermenu"
+          aria-label="Toggle navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Mobile Overlay Background Blur Element -->
+    <div class="navmobilenavoverlay" id="navmobilenavoverlay"></div>
+    <!-- SECTION 1 — HERO SECTION -->
+    <section class="abthero" id="abthero">
+      <div class="abtherooverlay"></div>
+      <div class="abtherocontent">
+        <div class="abtherobadge">About Our Institution</div>
+        <h1 class="abtherotitle">About SNEHA VIDYA SAMSTE</h1>
+        <p class="abtherosubtitle">
+          More than two decades of educational excellence, values, discipline
+          and community service dedicated to shaping future generations.
+        </p>
+        <button
+          class="abtherobtn"
+          id="abtherojourneybtn"
+          aria-label="Explore Our History"
+        >
+          Explore Our Journey
+        </button>
+      </div>
+    </section>
+
+    <!-- SECTION 2 — INTRODUCTION STORY BLOCK -->
+    <section class="abtintro">
+      <div class="abtcontainer">
+        <div class="abtintrogrid">
+          <!-- Large Campus Graphic -->
+          <div class="abtintroimagebox abtreveal">
+            <img
+              src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1000&auto=format&fit=crop"
+              alt="Sneha Vidya Samste Campus"
+              class="abtintroimg"
+            />
+          </div>
+
+          <!-- Narrative Content -->
+          <div class="abtintrocontent abtreveal">
+            <span class="abtintrocontentlabel">Who We Are</span>
+            <h2 class="abtintrocontenttitle">
+              A School Built on Service, Values and Educational Excellence
+            </h2>
+            <p class="abtintrocontenttext">
+              SNEHA VIDYA SAMSTE was established in the year 1999 at Bharathi
+              Nagar under the visionary leadership of Shri Dasegowda. Founded as
+              a service-oriented educational organization, our primary mission
+              has always been to make premier, value-based education highly
+              accessible to rural families. Over the last 25 years, our
+              commitment to nurturing academic brilliance, moral integrity, and
+              social duty has transformed SNEHA VIDYA SAMSTE into a respected
+              citadel of learning.
+            </p>
+
+            <!-- Interactive Counters Block -->
+            <div class="abtcountergrid">
+              <div class="abtcounterbox">
+                <span class="abtcounternum" data-target="25">0</span>
+                <span class="abtcounterlabel">Years of Excellence</span>
+              </div>
+              <div class="abtcounterbox">
+                <span class="abtcounternum" data-target="1000">0</span>
+                <span class="abtcounterlabel">Students Empowered</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 — VISION & MISSION -->
+    <section class="abtvisionmission">
+      <div class="abtcontainer">
+        <div class="abtvisionmissiongrid">
+          <!-- Decorative divider centered on desktop -->
+          <div class="abtdivider"></div>
+
+          <!-- VISION -->
+          <div class="abtvisionblock abtreveal">
+            <div class="abtvisionmissionicon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+                />
+              </svg>
+            </div>
+            <h3 class="abtvisionmissiontitle">Our Vision</h3>
+            <p class="abtvisionmissiontext">
+              To empower every child with knowledge, core ethics,
+              self-confidence, creativity, and leadership competencies that
+              prepare them to confidently adapt to a modern globalized world
+              while staying strongly rooted in human service.
+            </p>
+          </div>
+
+          <!-- MISSION -->
+          <div class="abtmissionblock abtreveal">
+            <div class="abtvisionmissionicon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L11 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"
+                />
+              </svg>
+            </div>
+            <h3 class="abtvisionmissiontitle">Our Mission</h3>
+            <p class="abtvisionmissiontext">
+              To deliver affordable, top-tier, quality education that integrates
+              innovation, stringent mental discipline, comprehensive life
+              skills, and social duty to foster highly responsible global
+              citizens.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 — OUR JOURNEY TIMELINE -->
+    <section class="abttimelinesection" id="abttimeline">
+      <div class="abtcontainer">
+        <div class="abttimelinehead abtreveal">
+          <span class="abttimelineheadlabel">Milestones</span>
+          <h2 class="abttimelineheadtitle">Our Historical Journey</h2>
+        </div>
+
+        <div class="abttimelinewrap">
+          <!-- Timeline Item 1 -->
+          <div class="abttimelineitem abtreveal">
+            <div class="abttimelineicon"></div>
+            <div class="abtcontentwrapper">
+              <div class="abttimelinecontent">
+                <span class="abttimelineyear">1999</span>
+                <h4
+                  style="
+                    margin-bottom: 8px;
+                    color: var(--abtprimarypurple);
+                    font-weight: 700;
+                  "
+                >
+                  School Founded
+                </h4>
+                <p class="abttimelinedesc">
+                  Shri Dasegowda establishes SNEHA VIDYA SAMSTE in Bharathi
+                  Nagar to make quality education accessible to rural
+                  communities.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="abttimelineitem abtreveal">
+            <div class="abttimelineicon"></div>
+            <div class="abtcontentwrapper">
+              <div class="abttimelinecontent">
+                <span class="abttimelineyear">2005</span>
+                <h4
+                  style="
+                    margin-bottom: 8px;
+                    color: var(--abtprimarypurple);
+                    font-weight: 700;
+                  "
+                >
+                  Expansion of Programs
+                </h4>
+                <p class="abttimelinedesc">
+                  Introduced broader curricula and academic portfolios to
+                  enhance holistic training methodologies.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="abttimelineitem abtreveal">
+            <div class="abttimelineicon"></div>
+            <div class="abtcontentwrapper">
+              <div class="abttimelinecontent">
+                <span class="abttimelineyear">2012</span>
+                <h4
+                  style="
+                    margin-bottom: 8px;
+                    color: var(--abtprimarypurple);
+                    font-weight: 700;
+                  "
+                >
+                  Infrastructure Development
+                </h4>
+                <p class="abttimelinedesc">
+                  Constructed upgraded science labs, well-equipped libraries,
+                  and pristine recreational areas for advanced activities.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 4 -->
+          <div class="abttimelineitem abtreveal">
+            <div class="abttimelineicon"></div>
+            <div class="abtcontentwrapper">
+              <div class="abttimelinecontent">
+                <span class="abttimelineyear">2018</span>
+                <h4
+                  style="
+                    margin-bottom: 8px;
+                    color: var(--abtprimarypurple);
+                    font-weight: 700;
+                  "
+                >
+                  Digital Integration
+                </h4>
+                <p class="abttimelinedesc">
+                  Integrated modern smart classrooms, digital teaching portals,
+                  and computer labs for next-gen interactive pedagogy.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 5 -->
+          <div class="abttimelineitem abtreveal">
+            <div class="abttimelineicon"></div>
+            <div class="abtcontentwrapper">
+              <div class="abttimelinecontent">
+                <span class="abttimelineyear">2025+</span>
+                <h4
+                  style="
+                    margin-bottom: 8px;
+                    color: var(--abtprimarypurple);
+                    font-weight: 700;
+                  "
+                >
+                  The Era of Future Excellence
+                </h4>
+                <p class="abttimelinedesc">
+                  Expanding continuous pedagogical upgrades, technical
+                  intelligence structures, and strong ethical values to empower
+                  future leaders.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5 — PRESIDENT MESSAGE -->
+    <section class="abtleadersection">
+      <div class="abtcontainer">
+        <div class="abtleadergrid">
+          <!-- President Photo with Gold Border -->
+          <div class="abtleaderimagebox abtreveal">
+            <div class="abtleaderframe">
+              <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop"
+                alt="Founder President Shri Dasegowda"
+                class="abtleaderimg"
+              />
+            </div>
+          </div>
+
+          <!-- President Message Content -->
+          <div class="abtleadercontent abtreveal">
+            <span class="abtleaderlabel">Message From The President</span>
+            <h2 class="abtleadertitle">Leading Through Service and Vision</h2>
+            <p class="abtleadertext">
+              "Education is the cornerstone of societal advancement and the
+              primary catalyst for positive transformational growth. When SNEHA
+              VIDYA SAMSTE was founded in 1999, our core vision was clear and
+              resolute: to make premium quality, holistic education fully
+              reachable for every child, especially across our deserving rural
+              landscapes.
+              <br /><br />
+              Over the last two decades, we have remained deeply committed to
+              service-oriented policies that ensure educational equity. We don't
+              just focus on standard textbook curriculums; we nurture high-moral
+              integrity, ethical values, self-worth, and proactive discipline.
+              Our journey is defined by the incredible achievements of our
+              alumni who are making positive contributions globally. We look
+              forward to guiding future generations with absolute dedication and
+              modern progressiveness."
+            </p>
+            <div class="abtleaderinfo">
+              <div class="abtleadersignature">Shri Dasegowda</div>
+              <div class="abtleadername">Shri Dasegowda</div>
+              <div class="abtleaderrole">
+                Founder &amp; President, Sneha Vidya Samste Trust
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6 — HEAD MISTRESS MESSAGE -->
+    <section class="abtleadersection abtheadmizsection">
+      <div class="abtcontainer">
+        <div class="abtleadergrid">
+          <!-- Headmistress Photo with Gold Border -->
+          <div class="abtleaderimagebox abtreveal">
+            <div class="abtleaderframe">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop"
+                alt="Principal &amp; Head Mistress Mrs. Shylashri"
+                class="abtleaderimg"
+              />
+            </div>
+          </div>
+
+          <!-- Headmistress Message Content -->
+          <div class="abtleadercontent abtreveal">
+            <span class="abtleaderlabel">Message From The Head Mistress</span>
+            <h2 class="abtleadertitle">
+              Nurturing Holistic Academic Excellence
+            </h2>
+            <p class="abtleadertext">
+              "At SNEHA VIDYA SAMSTE, we strongly believe that a school campus
+              is a sanctuary of learning where characters are forged, talents
+              are uncovered, and lifelong values are instilled. Our primary
+              purpose is to offer an intellectual ecosystem that challenges
+              minds while remaining deeply supportive of individual child
+              potentials.
+              <br /><br />
+              By marrying advanced digital classrooms with traditional
+              educational values, our experienced teachers foster an atmosphere
+              of critical thinking and creative inquiry. Holistic development is
+              a living practice here, encompassing athletic development, arts,
+              and community service. Together with our active parent community,
+              we build paths of success and integrity for every student."
+            </p>
+            <div class="abtleaderinfo">
+              <div class="abtleadersignature">Mrs. Shylashri</div>
+              <div class="abtleadername">Mrs. Shylashri</div>
+              <div class="abtleaderrole">
+                Principal &amp; Head Mistress, Sneha Academics
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7 — MANAGEMENT TEAM -->
+    <section class="abtmanagement">
+      <div class="abtcontainer">
+        <div class="abtmanagementhead abtreveal">
+          <h2 class="abtmanagementtitle">Our Leadership Team</h2>
+          <p class="abtmanagementsubtitle">
+            Dedicated individuals guiding the institution towards academic
+            brilliance and moral values.
+          </p>
+        </div>
+
+        <div class="abtmanagementgrid">
+          <!-- Board Member 1 -->
+          <div class="abtmanagementcard abtreveal">
+            <div class="abtmanagementimgwrap">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop"
+                alt="Shri Dasegowda"
+                class="abtmanagementimg"
+              />
+            </div>
+            <div class="abtmanagementinfo">
+              <h4 class="abtmanagementname">Shri Dasegowda</h4>
+              <span class="abtmanagementrole">Founder</span>
+              <p class="abtmanagementbio">
+                Guiding Sneha's foundational pathways of rural community service
+                since 1999.
+              </p>
+            </div>
+          </div>
+
+          <!-- Board Member 2 -->
+          <div class="abtmanagementcard abtreveal">
+            <div class="abtmanagementimgwrap">
+              <img
+                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop"
+                alt="President Trustee"
+                class="abtmanagementimg"
+              />
+            </div>
+            <div class="abtmanagementinfo">
+              <h4 class="abtmanagementname">Trustee Member</h4>
+              <span class="abtmanagementrole">President</span>
+              <p class="abtmanagementbio">
+                Formulating modern infrastructure development projects and
+                global partnerships.
+              </p>
+            </div>
+          </div>
+
+          <!-- Board Member 3 -->
+          <div class="abtmanagementcard abtreveal">
+            <div class="abtmanagementimgwrap">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop"
+                alt="Vice President Trustee"
+                class="abtmanagementimg"
+              />
+            </div>
+            <div class="abtmanagementinfo">
+              <h4 class="abtmanagementname">Trustee Member</h4>
+              <span class="abtmanagementrole">Vice President</span>
+              <p class="abtmanagementbio">
+                Coordinating academic governance structures and standard
+                compliance benchmarks.
+              </p>
+            </div>
+          </div>
+
+          <!-- Board Member 4 -->
+          <div class="abtmanagementcard abtreveal">
+            <div class="abtmanagementimgwrap">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop"
+                alt="Secretary Trustee"
+                class="abtmanagementimg"
+              />
+            </div>
+            <div class="abtmanagementinfo">
+              <h4 class="abtmanagementname">Trustee Member</h4>
+              <span class="abtmanagementrole">Secretary</span>
+              <p class="abtmanagementbio">
+                Supervising operational guidelines and managing regulatory trust
+                associations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8 — WHY CHOOSE US -->
+    <section class="abtwhy">
+      <div class="abtcontainer">
+        <div class="abtwhyhead abtreveal">
+          <h2 class="abtwhytitle">Why Choose Us</h2>
+          <p class="abtwhysubtitle">
+            Discover the core structural pillars that establish our long
+            standing reputation of trust.
+          </p>
+        </div>
+
+        <div class="abtwhygrid">
+          <!-- Feature 1 -->
+          <div class="abtwhyitem abtreveal">
+            <div class="abtwhyicon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                />
+              </svg>
+            </div>
+            <h4 class="abtwhyitemtitle">25+ Years Legacy</h4>
+            <p class="abtwhyitemdesc">
+              More than two decades of structural excellence in educational
+              management.
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="abtwhyitem abtreveal">
+            <div class="abtwhyicon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                />
+              </svg>
+            </div>
+            <h4 class="abtwhyitemtitle">Experienced Teachers</h4>
+            <p class="abtwhyitemdesc">
+              Dedicated master mentors using compassionate and modern pedagogy.
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="abtwhyitem abtreveal">
+            <div class="abtwhyicon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"
+                />
+              </svg>
+            </div>
+            <h4 class="abtwhyitemtitle">Value-Based Education</h4>
+            <p class="abtwhyitemdesc">
+              Focusing strongly on moral ethics, respect, and character design.
+            </p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="abtwhyitem abtreveal">
+            <div class="abtwhyicon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"
+                />
+              </svg>
+            </div>
+            <h4 class="abtwhyitemtitle">Student-Centric Learning</h4>
+            <p class="abtwhyitemdesc">
+              Customized programs matching unique pace of learning patterns.
+            </p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="abtwhyitem abtreveal">
+            <div class="abtwhyicon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"
+                />
+              </svg>
+            </div>
+            <h4 class="abtwhyitemtitle">Safe Campus</h4>
+            <p class="abtwhyitemdesc">
+              Fully monitored premises with child safety compliance standards.
+            </p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="abtwhyitem abtreveal">
+            <div class="abtwhyicon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 14.5L4.82 13.6 3 14.6l9 5 9-5-1.82-1L12 17.5z"
+                />
+              </svg>
+            </div>
+            <h4 class="abtwhyitemtitle">Holistic Development</h4>
+            <p class="abtwhyitemdesc">
+              Balancing arts, intensive sports, debates, and tech hobbies.
+            </p>
+          </div>
+
+          <!-- Feature 7 -->
+          <div class="abtwhyitem abtreveal">
+            <div class="abtwhyicon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"
+                />
+              </svg>
+            </div>
+            <h4 class="abtwhyitemtitle">Technology Learning</h4>
+            <p class="abtwhyitemdesc">
+              Integrated computing systems, coding labs, and smart media
+              platforms.
+            </p>
+          </div>
+
+          <!-- Feature 8 -->
+          <div class="abtwhyitem abtreveal">
+            <div class="abtwhyicon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                />
+              </svg>
+            </div>
+            <h4 class="abtwhyitemtitle">Community Service</h4>
+            <p class="abtwhyitemdesc">
+              Instilling values of charity, environment care, and active
+              service.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9 — FULL WIDTH ADMISSION CTA -->
+    <section class="abtcta">
+      <div class="abtctaoverlay"></div>
+      <div class="abtctacontent">
+        <h2 class="abtctatitle">Admissions Open For Academic Year 2026–2027</h2>
+        <p class="abtctadesc">
+          Join a trusted institution that has been transforming lives through
+          quality value-based education since 1999.
+        </p>
+        <div class="abtctabtnwrap">
+          <a
+            href="school_admission.html"
+            class="abtctabtn"
+            aria-label="Access Enquiry Form"
+            >Admission Enquiry</a
+          >
+          <a
+            href="school_admission.html#cntmapsection"
+            class="abtctabtn abtctabtnsecondary"
+            aria-label="Contact Us Location"
+            >Contact Us</a
+          >
+        </div>
+      </div>
+    </section>
+<!-- ==========================================
+       PREMIUM SCHOOL WEBSITE FOOTER
+       Satisfies all strictly prefixed ftr requirements
+       ========================================== -->
+    <footer class="ftrfooter">
+      <div class="ftrcontainer">
+        <!-- COLUMN 1: School Branding & Social Handles -->
+        <div class="ftrbrandcol">
+          <div class="ftrlogoimgwrapper">
+            <img
+              src="./assets/logosneha.webp"
+              alt="Sneha Vidya Samste Foot Logo"
+              class="ftrlogoimg"
+            />
+          </div>
+          <p class="ftrbranddesc">
+            Empowering students with knowledge, discipline, innovation, and
+            values for a brighter future.
+          </p>
+          <div class="ftrsocialbox">
+            <a
+              href="https://facebook.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://instagram.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://youtube.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="YouTube"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a
+              href="https://linkedin.com"
+              class="ftrsocialbtn"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+
+        <hr class="ftrseparator" />
+
+        <!-- COLUMN 2: Responsive Embedded Map -->
+        <div class="ftrmapcol">
+          <h3 class="ftrmapcoltitle">Find Our Campus</h3>
+          <div class="ftrmapbox">
+            <!-- Responsive maps placeholder pointing to a premium Bangalore tech/academic zone -->
+            <iframe class="ftriframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3895.4743818457423!2d77.02681947121012!3d12.484685001648813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf07f417132ce7%3A0x91d5d4ff62792c9b!2ssneha%20education%20society!5e0!3m2!1sen!2sin!4v1780376612211!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </iframe>
+          </div>
+        </div>
+
+        <hr class="ftrseparator" />
+
+        <!-- COLUMN 3: Premium QR Access Code Card -->
+        <div class="ftrqrcol">
+          <h3 class="ftrqrcoltitle">Quick Access</h3>
+          <div class="ftrqrcard">
+            <img
+              src="./assets/QR.webp"
+              alt="Quick Access QR"
+              class="ftrqrimg"
+            />
+            <span class="ftrqrtext">Scan for Quick Access</span>
+          </div>
+        </div>
+
+        <hr class="ftrseparator" />
+
+        <!-- COLUMN 4: Complete Interactive Contact Information -->
+        <div class="ftrcontactcol">
+          <h3 class="ftrcontactcoltitle">Contact Details</h3>
+          <ul class="ftrcontactlist">
+            <li class="ftrcontactitem">
+              <i class="fas fa-map-marker-alt ftrcontacticon"></i>
+              <span class="ftrcontacttext"
+                >Gudigere Road, Bharathi Nagar(KM DODDI), Karnataka-571422 </span
+              >
+            </li>
+            <li class="ftrcontactitem">
+              <i class="fas fa-phone-alt ftrcontacticon"></i>
+              <a href="tel:+919739422025" class="ftrcontacttext"
+                >+91 97394 22025</a
+              >
+            </li>
+            <!-- <li class="ftrcontactitem">
+              <i class="fas fa-phone-volume ftrcontacticon"></i>
+              <a href="tel:+91802345678" class="ftrcontacttext"
+                >+91 80 2345 6789</a
+              >
+            </li> -->
+            <li class="ftrcontactitem">
+              <i class="fas fa-envelope ftrcontacticon"></i>
+              <a href="mailto:snehavidyasamste123@gmail.com" class="ftrcontacttext"
+                >snehavidyasamste123@gmail.com</a
+              >
+            </li>
+            <li class="ftrcontactitem">
+              <i class="fas fa-globe ftrcontacticon"></i>
+              <a
+                href="https://snehavidyasamste.in"
+                target="_blank"
+                class="ftrcontacttext"
+                >www.snehavidyasamste.in</a
+              >
+            </li>
+            <li class="ftrcontactitem">
+              <i class="fas fa-clock ftrcontacticon"></i>
+              <span class="ftrcontacttext">Mon - Sat: 8:30 AM - 4:30 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Foot Bottom Copyright Banner Block -->
+      <div class="ftrbottombar">
+        <div class="ftrbottomcontainer">
+          <p class="ftrcopyright">
+            &copy; 2026 SNEHA VIDYA SAMSTE. All Rights Reserved.
+          </p>
+          <p class="ftrdesigner">
+            Designed by
+            <a href="https://arouzatechlabs.in/" class="ftrdesignerlink"
+              >Arouza Techlabs</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==========================================
+       BACK TO TOP BUTTON TRIGGER
+       ========================================== -->
+    <button class="ftrbacktotop" id="ftrbacktotop" aria-label="Back to top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+<script type="module" src="./nav.js"></script>
+<script type="module" src="./footer.js"></script>
+    <!-- JAVASCRIPT FOR DYNAMIC ANIMATIONS -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Smooth Scroll CTA scroll to Journey / Intro section
+        const exploreBtn = document.getElementById("abtherojourneybtn");
+        const timelineSection = document.getElementById("abttimeline");
+
+        if (exploreBtn && timelineSection) {
+          exploreBtn.addEventListener("click", () => {
+            timelineSection.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          });
+        }
+
+        // 2. High Performance Scroll Reveal using Intersection Observer
+        const revealItems = document.querySelectorAll(".abtreveal");
+
+        const revealCallback = (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("abtrevealactive");
+              observer.unobserve(entry.target); // Run animation once
+            }
+          });
+        };
+
+        const scrollObserver = new IntersectionObserver(revealCallback, {
+          root: null,
+          threshold: 0.12,
+          rootMargin: "0px 0px -40px 0px",
+        });
+
+        revealItems.forEach((item) => {
+          scrollObserver.observe(item);
+        });
+
+        // 3. Smooth Counter Animations when intro triggers
+        const counterNumbers = document.querySelectorAll(".abtcounternum");
+
+        const startCounters = () => {
+          counterNumbers.forEach((counter) => {
+            const target = parseInt(counter.getAttribute("data-target"), 10);
+            const speed = 200; // lower means faster
+
+            const updateCount = () => {
+              const current = parseInt(counter.innerText, 10);
+              const increment = Math.ceil(target / speed);
+
+              if (current < target) {
+                const nextVal = current + increment;
+                counter.innerText = nextVal > target ? target + "+" : nextVal;
+                setTimeout(updateCount, 15);
+              } else {
+                counter.innerText = target + "+";
+              }
+            };
+            updateCount();
+          });
+        };
+
+        // Trigger counters smoothly on intro segment entry
+        const introSection = document.querySelector(".abtintro");
+        if (introSection) {
+          const counterObserver = new IntersectionObserver(
+            (entries, observer) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  startCounters();
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.3 },
+          );
+          counterObserver.observe(introSection);
+        }
+
+        console.log("Sneha Vidya Samste About Us initialized successfully.");
+      });
+    </script>
+  </body>
+</html>
