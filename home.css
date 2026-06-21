@@ -82,7 +82,101 @@ body {
 .hmfactitle-font {
   font-family: "Playfair Display", serif;
 }
+/* =========================
+   SNEHA VIDYA SAMSTE LOADER
+   ========================= */
 
+#svsLoader {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #4c1d95, #6d28d9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease;
+}
+
+#svsLoader.svsHide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.svsLoaderContent {
+  text-align: center;
+  padding: 20px;
+}
+
+.svsLoaderLogo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  background: white;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  animation: svsPulse 1.8s infinite ease-in-out;
+}
+
+.svsLoaderTitle {
+  margin-top: 20px;
+  color: #ffffff;
+  font-size: clamp(1.4rem, 4vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.svsLoaderText {
+  color: #fbbf24;
+  margin-top: 12px;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+.svsLoaderBar {
+  width: 260px;
+  max-width: 90%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  margin: 22px auto;
+  overflow: hidden;
+}
+
+.svsLoaderBar span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #fbbf24, #ffffff, #fbbf24);
+  border-radius: 50px;
+  animation: svsLoading 5s linear forwards;
+}
+
+@keyframes svsLoading {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes svsPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 /* Premium Card Interaction */
 .hmfaccard {
   background: white;
