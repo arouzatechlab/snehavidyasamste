@@ -1,3 +1,24 @@
+/* =========================
+   PAGE LOADER
+   ========================= */
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("svsLoader");
+
+  // Hide loader after page is loaded
+  setTimeout(() => {
+    loader.classList.add("svsHide");
+  }, 2000); // 2 sec after load
+});
+
+// Safety fallback: never exceed 5 seconds
+setTimeout(() => {
+  const loader = document.getElementById("svsLoader");
+  if (loader) {
+    loader.classList.add("svsHide");
+  }
+}, 5000);
+
 // Hero Slider
 let currentSlide = 0;
 const slides = document.querySelectorAll(".hm-hero-slide");
