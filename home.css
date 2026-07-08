@@ -929,7 +929,7 @@ body {
   text-align: center;
 
   /* Replace with your image path */
-  background: url("images/logo.webp") center center/cover no-repeat;
+  background: url("./assets/cta.webp") center center/cover no-repeat;
 
   min-height: 500px;
   display: flex;

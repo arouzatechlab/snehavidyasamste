@@ -65,7 +65,7 @@
         padding: 2rem;
         background:
           linear-gradient(rgba(76, 29, 149, 0.85), rgba(76, 29, 149, 0.85)),
-          url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2000")
+          url("./assets/cta.webp")
             center/cover;
         height: 75vh;
       }
@@ -184,7 +184,7 @@
         color: var(--glrwhite);
         background:
           linear-gradient(rgba(76, 29, 149, 0.9), rgba(76, 29, 149, 0.9)),
-          url("https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?q=80&w=2000")
+          url("./assets/ctaaa.webp")
             center/cover;
       }
       .glrctabtn {
@@ -287,11 +287,11 @@
                   ><i class="fas fa-users"></i> Faculties</a
                 >
               </li>
-              <li class="navdropdownitem">
+              <!-- <li class="navdropdownitem">
                 <a href="./disclosure.html" class="navdropdownlink"
                   ><i class="fas fa-file-signature"></i> Mandatory Disclosure</a
                 >
-              </li>
+              </li> -->
               <!-- <li class="navdropdownitem">
                 <a href="#disclosure" class="navdropdownlink"
                   ><i class="fas fa-images"></i> Gallery</a
@@ -374,7 +374,9 @@
       <p style="margin-top: 1.5rem; font-size: 1.25rem; opacity: 0.9">
         Join SNEHA VIDYA SAMSTE and create your own memorable journey.
       </p>
-      <button class="glrctabtn">Admission</button>
+      <button class="glrctabtn" onclick="window.location.href = './admission.html'">
+        Admissions
+      </button>
     </section>
 
     <div class="glrlightbox" id="glrlightbox" onclick="closeLightbox()">
@@ -535,42 +537,210 @@
     </button>
 <script type="module" src="./nav.js"></script>
 <script type="module" src="./footer.js"></script>
-    <script>
-      // Populate Images
-      const grid = document.getElementById("glrgrid");
-      for (let i = 0; i < 12; i++) {
-        const div = document.createElement("div");
-        div.className = "glrcard";
-        div.innerHTML = `<img src="https://picsum.photos/400/300?random=${i}" loading="lazy" alt="Image ${i}">`;
-        div.onclick = () => {
-          document.getElementById("glrlightbox-content").innerHTML =
-            `<img src="https://picsum.photos/800/600?random=${i}" alt="Full view">`;
-          document.getElementById("glrlightbox").style.display = "flex";
-        };
-        grid.appendChild(div);
-      }
+   <script>/* ==========================================
+   PHOTO GALLERY
+========================================== */
 
-      // Populate Videos
-      const vgrid = document.getElementById("glrvideogrid");
-      for (let i = 0; i < 5; i++) {
-        const div = document.createElement("div");
-        div.className = "glrvideocard";
-        div.innerHTML = `<div class="glrvideothumb"></div><h3>Campus Event ${i + 1}</h3>`;
-        div.onclick = () => {
-          document.getElementById("glrlightbox-content").innerHTML = `
-                    <video controls autoplay>
-                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>`;
-          document.getElementById("glrlightbox").style.display = "flex";
-        };
-        vgrid.appendChild(div);
-      }
+const images = [
+  "./assets/hero2.jpeg",
+  "./assets/a2.webp",
+  "./assets/a3.webp",
+  "./assets/fl1.webp",
+  "./assets/fl2.webp",
+  "./assets/fl3.webp",
+  "./assets/fl4.webp",
+  "./assets/fl5.webp",
+  "./assets/fl6.webp",
+  "./assets/hero6.webp",
+  "./assets/a1.webp",
+  "./assets/hero3.jpeg",
+  "./assets/hero4.jpeg",
+];
 
-      function closeLightbox() {
-        document.getElementById("glrlightbox").style.display = "none";
-        document.getElementById("glrlightbox-content").innerHTML = "";
-      }
-    </script>
+const galleryGrid = document.getElementById("glrgrid");
+
+images.forEach((image, index) => {
+
+    const card = document.createElement("div");
+    card.className = "glrcard";
+
+    card.innerHTML = `
+        <img src="${image}"
+             loading="lazy"
+             alt="Gallery Image ${index + 1}">
+    `;
+
+    card.addEventListener("click", () => {
+
+        document.getElementById("glrlightbox-content").innerHTML = `
+            <img src="${image}" alt="Gallery Image">
+        `;
+
+        document.getElementById("glrlightbox").style.display = "flex";
+
+    });
+
+    galleryGrid.appendChild(card);
+
+});
+
+
+/* ==========================================
+   VIDEO GALLERY
+========================================== */
+
+/* ==========================================
+   YOUTUBE VIDEO GALLERY
+========================================== */
+
+const videos = [
+  {
+    title: "Annual Day Celebration",
+    youtubeId: "VIDEO_ID_1"
+  },
+  {
+    title: "Sports Day Highlights",
+    youtubeId: "VIDEO_ID_2"
+  },
+  {
+    title: "Science Exhibition",
+    youtubeId: "VIDEO_ID_3"
+  },
+  {
+    title: "Independence Day Celebration",
+    youtubeId: "VIDEO_ID_4"
+  },
+  {
+    title: "School Tour",
+    youtubeId: "VIDEO_ID_5"
+  }
+];
+
+const videoGrid = document.getElementById("glrvideogrid");
+
+videos.forEach((video) => {
+
+    const card = document.createElement("div");
+
+    card.className = "glrvideocard";
+
+    card.innerHTML = `
+        <div style="position:relative; overflow:hidden; border-radius:12px;">
+
+            <img
+                src="https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg"
+                alt="${video.title}"
+                style="
+                    width:100%;
+                    height:220px;
+                    object-fit:cover;
+                    display:block;
+                "
+            >
+
+            <div style="
+                position:absolute;
+                inset:0;
+                background:rgba(0,0,0,.25);
+                display:flex;
+                justify-content:center;
+                align-items:center;
+            ">
+
+                <i class="fas fa-play-circle"
+                   style="
+                        font-size:70px;
+                        color:white;
+                        text-shadow:0 5px 15px rgba(0,0,0,.4);
+                   ">
+                </i>
+
+            </div>
+
+        </div>
+
+        <h3 style="margin-top:15px;">
+            ${video.title}
+        </h3>
+    `;
+
+    card.addEventListener("click", () => {
+
+        document.getElementById("glrlightbox-content").innerHTML = `
+            <div style="
+                position:relative;
+                width:100%;
+                padding-bottom:56.25%;
+                height:0;
+            ">
+
+                <iframe
+                    src="https://www.youtube.com/embed/${video.youtubeId}?autoplay=1&rel=0"
+                    title="${video.title}"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    style="
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        width:100%;
+                        height:100%;
+                        border:none;
+                        border-radius:12px;
+                    ">
+                </iframe>
+
+            </div>
+        `;
+
+        document.getElementById("glrlightbox").style.display = "flex";
+
+    });
+
+    videoGrid.appendChild(card);
+
+});
+
+/* ==========================================
+   LIGHTBOX
+========================================== */
+
+function closeLightbox() {
+
+    document.getElementById("glrlightbox").style.display = "none";
+
+    document.getElementById("glrlightbox-content").innerHTML = "";
+
+}
+
+
+/* ==========================================
+   ESC KEY CLOSE
+========================================== */
+
+document.addEventListener("keydown", function (e) {
+
+    if (e.key === "Escape") {
+
+        closeLightbox();
+
+    }
+
+});
+
+
+/* ==========================================
+   CLICK OUTSIDE CLOSE
+========================================== */
+
+document.getElementById("glrlightbox").addEventListener("click", function (e) {
+
+    if (e.target.id === "glrlightbox") {
+
+        closeLightbox();
+
+    }
+
+});</script>
   </body>
 </html>
