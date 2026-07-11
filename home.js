@@ -69,7 +69,14 @@ const facilities = [
     icon: `<path d="M3 3h18v18H3zM3 9h18M9 3v18" stroke="url(#g1)"/>`,
   },
 ];
+const playBtn = document.getElementById("hmplaybtn");
+const overlay = document.getElementById("hmvideooverlay");
+const iframe = document.getElementById("hmcampusvideo");
 
+playBtn.addEventListener("click", () => {
+  iframe.src = "https://www.youtube.com/embed/BNrJSCsTvbg?autoplay=1&rel=0";
+  overlay.style.display = "none";
+});
 const grid = document.getElementById("hmfacgrid");
 grid.innerHTML = facilities
   .map(
