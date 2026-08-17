@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gallery | SNEHA VIDYA SAMSTE</title>
-     <!-- Google Fonts: Inter & Playfair Display for premium academic typography -->
+    <!-- Google Fonts: Inter & Playfair Display for premium academic typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -50,6 +50,18 @@
       h2,
       h3 {
         font-family: "Playfair Display", serif;
+      }
+
+      /* Smooth fade for images to prevent blinking */
+      @keyframes glrFadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
       }
 
       /* Premium Hero */
@@ -134,6 +146,9 @@
         width: 100%;
         height: 250px;
         object-fit: cover;
+        display: block;
+        background: #ede9fe; /* soft purple placeholder while loading */
+        animation: glrFadeIn 0.5s ease;
       }
 
       /* Video Section */
@@ -160,6 +175,10 @@
         text-align: center;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         cursor: pointer;
+        transition: transform 0.2s;
+      }
+      .glrvideocard:hover {
+        transform: translateY(-4px);
       }
       .glrvideothumb {
         height: 200px;
@@ -226,6 +245,20 @@
         width: 100%;
         border-radius: 8px;
       }
+
+      .glrvideocard h3 {
+        margin-top: 15px;
+        font-size: 1.1rem;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        color: var(--glrdarktext);
+      }
+
+      /* Video thumbnail images also get fade & placeholder */
+      .glrvideocard img {
+        background: #ede9fe;
+        animation: glrFadeIn 0.5s ease;
+      }
     </style>
   </head>
   <body>
@@ -237,7 +270,6 @@
         <!-- Left Branding Logo -->
         <a href="./index.html" class="navnavbarbrand">
           <div class="navnavbarlogo">
-            <!-- Styled <img> tag replaced SVG representation cleanly -->
             <img
               src="./assets/logosneha.webp"
               alt="Sneha Vidya Samste Logo"
@@ -275,7 +307,6 @@
                 style="font-size: 0.75rem; margin-left: 2px"
               ></i>
             </a>
-            <!-- Animated Dropdown Options -->
             <ul class="navdropdownmenu">
               <li class="navdropdownitem">
                 <a href="./about.html#about" class="navdropdownlink"
@@ -287,25 +318,13 @@
                   ><i class="fas fa-users"></i> Faculties</a
                 >
               </li>
-              <!-- <li class="navdropdownitem">
-                <a href="./disclosure.html" class="navdropdownlink"
-                  ><i class="fas fa-file-signature"></i> Mandatory Disclosure</a
-                >
-              </li> -->
-              <!-- <li class="navdropdownitem">
-                <a href="#disclosure" class="navdropdownlink"
-                  ><i class="fas fa-images"></i> Gallery</a
-                >
-              </li> -->
             </ul>
           </li>
 
-          <!-- New Root Contact Option (Moved out of Dropdown as requested) -->
           <li class="navnavbaritem">
             <a href="./gallery.html" class="navnavbarlink">GALLERY</a>
           </li>
 
-          <!-- Call To Action Admin Login Button -->
           <li class="navnavbaritem">
             <button
               class="navbtnlogin"
@@ -318,7 +337,6 @@
           </li>
         </ul>
 
-        <!-- Hamburger Action Trigger for Mobile Responsive Display -->
         <button
           class="navhamburger"
           id="navhamburgermenu"
@@ -331,8 +349,9 @@
       </nav>
     </div>
 
-    <!-- Mobile Overlay Background Blur Element -->
     <div class="navmobilenavoverlay" id="navmobilenavoverlay"></div>
+
+    <!-- ===== HERO ===== -->
     <section class="glrhero">
       <div class="glrherobadge">Campus Life & Memories</div>
       <h1 class="glrherotitle">Gallery</h1>
@@ -348,6 +367,7 @@
       </button>
     </section>
 
+    <!-- ===== PHOTO GALLERY ===== -->
     <section id="glranchor" class="glrsection">
       <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem">
         Photo Gallery
@@ -355,6 +375,7 @@
       <div class="glrgrid" id="glrgrid"></div>
     </section>
 
+    <!-- ===== VIDEO GALLERY ===== -->
     <section class="glrvideosection">
       <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem">
         Campus Videos
@@ -362,6 +383,7 @@
       <div class="glrvideogrid" id="glrvideogrid"></div>
     </section>
 
+    <!-- ===== CTA ===== -->
     <section class="glrcta">
       <h2
         style="
@@ -379,6 +401,7 @@
       </button>
     </section>
 
+    <!-- ===== LIGHTBOX ===== -->
     <div class="glrlightbox" id="glrlightbox" onclick="closeLightbox()">
       <div
         class="glrlightbox-content"
@@ -388,13 +411,12 @@
         <!-- Content injected here -->
       </div>
     </div>
-<!-- ==========================================
-       PREMIUM SCHOOL WEBSITE FOOTER
-       Satisfies all strictly prefixed ftr requirements
+
+    <!-- ==========================================
+       FOOTER
        ========================================== -->
     <footer class="ftrfooter">
       <div class="ftrcontainer">
-        <!-- COLUMN 1: School Branding & Social Handles -->
         <div class="ftrbrandcol">
           <div class="ftrlogoimgwrapper">
             <img
@@ -441,11 +463,9 @@
 
         <hr class="ftrseparator" />
 
-        <!-- COLUMN 2: Responsive Embedded Map -->
         <div class="ftrmapcol">
           <h3 class="ftrmapcoltitle">Find Our Campus</h3>
           <div class="ftrmapbox">
-            <!-- Responsive maps placeholder pointing to a premium Bangalore tech/academic zone -->
             <iframe class="ftriframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3895.4743818457423!2d77.02681947121012!3d12.484685001648813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf07f417132ce7%3A0x91d5d4ff62792c9b!2ssneha%20education%20society!5e0!3m2!1sen!2sin!4v1780376612211!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </iframe>
           </div>
@@ -453,7 +473,6 @@
 
         <hr class="ftrseparator" />
 
-        <!-- COLUMN 3: Premium QR Access Code Card -->
         <div class="ftrqrcol">
           <h3 class="ftrqrcoltitle">Quick Access</h3>
           <div class="ftrqrcard">
@@ -468,14 +487,13 @@
 
         <hr class="ftrseparator" />
 
-        <!-- COLUMN 4: Complete Interactive Contact Information -->
         <div class="ftrcontactcol">
           <h3 class="ftrcontactcoltitle">Contact Details</h3>
           <ul class="ftrcontactlist">
             <li class="ftrcontactitem">
               <i class="fas fa-map-marker-alt ftrcontacticon"></i>
               <span class="ftrcontacttext"
-                >Gudigere Road, Bharathi Nagar(KM DODDI), Karnataka-571422 </span
+                >Gudigere Road, Bharathi Nagar(KM DODDI), Karnataka-571422</span
               >
             </li>
             <li class="ftrcontactitem">
@@ -484,12 +502,6 @@
                 >+91 97394 22025</a
               >
             </li>
-            <!-- <li class="ftrcontactitem">
-              <i class="fas fa-phone-volume ftrcontacticon"></i>
-              <a href="tel:+91802345678" class="ftrcontacttext"
-                >+91 80 2345 6789</a
-              >
-            </li> -->
             <li class="ftrcontactitem">
               <i class="fas fa-envelope ftrcontacticon"></i>
               <a href="mailto:snehavidyasamsthe123@gmail.com" class="ftrcontacttext"
@@ -513,7 +525,6 @@
         </div>
       </div>
 
-      <!-- Foot Bottom Copyright Banner Block -->
       <div class="ftrbottombar">
         <div class="ftrbottomcontainer">
           <p class="ftrcopyright">
@@ -529,218 +540,175 @@
       </div>
     </footer>
 
-    <!-- ==========================================
-       BACK TO TOP BUTTON TRIGGER
-       ========================================== -->
     <button class="ftrbacktotop" id="ftrbacktotop" aria-label="Back to top">
       <i class="fas fa-chevron-up"></i>
     </button>
-<script type="module" src="./nav.js"></script>
-<script type="module" src="./footer.js"></script>
-   <script>/* ==========================================
-   PHOTO GALLERY
-========================================== */
 
-const images = [
-  "./assets/hero2.jpeg",
-  "./assets/a2.webp",
-  "./assets/a3.webp",
-  "./assets/fl1.webp",
-  "./assets/fl2.webp",
-  "./assets/fl3.webp",
-  "./assets/fl4.webp",
-  "./assets/fl5.webp",
-  "./assets/fl6.webp",
-  "./assets/hero6.webp",
-  "./assets/a1.webp",
-  "./assets/hero3.jpeg",
-  "./assets/hero4.jpeg",
-];
+    <script type="module" src="./nav.js"></script>
+    <script type="module" src="./footer.js"></script>
 
-const galleryGrid = document.getElementById("glrgrid");
+    <script>
+      /* ==========================================
+         PHOTO GALLERY – old images + new g1…g15
+         ========================================== */
+      // Original 13 images (unchanged)
+      const oldImages = [
+        "./assets/hero2.jpeg",
+        "./assets/a2.webp",
+        "./assets/a3.webp",
+        "./assets/fl1.webp",
+        "./assets/fl2.webp",
+        "./assets/fl3.webp",
+        "./assets/fl4.webp",
+        "./assets/fl5.webp",
+        "./assets/fl6.webp",
+        "./assets/hero6.webp",
+        "./assets/a1.webp",
+        "./assets/hero3.jpeg",
+        "./assets/hero4.jpeg",
+      ];
 
-images.forEach((image, index) => {
+      // 15 new images (g1.webp … g15.webp)
+      const newImages = [];
+      for (let i = 1; i <= 10; i++) {
+        newImages.push(`./assets/g${i}.webp`);
+      }
 
-    const card = document.createElement("div");
-    card.className = "glrcard";
+      // Combine: old first, then new
+      const images = [...oldImages, ...newImages];
 
-    card.innerHTML = `
-        <img src="${image}"
-             loading="lazy"
-             alt="Gallery Image ${index + 1}">
-    `;
+      const galleryGrid = document.getElementById("glrgrid");
 
-    card.addEventListener("click", () => {
+      images.forEach((src, index) => {
+        const card = document.createElement("div");
+        card.className = "glrcard";
+        // Removed onerror to prevent blinking loops.
+        // Added background + fade via CSS.
+        card.innerHTML = `
+              <img src="${src}"
+                   loading="lazy"
+                   alt="Gallery Image ${index + 1}"
+              >
+            `;
+        card.addEventListener("click", () => {
+          document.getElementById("glrlightbox-content").innerHTML = `
+                <img src="${src}" alt="Gallery Image">
+              `;
+          document.getElementById("glrlightbox").style.display = "flex";
+        });
+        galleryGrid.appendChild(card);
+      });
 
-        document.getElementById("glrlightbox-content").innerHTML = `
-            <img src="${image}" alt="Gallery Image">
-        `;
 
-        document.getElementById("glrlightbox").style.display = "flex";
+      /* ==========================================
+         VIDEO GALLERY – old 5 + 5 new = 10 total
+         ========================================== */
+      // Original 5 videos (unchanged)
+      const oldVideos = [
+        { title: "Annual Day Celebration", youtubeId: "N4eV3eB-boc" },
+        { title: "Birthday Celebration", youtubeId: "qsUDqeSJxOU" },
+        { title: "Events", youtubeId: "WYrOKXhFazw" },
+        { title: "Activities", youtubeId: "sT9pkPz1NmU" },
+        { title: "Saraswathi Pooja", youtubeId: "kUh5EdMKAg8" },
+      ];
 
-    });
+      // 5 additional videos to reach total 10
+      const newVideos = [
+        { title: "Kids Activity", youtubeId: "Z26Pbx5hd4U" },
+        { title: "Independence Day Celebration", youtubeId: "xg4EUeIxRec" },
+        { title: "Prize Distribution Ceremony", youtubeId: "VIDEO_ID_8" },
+        { title: "Farewell Function", youtubeId: "VIDEO_ID_9" },
+        { title: "Campus Walkthrough", youtubeId: "VIDEO_ID_10" },
+      ];
 
-    galleryGrid.appendChild(card);
+      const videos = [...oldVideos, ...newVideos];
 
-});
+      const videoGrid = document.getElementById("glrvideogrid");
 
+      videos.forEach((video) => {
+        const card = document.createElement("div");
+        card.className = "glrvideocard";
 
-/* ==========================================
-   VIDEO GALLERY
-========================================== */
-
-/* ==========================================
-   YOUTUBE VIDEO GALLERY
-========================================== */
-
-const videos = [
-  {
-    title: "Annual Day Celebration",
-    youtubeId: "VIDEO_ID_1"
-  },
-  {
-    title: "Sports Day Highlights",
-    youtubeId: "VIDEO_ID_2"
-  },
-  {
-    title: "Science Exhibition",
-    youtubeId: "VIDEO_ID_3"
-  },
-  {
-    title: "Independence Day Celebration",
-    youtubeId: "VIDEO_ID_4"
-  },
-  {
-    title: "School Tour",
-    youtubeId: "VIDEO_ID_5"
-  }
-];
-
-const videoGrid = document.getElementById("glrvideogrid");
-
-videos.forEach((video) => {
-
-    const card = document.createElement("div");
-
-    card.className = "glrvideocard";
-
-    card.innerHTML = `
-        <div style="position:relative; overflow:hidden; border-radius:12px;">
-
-            <img
-                src="https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg"
-                alt="${video.title}"
-                style="
+        card.innerHTML = `
+              <div style="position:relative; overflow:hidden; border-radius:12px;">
+                <img
+                  src="https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg"
+                  alt="${video.title}"
+                  style="
                     width:100%;
                     height:220px;
                     object-fit:cover;
                     display:block;
-                "
-            >
+                    background: #ede9fe;
+                  "
+                >
+                <div style="
+                  position:absolute;
+                  inset:0;
+                  background:rgba(0,0,0,.25);
+                  display:flex;
+                  justify-content:center;
+                  align-items:center;
+                ">
+                  <i class="fas fa-play-circle"
+                     style="
+                      font-size:70px;
+                      color:white;
+                      text-shadow:0 5px 15px rgba(0,0,0,.4);
+                     ">
+                  </i>
+                </div>
+              </div>
+              <h3>${video.title}</h3>
+            `;
 
-            <div style="
-                position:absolute;
-                inset:0;
-                background:rgba(0,0,0,.25);
-                display:flex;
-                justify-content:center;
-                align-items:center;
-            ">
-
-                <i class="fas fa-play-circle"
-                   style="
-                        font-size:70px;
-                        color:white;
-                        text-shadow:0 5px 15px rgba(0,0,0,.4);
-                   ">
-                </i>
-
-            </div>
-
-        </div>
-
-        <h3 style="margin-top:15px;">
-            ${video.title}
-        </h3>
-    `;
-
-    card.addEventListener("click", () => {
-
-        document.getElementById("glrlightbox-content").innerHTML = `
-            <div style="
-                position:relative;
-                width:100%;
-                padding-bottom:56.25%;
-                height:0;
-            ">
-
-                <iframe
+        card.addEventListener("click", () => {
+          document.getElementById("glrlightbox-content").innerHTML = `
+                <div style="
+                  position:relative;
+                  width:100%;
+                  padding-bottom:56.25%;
+                  height:0;
+                ">
+                  <iframe
                     src="https://www.youtube.com/embed/${video.youtubeId}?autoplay=1&rel=0"
                     title="${video.title}"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen
                     style="
-                        position:absolute;
-                        top:0;
-                        left:0;
-                        width:100%;
-                        height:100%;
-                        border:none;
-                        border-radius:12px;
+                      position:absolute;
+                      top:0;
+                      left:0;
+                      width:100%;
+                      height:100%;
+                      border:none;
+                      border-radius:12px;
                     ">
-                </iframe>
+                  </iframe>
+                </div>
+              `;
+          document.getElementById("glrlightbox").style.display = "flex";
+        });
 
-            </div>
-        `;
-
-        document.getElementById("glrlightbox").style.display = "flex";
-
-    });
-
-    videoGrid.appendChild(card);
-
-});
-
-/* ==========================================
-   LIGHTBOX
-========================================== */
-
-function closeLightbox() {
-
-    document.getElementById("glrlightbox").style.display = "none";
-
-    document.getElementById("glrlightbox-content").innerHTML = "";
-
-}
+        videoGrid.appendChild(card);
+      });
 
 
-/* ==========================================
-   ESC KEY CLOSE
-========================================== */
+      /* ==========================================
+         LIGHTBOX
+         ========================================== */
+      function closeLightbox() {
+        document.getElementById("glrlightbox").style.display = "none";
+        document.getElementById("glrlightbox-content").innerHTML = "";
+      }
 
-document.addEventListener("keydown", function (e) {
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeLightbox();
+      });
 
-    if (e.key === "Escape") {
-
-        closeLightbox();
-
-    }
-
-});
-
-
-/* ==========================================
-   CLICK OUTSIDE CLOSE
-========================================== */
-
-document.getElementById("glrlightbox").addEventListener("click", function (e) {
-
-    if (e.target.id === "glrlightbox") {
-
-        closeLightbox();
-
-    }
-
-});</script>
+      document.getElementById("glrlightbox").addEventListener("click", function (e) {
+        if (e.target.id === "glrlightbox") closeLightbox();
+      });
+    </script>
   </body>
 </html>
